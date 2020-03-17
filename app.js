@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const users = require("./routes/api/users");
+const favorites = require('./routes/api/favorites');
 const bodyParser = require('body-parser');
 const passport = require("passport");
 // middleware
@@ -21,6 +22,7 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // route paths
 app.use("/api/users", users);
+app.use('/api/restaurants', favorites);
 
 
 // set up the app port

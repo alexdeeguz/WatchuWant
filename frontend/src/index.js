@@ -18,9 +18,12 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
+// testing
+import {fetchFavorite, fetchFavorites, postFavorite} from './actions/favorites'
+
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
-    // debugger
     if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);
         const decodedUser = jwt_decode(localStorage.jwtToken);
@@ -33,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = '/login';
         }
      } else store = configureStore({});
+
+    //  TESTING -kmo
+     window.getState = store.getState;
+     window.dispatch = store.dispatch;
+     window.fetchFavorite = fetchFavorite;
+     window.fetchFavorites = fetchFavorites;
+     window.postFavorite = postFavorite;
 
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
