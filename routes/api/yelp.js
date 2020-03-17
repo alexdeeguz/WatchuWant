@@ -5,6 +5,8 @@ const yelpUrl = 'https://api.yelp.com/v3/businesses/search';
 
 router.get('/yelp', (req, res) => {
     console.log('getting /yelp');
+    debugger
+    console.log(req);
 
     return axios.get({
         method: 'GET',
