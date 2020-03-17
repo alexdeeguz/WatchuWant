@@ -1,24 +1,33 @@
+//libraries and assets
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+//react routing
+import { AuthRoute, ProtectedRoute } from '../src/util/route_util';
+import { Switch } from 'react-router-dom';
+
+//components
+import NavBarContainer from './components/nav/navbar_container';
+import MainPage from './components/main/main_page';
+import LoginFormContainer from './components/session/login_form_container';
+import SignupFormContainer from './components/session/signup_form_container';
+import UserShowContainer from './components/users/user_show_container';
+import Footer from './components/footer/footer';
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+        <NavBarContainer />
+        <Switch>
+            <AuthRoute exact path="/" component={MainPage} />
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+
+            <ProtectedRoute exact path="/" component={UserShowContainer} />
+        </Switch>
+        <Footer />
+        {/* <Route path='/testroute' component={}/> */}
     </div>
   );
 }
