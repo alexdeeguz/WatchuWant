@@ -11,7 +11,7 @@ import {
 const favoritesReducer = (state ={}, action) =>{
     Object.freeze(state);
     let newState = Object.assign({}, state)
-    debugger
+    // debugger
     switch (action.type) {
         case RECEIVE_FAVORITES:
             action.favorites.data.forEach((fav, idx)=>{
