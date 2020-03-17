@@ -18,15 +18,15 @@ import Footer from './components/footer/footer';
 const App = () => {
   return (
     <div className='App'>
-        <NavBarContainer />
+        {/* <NavBarContainer /> */}
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
             <ProtectedRoute exact path="/" component={UserShowContainer} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
         {/* <Route path='/testroute' component={}/> */}
     </div>
   );

@@ -2,16 +2,28 @@
 
 import React from 'react';
 import './main_page.css';
+import Modal from '../modal/modal'
 
 class MainPage extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            formType: "login"
+        }
+    }
 
     render() {
         return (
             <div>
-                <h1>Whatchu Want? (infdev)</h1>
-                <footer>
+                <div className="main-page">
+                    <h1>Whatchu Want?</h1>
+                    <img id="home-pic" src="splash-page-pic.jpg"></img>
+                </div>
+                <Modal {...this.props}/>
+                {/* <footer>
                     Copyright &copy; 2020 JAKT
-                </footer>
+                </footer> */}
             </div>
         );
     }
