@@ -18,7 +18,7 @@ import Footer from './components/footer/footer';
 const App = () => {
   return (
     <div className='App'>
-        {/* <NavBarContainer /> */}
+        <NavBarContainer />
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
             {/* <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
