@@ -1,5 +1,5 @@
 const Validator = require("validator");
-const validText = require('./valid_test');
+const validText = require('./valid_text');
 
 const validateSignUpInput = data => {
     data.email = validText(data.email) ? data.email : "";
