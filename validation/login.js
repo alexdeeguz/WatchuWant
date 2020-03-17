@@ -1,5 +1,5 @@
 const Validator = require('validator');
-const validText = require('./valid-test');
+const validText = require('./valid_test');
 
 
 const validateLoginInput = data => {
@@ -9,7 +9,7 @@ const validateLoginInput = data => {
     
     const errors = {};
 
-    if(!Validator.isEmpty(data.email)) {
+    if(Validator.isEmpty(data.email)) {
         errors.email = "Email is required";
     }
 
@@ -17,7 +17,7 @@ const validateLoginInput = data => {
         errors.email = "Email is invalid";
     }
 
-    if(!Validator.isEmpty(data.password)) {
+    if(Validator.isEmpty(data.password)) {
         errors.password = "Password is required"
     }
 
