@@ -95,6 +95,6 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
       id: req.user.id,
       email: req.user.email
     });
-  })
+})
 
 module.exports = router;
