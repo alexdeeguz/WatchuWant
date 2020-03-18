@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const users = require("./routes/api/users");
+const yelp = require('./routes/api/yelp');
 const bodyParser = require('body-parser');
 const passport = require("passport");
 // middleware
@@ -21,7 +22,7 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // route paths
 app.use("/api/users", users);
-
+app.use('/api/yelp', yelp);
 
 // set up the app port
 const port = process.env.PORT || 5000;
