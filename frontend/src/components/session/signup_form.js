@@ -39,7 +39,7 @@ class SignupForm extends React.Component {
             password: this.state.password,
             password2: this.state.password2
         };
-
+        debugger
         this.props.signup(user, this.props.history);
     }
 
@@ -57,11 +57,10 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="signup-form-container">
-                <Modal />
+            <div className="signup-form">
+                <h1>SIGN UP</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <div className="signup-form">
-                        <br />
+                    <div className="session-form">
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
@@ -80,7 +79,7 @@ class SignupForm extends React.Component {
                             placeholder="Confirm Password"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="CREATE ACCOUNT" />
                         {this.renderErrors()}
                     </div>
                 </form>

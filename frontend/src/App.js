@@ -21,13 +21,10 @@ const App = () => {
         <NavBarContainer />
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-
             <ProtectedRoute exact path="/" component={UserShowContainer} />
         </Switch>
         <Footer />
-        {/* <Route path='/api/testing' component={testingContainer} /> */}
     </div>
   );
 }
