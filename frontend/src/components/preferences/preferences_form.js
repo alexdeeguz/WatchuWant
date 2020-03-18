@@ -43,11 +43,11 @@ class PreferenceForm extends React.Component {
             params: {
                 location: 'san francisco', //location or coordinates
                 categories: [], //array of string, yelp has list of supported categories
-                limit: 10, // limits search, max 50
+                limit: 5, // limits search, max 50
                 price: "2", //string "1", "2", "3", or "4"
                 term: "",  //specific search term
                 radius: 500, //radius in meters, max is 40_000meters approx 25miles
-                rating: 2.5, //decminal 1 through 5
+                rating: 2.5, //minimum rating: decimal 1 through 5
             }
         }
         
