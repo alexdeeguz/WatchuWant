@@ -1,3 +1,4 @@
+
 import React from 'react';
 import $ from 'jquery';
 import "./splash.scss";
@@ -93,7 +94,6 @@ class SplashCarousel extends React.Component{
     // }
 
 };
-
 
 
 export default SplashCarousel;

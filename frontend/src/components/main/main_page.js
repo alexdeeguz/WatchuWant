@@ -2,7 +2,6 @@
 
 import React from 'react';
 import './main_page.css';
-import Modal from '../modal/modal'
 import SplashCarousel from '../carousel/splash';
 
 class MainPage extends React.Component {
@@ -20,8 +19,8 @@ class MainPage extends React.Component {
                 {/* <footer>
                     Copyright &copy; 2020 JAKT
                 </footer> */}
+
                 < SplashCarousel />
-                
             </div>
         );
     }
