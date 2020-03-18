@@ -19,7 +19,7 @@ import Preferences from './components/preferences/preferences'
 const App = () => {
   return (
     <div className='App'>
-        <NavBarContainer />
+        <NavBarContainer className="nav-bar"/>
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -27,7 +27,7 @@ const App = () => {
             
             <ProtectedRoute exact path="/" component={UserShowContainer} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
     </div>
   );
 }
