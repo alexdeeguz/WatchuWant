@@ -14,23 +14,27 @@
 
 .preference-form > h1 {
     font-size: 5vh;
-    margin-top: 2%;
+    margin-top: 10%;
 }
 
 .preference-form {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    border: 1px solid red;
 }
 
 .preference-form > div > input {
     width: 5vw;
     font-size: 5vh;
     outline: none;
+    margin-top: 15%;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -47,20 +51,22 @@ input[type=number]::-webkit-outer-spin-button {
 
 .cuisine-types {
     width: 100%;
+    margin-top: 3%;
 }
 
-.cuisine-one {
+.cuisine-one, .cuisine-two {
     display: flex;
     justify-content: space-around;
+    margin-top: 1%;
 }
 
-.cuisine-one > button {
+.cuisine-one > button, .cuisine-two > button {
     width: 20%;
     padding: 10px;
     border-radius: 10px;
 }
 
-.cuisine-one > button:hover {
+.cuisine-one > button:hover, .cuisine-two > button:hover {
     cursor: pointer;
     background-color: darkblue;
     color: white;

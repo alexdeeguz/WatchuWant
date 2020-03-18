@@ -77,6 +77,12 @@ class PreferenceForm extends React.Component {
                         <button onClick={this.updateCuisine} className={this.state.cuisine === "Mexican" ? "selected" : ""}>Mexican</button>
                         <button onClick={this.updateCuisine} className={this.state.cuisine === "American" ? "selected" : ""}>American</button>
                     </div>
+                    <div className="cuisine-two">
+                        <button onClick={this.updateCuisine} className={this.state.cuisine === "Indian" ? "selected" : ""}>Indian</button>
+                        <button onClick={this.updateCuisine} className={this.state.cuisine === "Italian" ? "selected" : ""}>Italian</button>
+                        <button onClick={this.updateCuisine} className={this.state.cuisine === "Mediteranean" ? "selected" : ""}>Mediteranean</button>
+                    </div>
+
                 </div>
                 <button onClick={this.commenceSearch}>search</button>
             </div>

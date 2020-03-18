@@ -28,9 +28,12 @@
 
 
 .modal-content {
-    left: 340%;
+    /* left: 340%;
+    top: 150%; */
+    top: 160%;
     /* bottom: 0; */
-    top: 150%;
+    left: 0;
+    right: 0;
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;

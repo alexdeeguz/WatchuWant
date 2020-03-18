@@ -48,7 +48,6 @@ class LoginForm extends React.Component {
         };
         this.props.login(user)
             .then(() => this.props.history.push('/preferences'))
-            .then(this.closeModal())
     }
 
     // Render the session errors if there are any
