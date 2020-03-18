@@ -19,7 +19,8 @@ router.post('/',
         }
 
         const newFavorite = new Favorite({
-            restaurantId: req.body.restaurantId
+            restaurantId: req.body.restaurantId,
+            userId: req.body.userId
         })
 
         newFavorite
@@ -47,10 +48,10 @@ router.get('/:id',
 )
 
 // get all
-router.get('/',
+router.get('/user/:userId',
     (req, res)=>{
         Favorite
-            .find()
+            .find({userId: req.params.userId})
             .sort( {date: -1})
             .then(favs => res.json(favs))
             .catch(err => res.status(400).json(err))
