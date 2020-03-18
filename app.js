@@ -7,6 +7,7 @@ const passport = require("passport");
 // api routes
 const users = require("./routes/api/users");
 const preferences = require("./routes/api/preferences");
+const yelp = require('./routes/api/yelp');
 
 // middleware
 app.use(passport.initialize());
@@ -27,6 +28,7 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
 // route paths
 app.use("/api/users", users); // for user login, signup
 app.use("/api/preferences", preferences); // for user add, edit preferences
+app.use('/api/yelp', yelp);
 
 // set up the app port
 const port = process.env.PORT || 5000;
