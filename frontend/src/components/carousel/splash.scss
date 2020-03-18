@@ -1,14 +1,40 @@
 
-.splashbackground{
-    background: url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    border: 1px solid blue;
+
+// .splashbackground{
+//     background: url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80') no-repeat center center fixed;
+//     background-size: cover;
+//     height: 100vh;
+//     width: 100vw;
+//     border: 1px solid blue;
+// }
+
+// #slideshow{
+//     border: 1px solid green;
+//     height: 100vh;
+//     width: 100vw;
+// }
+
+
+#slideshow { 
+    margin: 50px auto; 
+    position: relative; 
+    width: 100vw; 
+    // height: 100vw; 
+    padding: 10px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+    object-fit: cover;
 }
 
-#slideshow{
-    border: 1px solid green;
-    height: 100vh;
-    width: 100vw;
+#slideshow > div { 
+    position: absolute; 
+    top: 10px; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 10px; 
+    // height: 100vh;
 }
+
+.food-slide-pic{
+    width: 100%
+}
+

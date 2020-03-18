@@ -1,3 +1,4 @@
+
 // src/components/main/main_page.js
 
 import React from 'react';
@@ -13,5 +14,6 @@ class MainPage extends React.Component {
         );
     }
 }
+
 
 export default MainPage;
