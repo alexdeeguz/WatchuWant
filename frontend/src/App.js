@@ -4,7 +4,7 @@ import './App.css';
 
 //react routing
 import { AuthRoute, ProtectedRoute } from '../src/util/route_util';
-import { Switch, Route } from 'react-router-dom';
+import { Switch} from 'react-router-dom';
 
 //components
 import NavBarContainer from './components/nav/navbar_container';
@@ -20,11 +20,12 @@ const App = () => {
     <div className='App'>
         <NavBarContainer className="nav-bar"/>
         <Switch>
-            <ProtectedRoute path='/restaurant/:id' component={RestaurantShowContainer}/>
+            <ProtectedRoute path='/restaurants/:id' component={RestaurantShowContainer}/>
             <ProtectedRoute path="/preferences" component={Preferences} />
+            <ProtectedRoute path="/user" component={UserShowContainer} />
             <AuthRoute path="/" component={MainPage} />
+
         </Switch>
-        <ProtectedRoute exact path="/user" component={UserShowContainer} />
         {/* <Footer /> */}
     </div>
   );
