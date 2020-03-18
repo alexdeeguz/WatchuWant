@@ -19,7 +19,7 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
 // testing
-import {fetchFavorite, fetchFavorites, postFavorite} from './actions/favorites'
+import {fetchFavorite, fetchFavorites, postFavorite, deleteFavorite} from './actions/favorites'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
      window.fetchFavorite = fetchFavorite;
      window.fetchFavorites = fetchFavorites;
      window.postFavorite = postFavorite;
+     window.deleteFavorite = deleteFavorite
 
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);

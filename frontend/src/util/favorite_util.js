@@ -11,3 +11,7 @@ export const getFavorite = favoriteId =>{
 export const postFavorite = data =>{
     return axios.post('api/restaurants/', data)
 }
+
+export const deleteFavorite = favoriteId =>{
+    return axios.delete(`api/restaurants/${favoriteId}`)
+}
