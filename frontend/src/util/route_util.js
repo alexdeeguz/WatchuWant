@@ -8,15 +8,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
         !loggedIn ? (
             <Component {...props} />
         ) : (
-
-
-                <Redirect to="/preferences" />
-
-                // Redirect to the main page if the user is authenticated
-                // <Redirect to="/" />
-
-            )
-            // <Redirect to="/preferences" />
+            <Redirect to="/preferences" />
         )
     )} />
 );
