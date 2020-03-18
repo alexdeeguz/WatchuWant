@@ -1,5 +1,5 @@
 module.exports = {
-    mongoURI: "mongodb+srv://jakt_aA_watchuwant:jaktMERN2019@watchuwant-bjm46.mongodb.net/test?retryWrites=true&w=majority",
-    secretToken: "B<}|79FhQjP5Y@v",
-    yelpAPIKey: "QANNLRBgBmA4Tv0TULEE7HfafCaYMhWI_cZI0PCU2ec82NEx_ZvqKkoyth4A3I0tniedNejSylCvutvoyuF1xTKoxo9GgyQxO1niKmS8gxPUcQKNmLZlXPSVBXtxXnYx"
+    mongoURI: "mongodb+srv://watchuwant_jakt_mern:mern_stack_2020@watchuwant-bjm46.mongodb.net/watchu_want_db?retryWrites=true&w=majority",
+    secretToken: "@EVO*{YrnCdo%g%",
+    yelpAPIKey: "cKHwpShzI-SmUuaP0mN9sDqX8bFYOxPLryNl-6O-J5PIAdAkrWHWOXQ-V975fjBsAdq6W4yfoEFP1RnyxrmBPnIYZbTJZXe2DSxzSKNIFBmZrUBtgC18pU23l0dyXnYx"
 }

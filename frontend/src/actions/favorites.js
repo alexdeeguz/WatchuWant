@@ -26,8 +26,8 @@ export const receiveNewFavorite = favorite => ({
 
 // THUNK
 
-export const fetchFavorites = () => dispatch =>(
-    favoriteRestaurantAPIUtil.getFavorites()
+export const fetchFavorites = (userId) => dispatch =>(
+    favoriteRestaurantAPIUtil.getFavorites(userId)
         .then(favorites =>(dispatch(receiveFavorites(favorites))))
 );
 

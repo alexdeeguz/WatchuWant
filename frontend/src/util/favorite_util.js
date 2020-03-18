@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const getFavorites = () =>{
-    return axios.get('api/restaurants/')
+export const getFavorites = (userId) =>{
+    return axios.get(`/api/restaurants/user/${userId}`)
 }
 
 export const getFavorite = favoriteId =>{

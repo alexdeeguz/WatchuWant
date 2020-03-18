@@ -7,6 +7,10 @@ const FavoriteSchema = new Schema({
         required: true,
         unique: true
     },
+    userId:{
+        type: String,
+        required: true
+    },
     date:{
         type: Date, 
         default: Date.now
