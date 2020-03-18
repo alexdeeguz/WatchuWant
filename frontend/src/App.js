@@ -26,7 +26,6 @@ const App = () => {
             <AuthRoute path="/" component={MainPage} />
 
         </Switch>
-        {/* <Footer /> */}
     </div>
   );
 }
