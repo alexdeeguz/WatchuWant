@@ -1,14 +1,20 @@
 // allows routing in our app
 const express = require('express');
 const app = express();
-const users = require("./routes/api/users");
 const bodyParser = require('body-parser');
 const passport = require("passport");
+
+// api routes
+const users = require("./routes/api/users");
+const preferences = require("./routes/api/preferences");
+const yelp = require('./routes/api/yelp');
+
 // middleware
 app.use(passport.initialize());
 require("./config/passport")(passport);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 // allows use of mongodb
 const mongoose = require('mongoose');
@@ -20,8 +26,9 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch(err => console.log(err));
 
 // route paths
-app.use("/api/users", users);
-
+app.use("/api/users", users); // for user login, signup
+app.use("/api/preferences", preferences); // for user add, edit preferences
+app.use('/api/yelp', yelp);
 
 // set up the app port
 const port = process.env.PORT || 5000;

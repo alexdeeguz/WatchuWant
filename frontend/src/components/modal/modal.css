@@ -36,13 +36,14 @@
 }
 
 .session-form > input {
-  height: 45px;
-  width: 400px;
+  height: 7vh;
+  width: 90%;
   font-family: 'Montserrat';
   font-size: 3vh;
   margin: 12px;
   padding-left: 10px;
   background-color: rgba(207, 202, 202, 0.4);
+  outline: none;
 }
 
 .login-form > h1, .signup-form > h1 {
