@@ -6,19 +6,20 @@ const yelpKey = require('../../config/keys').yelpAPIKey;
 const yelpUrl = 'https://api.yelp.com/v3/businesses/search'; 
 // const yelpUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search'; 
 
-const config = {
+router.get('/', (req, res) => {
+  let {location, categories, limit, price, term, radius} = req.query;
+  const config = {
     headers: {'Authorization': `Bearer ${yelpKey}`},
     params: {
-      location: 'san francisco',
-      categories: 'breakfast_brunch',
-      limit: 10
+      location: location,
+      categories: categories,
+      limit, price, term, radius
     }
   };
 
-router.get('/', (req, res) => {
-    axios.get(yelpUrl, config)
+  axios.get(yelpUrl, config)
     .then( ans => res.jsonp(ans.data) )
-    .catch( errors => console.log(errors) );
+    .catch( errors => res.jsonp(errors) );
 });
 
 
