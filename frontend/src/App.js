@@ -14,20 +14,26 @@ import SignupFormContainer from './components/session/signup_form_container';
 import UserShowContainer from './components/users/user_show_container';
 import Footer from './components/footer/footer';
 import Preferences from './components/preferences/preferences'
+import RestaurantShowContainer from './components/restauraunts/restaurant_show_container';
 
 
 const App = () => {
   return (
     <div className='App'>
-        <NavBarContainer />
+        <NavBarContainer className="nav-bar"/>
         <Switch>
+
             <AuthRoute exact path="/" component={MainPage} />
             {/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
-            <ProtectedRoute  path="/preferences" component={Preferences} />
-            
-            <ProtectedRoute exact path="/" component={UserShowContainer} />
+          
+
+            <ProtectedRoute path='/restaurant/:id' component={RestaurantShowContainer}/>
+            <ProtectedRoute path="/preferences" component={Preferences} />
+            <ProtectedRoute path="/user" component={UserShowContainer} />
+            <AuthRoute path="/" component={MainPage} />
+
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
     </div>
   );
 }
