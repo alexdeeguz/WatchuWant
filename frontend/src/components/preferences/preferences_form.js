@@ -32,7 +32,7 @@ class PreferenceForm extends React.Component {
 
     updatePrice(e) {
         this.setState({
-            price: e.target.value
+            price: Number(e.target.value)
         })
     }
 
@@ -67,11 +67,20 @@ class PreferenceForm extends React.Component {
 
                 <h1>HOW MUCH ARE YOU WILLING TO SPEND?</h1>
                 <div>
-                    $<input type="number" min="1"></input>
+                    $<input onChange={this.updatePrice} type="number" min="1"></input>
                 </div>
 
                 <h1>WHAT FOOD DO YOU WANT?</h1>
-                <div className="cuisine-types">
+                <select>
+                    <option disabled selected>--Please select an option--</option>
+                    <option>Asian</option>
+                    <option>Mexican</option>
+                    <option>American</option>
+                    <option>Indian</option>
+                    <option>Italian</option>
+                    <option>Mediteranean</option>
+                </select>
+                {/* <div className="cuisine-types">
                     <div className="cuisine-one">
                         <button onClick={this.updateCuisine} className={this.state.cuisine === "Asian" ? "selected" : ""}>Asian</button>
                         <button onClick={this.updateCuisine} className={this.state.cuisine === "Mexican" ? "selected" : ""}>Mexican</button>
@@ -83,7 +92,7 @@ class PreferenceForm extends React.Component {
                         <button onClick={this.updateCuisine} className={this.state.cuisine === "Mediteranean" ? "selected" : ""}>Mediteranean</button>
                     </div>
 
-                </div>
+                </div> */}
                 <button onClick={this.commenceSearch}>search</button>
             </div>
         )

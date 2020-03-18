@@ -17,9 +17,8 @@ class Preferences extends React.Component {
     render() {
         return (
             <div>
-                <div className="preferences-modal">
-                </div>
-                <div className="preferences-modal-content" onClick={(e) => e.stopPropagation()}>
+                <img id="home-pic" src="splash-page-pic.jpg"></img>
+                <div className="preferences">
                    <PreferenceForm />
                 </div>
             </div>
