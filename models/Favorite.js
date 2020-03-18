@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const FavoriteSchema = new Schema({
     restaurantId:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     date:{
         type: Date, 

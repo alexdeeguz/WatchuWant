@@ -29,18 +29,13 @@ router.post('/',
     }
 )
 
-// router.delete('/:id', 
-//     (req,res)=>{
-//         const currFav = Favorite.findById(req.params.id);
-//         currFav.remove()
-//         // Favorite.findOneAndDelete({
-//         //     id: req.params.id
-//         // }).then(fav =>{
-//         //     res.json(fav)
-//         // })
-//     }
-// )
-// get
+router.delete('/:id',
+    (req, res)=>{
+        Favorite.deleteOne({_id: req.params.id})
+            .then(()=>res.json('Restaurant removed from favorites'))
+            .catch( err => res.status(500).json({favoritedeletion: 'Could not remove restaurant'}))
+    }
+)
 
 router.get('/:id',
     (req,res)=>{
