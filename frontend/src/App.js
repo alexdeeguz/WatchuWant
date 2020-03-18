@@ -13,7 +13,8 @@ import LoginFormContainer from './components/session/login_form_container';
 import SignupFormContainer from './components/session/signup_form_container';
 import UserShowContainer from './components/users/user_show_container';
 import Footer from './components/footer/footer';
-// import testingContainer from './components/indev/testingContainer';
+import Preferences from './components/preferences/preferences'
+
 
 const App = () => {
   return (
@@ -21,13 +22,12 @@ const App = () => {
         <NavBarContainer />
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-
+            <ProtectedRoute  path="/preferences" component={Preferences} />
+            
             <ProtectedRoute exact path="/" component={UserShowContainer} />
         </Switch>
         <Footer />
-        {/* <Route path='/api/testing' component={testingContainer} /> */}
     </div>
   );
 }
