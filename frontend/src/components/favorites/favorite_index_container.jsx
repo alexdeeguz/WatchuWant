@@ -7,6 +7,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchFavorites: () => dispatch(fetchFavorites()),
-    fetchFavorite: ()
+    fetchFavorites: () => dispatch(fetchFavorites())
 })
+
+export default connect(mapStateToProps, mapDispatchToProps)(FavoriteIndex);
