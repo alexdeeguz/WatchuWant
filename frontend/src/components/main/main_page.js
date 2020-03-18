@@ -5,10 +5,6 @@ import './main_page.css';
 import SplashCarousel from '../carousel/splash';
 
 class MainPage extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         return (
             <div>
