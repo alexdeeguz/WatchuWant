@@ -3,6 +3,7 @@
 import React from 'react';
 import './main_page.css';
 import Modal from '../modal/modal'
+import SplashCarousel from '../carousel/splash';
 
 class MainPage extends React.Component {
     constructor(props) {
@@ -12,14 +13,20 @@ class MainPage extends React.Component {
     render() {
         return (
             <div>
-                <div className="main-page">
+                {/* <div className="main-page">
                     <h1>Whatchu Want?</h1>
                     <img id="home-pic" src="splash-page-pic.jpg"></img>
+<<<<<<< HEAD
+                </div> */}
+=======
                 </div>
+>>>>>>> master
                 {/* <Modal {...this.props}/> */}
                 {/* <footer>
                     Copyright &copy; 2020 JAKT
                 </footer> */}
+                < SplashCarousel />
+                
             </div>
         );
     }
