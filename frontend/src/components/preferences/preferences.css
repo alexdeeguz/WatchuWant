@@ -1,0 +1,104 @@
+.preferences-modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.preferences-modal-content {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    position: absolute;
+    z-index: 1;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 45vw;
+    background-color: white;
+    height: 60vh;
+    overflow-y: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.next-button {
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+  width: 10%;
+  height: 4vh;
+  padding: 5px;
+  outline: none;
+}
+
+.next-button:hover {
+  background-color: darkblue;
+}
+
+.preference-form > h1 {
+    font-size: 5vh;
+    margin-top: 2%;
+}
+
+.preference-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.preference-form > div > input {
+    width: 5vw;
+    font-size: 5vh;
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.back-next-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cuisine-types {
+    width: 100%;
+}
+
+.cuisine-one {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cuisine-one > button {
+    width: 20%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cuisine-one > button:hover {
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+}
+
+.selected {
+    background-color: darkblue;
+    color: white;
+    outline: none;
+}
