@@ -42,7 +42,8 @@ class SplashCarousel extends React.Component{
                     this is random stuff
                 </div> */}
                 <div className='splashbackground' style={{ backgroundImage: urlString }}>
-                    this is random stuff
+                    <h1>Whatchu Want?</h1>
+                    {/* this is random stuff */}
                 </div>
             </div>
         )

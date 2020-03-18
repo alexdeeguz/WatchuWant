@@ -21,6 +21,7 @@ class MainPage extends React.Component {
                 {/* <footer>
                     Copyright &copy; 2020 JAKT
                 </footer> */}
+
                 < SplashCarousel />
                 
             </div>
