@@ -34,12 +34,7 @@ class NavBar extends React.Component {
         } else {
             return (
                 <div>
-<<<<<<< HEAD
-                    <Link to={'/signup'}>Signup</Link>
-                    {/* <Link to={'/login'}>Login</Link> */}
-=======
                     <button onClick={this.openModal}>LOGIN</button>
->>>>>>> master
                 </div>
             );
         }
