@@ -20,14 +20,14 @@ import RestaurantShowContainer from './components/restauraunts/restaurant_show_c
 const App = () => {
   return (
     <div className='App'>
-        <NavBarContainer />
+        <NavBarContainer className="nav-bar"/>
         <Switch>
             <ProtectedRoute path='/restaurant/:id' component={RestaurantShowContainer}/>
             <ProtectedRoute path="/preferences" component={Preferences} />
             <ProtectedRoute path="/user" component={UserShowContainer} />
             <AuthRoute path="/" component={MainPage} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
     </div>
   );
 }
