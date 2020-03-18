@@ -1,5 +1,6 @@
-import React from 'react'
-import './preferences.css'
+import React from 'react';
+import './preferences.css';
+import { search } from '../../util/yelp_api';
 
 class PreferenceForm extends React.Component {
     constructor(props) {
@@ -9,11 +10,11 @@ class PreferenceForm extends React.Component {
             distance: 1,
             price: "",
             cuisine: ""
-        }
+        };
 
-        this.updateDistance = this.updateDistance.bind(this)
-        this.updateCuisine = this.updateCuisine.bind(this)
-        this.updatePrice = this.updatePrice.bind(this)
+        this.updateDistance = this.updateDistance.bind(this);
+        this.updateCuisine = this.updateCuisine.bind(this);
+        this.updatePrice = this.updatePrice.bind(this);
     }
 
     updateDistance(e) {
@@ -34,6 +35,26 @@ class PreferenceForm extends React.Component {
             price: e.target.value
         })
     }
+
+    commenceSearch(e) {
+        e.preventDefault();
+        const preferences = {
+            //keys names can't be changed. Yelp api looks specifically for them
+            params: {
+                location: 'san francisco', //location or coordinates
+                categories: [], //array of string, yelp has list of supported categories
+                limit: 10, // return array limit
+                price: "2", //string "1", "2", "3", or "4"
+                term: "",  //specific search term
+                radius: 500, //radius
+            }
+        }
+        
+        //returns an array of businesses
+        search(preferences)
+            .then(res => console.log(res.data));
+    }
+
 
     render() {
         if (this.state.form === "distance") {
@@ -86,6 +107,7 @@ class PreferenceForm extends React.Component {
                         <button onClick={() => this.setState({ form: "price" })} className="next-button">BACK</button>
                         <button className="next-button">NEXT</button>
                     </div>
+                    <button onClick={this.commenceSearch}>search</button>
                 </div>
             )
         }
