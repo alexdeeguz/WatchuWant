@@ -9,7 +9,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
             <Component {...props} />
         ) : (
             // logged in
-            <Redirect to="/preferences" />
+            <Redirect to="/" />
         )
     )} />
 );
