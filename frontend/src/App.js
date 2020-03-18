@@ -20,9 +20,15 @@ const App = () => {
     <div className='App'>
         <NavBarContainer className="nav-bar"/>
         <Switch>
+
+            <AuthRoute exact path="/" component={MainPage} />
+            {/* <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
+          
+
             <ProtectedRoute path='/restaurant/:id' component={RestaurantShowContainer}/>
             <ProtectedRoute path="/preferences" component={Preferences} />
             <AuthRoute path="/" component={MainPage} />
+
         </Switch>
         <ProtectedRoute exact path="/user" component={UserShowContainer} />
         {/* <Footer /> */}
