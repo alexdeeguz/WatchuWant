@@ -1,0 +1,16 @@
+.App > div:first-of-type {
+    height: 100%;
+}
+
+#restaurant-page-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.section-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
