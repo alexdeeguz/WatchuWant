@@ -30,6 +30,7 @@ class SplashCarousel extends React.Component{
     render(){
         return(
             <div className='outter-slide-wrap'>
+                <h1 className="logo">WATCHU WANT</h1>
                 <div id='slideshow'>
                     <div>
                         <img className="food-slide-pic" src='https://images.unsplash.com/photo-1543352634-99a5d50ae78e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80'></img>
