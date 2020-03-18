@@ -15,7 +15,7 @@
 }
 
 .preference-form > div > input {
-    width: 5vw;
+    width: 30%;
     font-size: 5vh;
     outline: none;
     margin-top: 15%;
@@ -72,4 +72,40 @@ input[type=number]::-webkit-outer-spin-button {
 
 select {
     height: 50px;
+    outline: none;
+}
+
+button {
+    height: 5vh;
+    width: 25%;
+    letter-spacing: 2px;
+    padding: 5px;
+}
+
+.preference-form > div {
+    /* border: 1px solid red; */
+    width: 50%;
+    text-align: left;
+}
+
+.logo {
+  background: linear-gradient(to right, transparent 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 0.5s ease;
+  letter-spacing: 3px;
+  padding: 20px;
+  outline: none;
+  position: absolute;
+  top: 0;
+  margin-left: 5%;
+  font-family: cursive;
+  font-size: 5vh;
+}
+
+.logo:hover {
+  background-position: left bottom;
+  transition: all 0.5s ease;
+  color: white;
+  outline: none;
 }
