@@ -3,10 +3,6 @@ import PreferenceForm from './preferences_form'
 import './preferences.css'
 
 class Preferences extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         return (
             <div>
