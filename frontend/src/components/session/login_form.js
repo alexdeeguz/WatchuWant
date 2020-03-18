@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
+import $ from 'jquery'
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
@@ -13,6 +13,13 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.closeModal = this.closeModal.bind(this)
+    }
+
+    closeModal() {
+        const modal = $(".modal-container")
+        modal.removeClass("show")
+        modal.addClass("hidden")
     }
 
     componentWillReceiveProps(nextProps) {
@@ -39,8 +46,8 @@ class LoginForm extends React.Component {
             email: this.state.email,
             password: this.state.password
         };
-
-        this.props.login(user);
+        this.props.login(user)
+            .then(() => this.props.history.push('/preferences'))
     }
 
     // Render the session errors if there are any
