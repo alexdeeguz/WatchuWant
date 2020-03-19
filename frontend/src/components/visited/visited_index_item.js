@@ -10,7 +10,11 @@ const VisitedIndexItem = (props) =>{
             </div>
             <div className='visited-rest-basic-info-div'>
                 <div>
-                    <Link className='visited-show-link' to='/'>{props.visitedRestaurant.name}</Link>
+                    <Link 
+                    className='visited-show-link' 
+                    to={`/restaurants/${props.visitedRestaurant._id}`}>
+                        {props.visitedRestaurant.name}
+                    </Link>
                 </div>
                 <div>
                     {props.visitedRestaurant.location}
