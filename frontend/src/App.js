@@ -10,7 +10,7 @@ import { Switch} from 'react-router-dom';
 import NavBarContainer from './components/nav/navbar_container';
 import MainPage from './components/main/main_page';
 import UserShowContainer from './components/users/user_show_container';
-import Footer from './components/footer/footer';
+// import Footer from './components/footer/footer';
 import Preferences from './components/preferences/preferences'
 import RestaurantShowContainer from './components/restauraunts/restaurant_show_container';
 
@@ -26,7 +26,6 @@ const App = () => {
             <AuthRoute path="/" component={MainPage} />
 
         </Switch>
-        {/* <Footer /> */}
     </div>
   );
 }

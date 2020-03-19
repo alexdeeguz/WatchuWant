@@ -1,18 +1,22 @@
+.splashbackground{
+    background: url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
 
-// .splashbackground{
-//     background: url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80') no-repeat center center fixed;
-//     background-size: cover;
-//     height: 100vh;
-//     width: 100vw;
-//     border: 1px solid blue;
-// }
+.splashbackground > h1 {
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 2%;
+    font-size: 10vh;
+    font-family: cursive;
+    padding: 10px;
+}
 
 // #slideshow{
-//     border: 1px solid green;
 //     height: 100vh;
 //     width: 100vw;
-// }
-
 
 #slideshow { 
     margin: 50px auto; 
@@ -23,13 +27,34 @@
     object-fit: cover;
 }
 
+
+.splashbackground > h1 {
+  background: linear-gradient(to right, transparent 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 0.5s ease;
+  letter-spacing: 3px;
+  padding: 20px;
+  float: right;
+  margin-right: 1%;
+  margin-top: 1%;
+  outline: none;
+}
+
+.splashbackground > h1:hover {
+  background-position: left bottom;
+  transition: all 0.5s ease;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
 #slideshow > div { 
     position: absolute; 
     top: 10px; 
     left: 0px; 
     right: 0px; 
     bottom: 10px; 
-    // height: 100vh;
 }
 
 .food-slide-pic{
