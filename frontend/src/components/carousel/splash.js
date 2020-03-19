@@ -36,17 +36,11 @@ class SplashCarousel extends React.Component{
                     <div>
                         <img className='food-slide-pic' src='https://images.unsplash.com/photo-1504712598893-24159a89200e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80'></img>
                     </div>
-                    {/* <div>
-                        <img className="food-slide-pic" src='https://images.unsplash.com/photo-1572098873382-f8e4bf925781?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80'></img>
-                    </div> */}
                     <div>
                         <img className="food-slide-pic" src="https://images.unsplash.com/photo-1543352634-99a5d50ae78e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"></img>
                     </div>
                     <div>
                         <img className="food-slide-pic" src="https://images.unsplash.com/photo-1543353071-873f17a7a088?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></img>
-                    </div>
-                    <div>
-                        <img className="food-slide-pic" src="https://images.unsplash.com/photo-1572098873382-f8e4bf925781?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"></img>
                     </div>
                     <div>
                         <img className="food-slide-pic" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></img>
