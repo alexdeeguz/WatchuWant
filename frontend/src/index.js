@@ -19,8 +19,8 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
 // testing
-import {fetchFavorite, fetchFavorites, postFavorite, deleteFavorite} from './actions/favorites'
-
+// import {fetchFavorite, fetchFavorites, postFavorite, deleteFavorite} from './actions/favorites'
+// import { fetchAllVisited, fetchSingleVisited, postVisited } from './actions/visited';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -40,10 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
     //  TESTING -kmo
      window.getState = store.getState;
      window.dispatch = store.dispatch;
-     window.fetchFavorite = fetchFavorite;
-     window.fetchFavorites = fetchFavorites;
-     window.postFavorite = postFavorite;
-     window.deleteFavorite = deleteFavorite
+    //  window.fetchFavorite = fetchFavorite;
+    //  window.fetchFavorites = fetchFavorites;
+    //  window.postFavorite = postFavorite;
+    //  window.deleteFavorite = deleteFavorite
+    //  window.postVisited = postVisited;
+    //  window.fetchAllVisited = fetchAllVisited;
+    //  window.fetchSingleVisited = fetchSingleVisited;
+    //  window.postVisited = window.postVisited; 
+
 
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
