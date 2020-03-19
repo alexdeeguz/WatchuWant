@@ -8,11 +8,6 @@ class RestaurantPage extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            restaurant: this.getRestaurant()
-        }
-        // console.log(this.state.restaurant)
-        console.log(this.props)
     }
 
     getRestaurant() {
@@ -39,26 +34,37 @@ class RestaurantPage extends React.Component {
 
     render() {
         const restaurant = this.props.restaurants.restaurant;
+        console.log(restaurant)
         if (restaurant === undefined) return null;
         return (
-            <div id="restaurant-page-container">
-                <div id="restaurant-info-container" className="section-container">
-                    <h1>{restaurant.name}</h1>
-                    <div className="image-container">
-                        <img src={restaurant.image_url}></img>
+            <div>
+                <img id="background-image" src="https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img>
+                <div className="container">
+                    <h1 id="name">{restaurant.name}</h1>
+                    <div id="restaurant-page-container">
+                        <div id="restaurant-info-container" className="section-container">
+                            <div className="image-container">
+                                <img src={restaurant.image_url}></img>
+                            </div>
+                        </div>
+                        <div id="map-container" className="section-container">
+                            <Map
+                                google={this.props.google}
+                                zoom={15}
+                                initialCenter={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
+                            >
+                                <Marker position={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}} />
+                            </Map>
+                        </div>
                     </div>
                     <div className="restaurant-details">
-        <p>{restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state} {restaurant.location.zip_code}</p>
+                        <p>{restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state} {restaurant.location.zip_code}</p>
+                        <p>{restaurant.display_phone}</p>
                     </div>
-                </div>
-                <div id="map-container" className="section-container">
-                    <Map
-                        google={this.props.google}
-                        zoom={15}
-                        initialCenter={{ lat: 47.444, lng: -122.176}}
-                    >
-                        <Marker position={{ lat: 47.444, lng: -122.176}} />
-                    </Map>
+                    <div className="choices">
+                        <p>EAT HERE</p>
+                        <p>PICK ANOTHER</p>
+                    </div>
                 </div>
             </div>
         )
