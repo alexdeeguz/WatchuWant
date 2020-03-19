@@ -87,8 +87,8 @@ class PreferenceForm extends React.Component {
                 </div>
 
                 <h1>WHAT FOOD DO YOU WANT?</h1>
-                <select onChange={this.updateCuisine}>
-                    <option disabled selected>--Please select an option--</option>
+                <select defaultValue={'default'} onChange={this.updateCuisine}>
+                    <option disabled value='default'>--Please select an option--</option>
                     <option value="asian">Asian</option>
                     <option value="mexican">Mexican</option>
                     <option value="american">American</option>
