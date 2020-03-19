@@ -15,13 +15,13 @@ class SignupForm extends React.Component {
         this.clearedErrors = false;
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.signedIn === true) {
-            this.props.history.push('/preferences');
-        }
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.signedIn === true) {
+    //         this.props.history.push('/preferences');
+    //     }
 
-        this.setState({ errors: nextProps.errors })
-    }
+    //     // this.setState({ errors: nextProps.errors })
+    // }
 
     update(field) {
         return e => this.setState({
@@ -36,7 +36,7 @@ class SignupForm extends React.Component {
             password: this.state.password,
             password2: this.state.password2
         };
-        debugger
+        // debugger
         this.props.signup(user, this.props.history);
     }
 
@@ -58,19 +58,19 @@ class SignupForm extends React.Component {
                 <h1>SIGN UP</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="session-form">
-                        <input type="text"
+                        <input className='input-box' type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
                         />
                         <br />
-                        <input type="password"
+                        <input className='input-box' type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
                         <br />
-                        <input type="password"
+                        <input className='input-box' type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
@@ -80,6 +80,7 @@ class SignupForm extends React.Component {
                         {this.renderErrors()}
                     </div>
                 </form>
+                <input className='demo-user-btn' type="submit" value="DEMO USER" onClick={this.handleDemoUser} />
             </div>
         );
     }
