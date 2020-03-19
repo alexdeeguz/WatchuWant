@@ -1,0 +1,10 @@
+/* animation: createBox 0.5s; */
+
+@keyframes createBox {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
