@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name": "watchu_want",
   "version": "1.0.0",
@@ -34,7 +33,6 @@
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "mongoose": "^5.9.4",
-    "node-sass": "^4.13.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "validator": "^12.2.0"
@@ -43,47 +41,3 @@
     "nodemon": "^2.0.2"
   }
 }
-=======
-{
-  "name": "watchu_want",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "server": "nodemon app.js",
-    "server:debug": "nodemon --inspect app.js",
-    "frontend-install": "npm install --prefix frontend",
-    "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexdeeguz/WatchuWant.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alexdeeguz/WatchuWant/issues"
-  },
-  "homepage": "https://github.com/alexdeeguz/WatchuWant#readme",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "concurrently": "^5.1.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "jwt-decode": "^2.2.0",
-    "mongoose": "^5.9.4",
-    "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0",
-    "validator": "^12.2.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
-}
->>>>>>> da56c80dc6df4837c770727de0ca4b9b5182d155

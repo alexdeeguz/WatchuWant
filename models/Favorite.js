@@ -7,9 +7,21 @@ const FavoriteSchema = new Schema({
         required: true,
         unique: true
     },
+    name:{
+        type: String,
+        required: true
+    },
+    imageUrl:{
+        type: String,
+        required:true
+    },
     userId:{
         type: String,
         required: true
+    },
+    location:{
+        type: String,
+        required:true
     },
     date:{
         type: Date, 

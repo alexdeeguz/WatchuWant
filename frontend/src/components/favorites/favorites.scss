@@ -1,0 +1,43 @@
+.outter-fav-wrap{
+    display:flex;
+    border-top: 1px solid grey;
+    // margin-right: 10px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    // padding-right:5%;
+    // border: 1px solid green;
+    justify-content: flex-start;
+}
+
+.fav-rest-img-div img{
+    height: 15vh;
+    width: 15vw;
+    border-radius: 3px;
+}
+
+.fav-rest-img-div{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.fav-rest-basic-info-div{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.fav-rest-basic-info-div div{
+    padding-bottom: 2%;
+}
+
+.fav-show-link{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.fav-show-link:hover{
+    color: blue;
+}
