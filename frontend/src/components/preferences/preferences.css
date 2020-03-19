@@ -87,26 +87,3 @@ button {
     width: 50%;
     text-align: left;
 }
-
-.logo {
-  background: linear-gradient(to right, transparent 50%, transparent 50%);
-  background-size: 200% 100%;
-  background-position:right bottom;
-  transition: all 0.5s ease;
-  letter-spacing: 3px;
-  padding: 20px;
-  outline: none;
-  position: absolute;
-  top: 0;
-  margin-left: 5%;
-  font-family: cursive;
-  font-size: 5vh;
-  z-index: 1;
-}
-
-.logo:hover {
-  background-position: left bottom;
-  transition: all 0.5s ease;
-  color: white;
-  outline: none;
-}
