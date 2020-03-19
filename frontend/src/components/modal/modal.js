@@ -1,5 +1,6 @@
 import React from 'react'
 import './modal.css';
+import './session-form.css';
 import LoginFormContainer from '../session/login_form_container'
 import SignupFormContainer from '../session/signup_form_container'
 import $ from 'jquery'

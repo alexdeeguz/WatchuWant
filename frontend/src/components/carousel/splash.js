@@ -13,6 +13,8 @@ class SplashCarousel extends React.Component{
 
 
     componentDidMount(){
+        const delay = 6000;
+
         $("#slideshow > div:gt(0)").hide();
 
         setInterval(function() { 
@@ -22,13 +24,13 @@ class SplashCarousel extends React.Component{
             .fadeIn(1000)
             .end()
             .appendTo('#slideshow');
-        },  6000);
+        },  delay);
     }
 
 
     render(){
         return(
-            <div className='outter-slide-wrap'>
+            <div className='outer-slide-wrap'>
                 <h1 className="logo">WATCHU WANT</h1>
                 <div id='slideshow'>
                     <div>
