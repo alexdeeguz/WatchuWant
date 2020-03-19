@@ -1,0 +1,157 @@
+#preference-form {
+    background-color: #e7e7e7;
+    border-radius: 4px;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.question {
+    align-items: center;
+    display: flex;
+    font-size: 2vw;
+    font-weight: bold;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+#preference-page {
+    background-image: url("splash-page-pic-2.jpg");
+    height: 100%;
+    padding-top: 10%;
+}
+
+#find-restaurant {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 5%;
+    padding-right: 5%;
+}
+
+#distance-input-container {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#distance-input-container input {
+    padding: 2%;
+    margin-right: 5%;
+    text-align: center;
+    width: 25%;
+}
+
+select {
+    height: 50px;
+}
+
+.selected {
+    background-color: darkblue;
+    color: white;
+    outline: none;
+}
+
+#find-button {
+    background-color: green;
+    border: none;
+    color: #fff;
+    font-size: 1.5vw;
+    font-weight: 600;
+    padding: 2%;
+}
+
+#price-container {
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+#price-container button {
+    background-color: green;
+    font-size: 2vw;
+    font-weight: 600;
+    padding: 5%;
+}
+
+#price-container > button:not(:first-child) {
+    border-left: none;
+}
+
+
+/* .preference-form > div > input {
+    width: 30%;
+    font-size: 5vw;
+    outline: none;
+    margin-top: 15%;
+} */
+
+/* input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+} */
+
+/* .cuisine-types {
+    width: 100%;
+}
+
+.cuisine-one, .cuisine-two {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cuisine-one > button, .cuisine-two > button {
+    width: 20%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cuisine-one > button:hover, .cuisine-two > button:hover {
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+}
+
+.home-pic {
+  width: 100vw;
+  height: 130vh;
+}
+
+.preferences {
+    height: 100%;
+    margin: 0 auto;
+    width: 80%;
+}
+
+
+
+button {
+    height: 5vh;
+    width: 25%;
+    letter-spacing: 2px;
+    padding: 5px;
+}
+
+
+.logo {
+  background: linear-gradient(to right, transparent 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 0.5s ease;
+  letter-spacing: 3px;
+  padding: 20px;
+  outline: none;
+  position: absolute;
+  top: 0;
+  margin-left: 5%;
+  font-family: cursive;
+  font-size: 5vh;
+  z-index: 1;
+}
+
+.logo:hover {
+  background-position: left bottom;
+  transition: all 0.5s ease;
+  color: white;
+  outline: none;
+} */
