@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import 'normalize.css'; //not working?
 import './reset.css';
 import './debug.css';
+import './util.css';
 import './index.css';
 
 //app entry
