@@ -32,7 +32,16 @@ router.get('/favorites', (req, res) => {
     }
   };
 
-  axios.get(yelpUrl, config)
+router.get('/restaurant', (req, res) => {
+  let { id } = req.query
+  const config = {
+    headers: {'Authorization': `Bearer ${yelpKey}`},
+    params: {
+      id: id //id of restaurant
+    }
+  };
+
+  axios.get(`https://api.yelp.com/v3/businesses/${id}`, config)
     .then( ans => res.jsonp(ans.data) )
     .catch( errors => res.jsonp(errors) );
 });
