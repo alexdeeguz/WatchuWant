@@ -13,14 +13,25 @@ class SignupForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
+        // this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     if (nextProps.signedIn === true) {
-    //         this.props.history.push('/preferences');
+    // handleDemoUser(e){
+    //     e.preventDefault();
+    //     let user = {
+    //         email: 'demo_user@gmail.com',
+    //         password: 'password'
     //     }
 
-    //     // this.setState({ errors: nextProps.errors })
+    //     this.props.signup(user, this.props.history);
+    // }
+
+    // componentWillReceiveProps(nextProps) {
+        // if (nextProps.signedIn === true) {
+        //     this.props.history.push('/preferences');
+        // }
+        // debugger
+        // this.setState({ errors: nextProps.errors })
     // }
 
     update(field) {
@@ -36,7 +47,6 @@ class SignupForm extends React.Component {
             password: this.state.password,
             password2: this.state.password2
         };
-        // debugger
         this.props.signup(user, this.props.history);
     }
 
@@ -80,7 +90,7 @@ class SignupForm extends React.Component {
                         {this.renderErrors()}
                     </div>
                 </form>
-                <input className='demo-user-btn' type="submit" value="DEMO USER" onClick={this.handleDemoUser} />
+                {/* <input className='demo-user-btn' type="submit" value="DEMO USER" onClick={this.handleDemoUser} /> */}
             </div>
         );
     }

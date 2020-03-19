@@ -12,7 +12,7 @@ import MainPage from './components/main/main_page';
 import UserShowContainer from './components/users/user_show_container';
 // import Footer from './components/footer/footer';
 import PreferencesContainer from './components/preferences/preferences_container'
-import RestaurantShowContainer from './components/restauraunts/restaurant_show_container';
+import RestaurantContainer from './components/restaurant/restaurant_container';
 import favoriteIndexContainer from './components/favorites/favorite_index_container';
 
 
@@ -26,8 +26,7 @@ const App = () => {
         <Switch>
             <Route exact path='/testing/favs' component={favoriteIndexContainer} />
 
-
-            <ProtectedRoute path='/restaurants/:id' component={RestaurantShowContainer}/>
+            <ProtectedRoute path='/restaurants/:id' component={RestaurantContainer}/>
             <ProtectedRoute path="/preferences" component={PreferencesContainer} />
             <ProtectedRoute path="/user" component={UserShowContainer} />
             <AuthRoute path="/" component={MainPage} />
