@@ -1,6 +1,6 @@
-.App > div:first-of-type {
+/* .App > div:first-of-type {
     height: 100%;
-}
+} */
 
 #restaurant-page-container {
     display: flex;
