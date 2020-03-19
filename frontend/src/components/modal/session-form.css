@@ -1,0 +1,49 @@
+
+.session-form > input {
+  height: 7vh;
+  width: 90%;
+  font-family: 'Montserrat';
+  font-size: 3vh;
+  margin: 12px;
+  padding-left: 10px;
+  background-color: rgba(207, 202, 202, 0.4);
+  outline: none;
+  transition: all 0.25s;
+}
+
+.session-form input:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 3px 1px hsl(180, 100%, 50%);
+}
+
+.session-form input:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 3px 1px hsl(180, 100%, 75%);
+}
+
+
+.login-form > h1, .signup-form > h1 {
+  margin-bottom: 5%;
+  font-size: 4vh;
+  font-family: 'Montserrat';
+}
+
+.login-signup > p {
+  color: rgb(156, 148, 148);
+}
+
+.login-signup > p > a {
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  background-color: darkblue;
+  color: white;
+  transition: all 0.25s;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: blue;
+  box-shadow: 0 0 3px 1px hsl(204, 100%, 50%);
+}
