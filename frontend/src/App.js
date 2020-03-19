@@ -25,7 +25,6 @@ const App = () => {
         <NavBarContainer className="nav-bar"/>
         <Switch>
             <Route exact path='/testing/favs' component={favoriteIndexContainer} />
-
             <ProtectedRoute path='/restaurants/:id' component={RestaurantContainer}/>
             <ProtectedRoute path="/preferences" component={PreferencesContainer} />
             <ProtectedRoute path="/user" component={UserShowContainer} />

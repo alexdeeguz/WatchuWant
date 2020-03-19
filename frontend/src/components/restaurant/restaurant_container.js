@@ -3,7 +3,7 @@ import RestaurantPage from "./restaurant_page";
 
 
 const mapStateToProps = state => ({
-    restaurant: state.restaurant
+    restaurants: state.restaurants
 });
 
 export default connect(mapStateToProps, null)(RestaurantPage);

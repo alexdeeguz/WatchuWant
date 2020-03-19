@@ -5,11 +5,25 @@ import keys from '../../keys_dev';
 
 class RestaurantPage extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            info: null
+        }
+    }
+
     componentDidMount() {
-        console.log(this.props);   
+        const { restaurants } = this.props;
+        const restaurantChoices = Object.values(restaurants);
+        const randomIndex = Math.floor(Math.random() * restaurantChoices.length);
+        const restaurantPick = restaurantChoices[randomIndex];
+        this.setState({info: restaurantPick});
     }
 
     render() {
+        const { info } = this.state;
+        if(!info) return null;
+        const { latitude, longitude } = info.coordinates;
         return (
             <div id="restaurant-page-container">
                 <div id="restaurant-info-container" className="section-container">
@@ -19,9 +33,9 @@ class RestaurantPage extends React.Component {
                     <Map
                         google={this.props.google}
                         zoom={15}
-                        initialCenter={{ lat: 47.444, lng: -122.176}}
+                        initialCenter={{ lat: latitude, lng: longitude}}
                     >
-                        <Marker position={{ lat: 47.444, lng: -122.176}} />
+                        <Marker position={{ lat: latitude, lng: longitude}} />
                     </Map>
                 </div>
             </div>
