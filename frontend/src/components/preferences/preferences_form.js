@@ -1,6 +1,7 @@
 import React from 'react';
 import './preferences.css';
 import { search } from '../../util/yelp_api';
+import { Redirect } from 'react-router-dom';
 
 class PreferenceForm extends React.Component {
     constructor(props) {
@@ -52,14 +53,20 @@ class PreferenceForm extends React.Component {
         }
         
         search(preferences)
-            .then(res => this.props.receiveRestaurants(res.data)) //dispatches to store the res
+            .then(res => { 
+                this.props.receiveRestaurants(res.data);
+                const rests = res.data.businesses;
+                if (rests.length !== 0) {
+                    let idx = Math.floor(Math.random() * rests.length);
+                    this.props.history.push(`/restaurants/${rests[idx].id}`);
+                }
+             })
             .catch(errors => console.log(errors));
-        //check state to see restaurants 
         
         //TODO:
-            //redirect to restaurant page
-            //mapstate to props the res
-            //pick a res, render restaurant show
+        //redirect to results page
+
+        // <Redirect to={`/results`}/>
     }
 
 
@@ -80,8 +87,8 @@ class PreferenceForm extends React.Component {
                 </div>
 
                 <h1>WHAT FOOD DO YOU WANT?</h1>
-                <select onChange={this.updateCuisine}>
-                    <option disabled selected>--Please select an option--</option>
+                <select defaultValue={'default'} onChange={this.updateCuisine}>
+                    <option disabled value='default'>--Please select an option--</option>
                     <option value="asian">Asian</option>
                     <option value="mexican">Mexican</option>
                     <option value="american">American</option>

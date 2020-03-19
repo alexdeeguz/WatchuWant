@@ -20,7 +20,7 @@ class Preferences extends React.Component {
                 <h1 className="logo">Whatchu Want?</h1>
                 <img id="home-pic" src="splash-page-pic.jpg"></img>
                 <div className="preferences">
-                   <PreferenceForm receiveRestaurants={this.props.receiveRestaurants}/>
+                   <PreferenceForm {...this.props} receiveRestaurants={this.props.receiveRestaurants}/>
                 </div>
             </div>
         )

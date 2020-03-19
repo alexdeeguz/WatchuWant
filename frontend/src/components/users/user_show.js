@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import RestaurantItem from '../restauraunts/restaurant_item';
 import FavoritesIndexContainer from '../favorites/favorite_index_container';
 
 class UserShow extends Component {
@@ -21,9 +20,9 @@ class UserShow extends Component {
         <div className='visited-container'>
           <h2>Visited</h2>
           <div className='visited'>
-            <RestaurantItem />
-            <RestaurantItem />
-            <RestaurantItem />
+            <div>visited rest</div>
+            <div>visited rest</div>
+            <div>visited rest</div>
           </div>
         </div>
 

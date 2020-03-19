@@ -10,6 +10,7 @@ const restaurantsReducer = (state = {}, action) => {
         newState.restaurant = action.restaurant;
         return newState;
     } else if(action.type === RECEIVE_RESTAURANTS) {
+        if (action.restaurants.name === 'Error') return state;
         const arr = action.restaurants.businesses;
         arr.forEach(r => {
             newState[r.id] = r;
