@@ -13,7 +13,8 @@ import UserShowContainer from './components/users/user_show_container';
 // import Footer from './components/footer/footer';
 import PreferencesContainer from './components/preferences/preferences_container'
 import RestaurantContainer from './components/restaurant/restaurant_container';
-import favoriteIndexContainer from './components/favorites/favorite_index_container';
+import FavoriteIndexContainer from './components/favorites/favorite_index_container';
+import VisitedIndexContainer from './components/visited/visited_index_container';
 
 
 // testing
@@ -24,7 +25,8 @@ const App = () => {
     <div className='App'>
         <NavBarContainer className="nav-bar"/>
         <Switch>
-            <Route exact path='/testing/favs' component={favoriteIndexContainer} />
+            <Route exact path='/testing/favs' component={FavoriteIndexContainer} />
+            <Route exact path='/testing/visited' component={VisitedIndexContainer} />
 
             <ProtectedRoute path='/restaurants/:id' component={RestaurantContainer}/>
             <ProtectedRoute path="/preferences" component={PreferencesContainer} />
