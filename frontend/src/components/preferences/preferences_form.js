@@ -51,9 +51,15 @@ class PreferenceForm extends React.Component {
             }
         }
         
-        //returns an array of businesses
         search(preferences)
-            .then(res => console.log(res.data));
+            .then(res => this.props.receiveRestaurants(res.data)) //dispatches to store the res
+            .catch(errors => console.log(errors));
+        //check state to see restaurants 
+        
+        //TODO:
+            //redirect to restaurant page
+            //mapstate to props the res
+            //pick a res, render restaurant show
     }
 
 
