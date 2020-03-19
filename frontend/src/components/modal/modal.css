@@ -79,8 +79,11 @@
   color: rgb(156, 148, 148);
 }
 
-.login-signup > p > a {
-  cursor: pointer;
+.login-signup > p {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 input[type="submit"] {
@@ -93,6 +96,8 @@ input[type="submit"]:hover {
   background-color: darkblue;
 }
 
-button {
+.login-signup > p > p {
   cursor: pointer;
+  border: none;
+  outline: none;
 }
