@@ -1,9 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-//components
-import Modal from '../modal/modal';
-
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
