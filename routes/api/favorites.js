@@ -20,7 +20,10 @@ router.post('/',
 
         const newFavorite = new Favorite({
             restaurantId: req.body.restaurantId,
-            userId: req.body.userId
+            userId: req.body.userId,
+            imageUrl: req.body.imageUrl,
+            name: req.body.name,
+            location: req.body.location
         })
 
         newFavorite

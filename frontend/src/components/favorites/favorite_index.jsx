@@ -1,16 +1,50 @@
 import React from 'react'
 import FavoriteIndexItem from './favorite_index_item';
+import './favorites.scss'
 
-export default function favorite_index() {
+class FavoriteIndex extends React.Component{
+  
+  constructor(props){
+    super(props)
+    
+  }
 
-  return (
+  componentDidMount(){
+    this.props.fetchFavorites()
+  }
 
-    // favorite items of the user
-    <div>
-      <h1>all favorites here</h1>
-      <FavoriteIndexItem />
-      <FavoriteIndexItem />
-      <FavoriteIndexItem />
-    </div>
-  )
+  render(){
+
+    const favoriteRestaurants = this.props.favorites.map((fav,idx)=>{
+      return(
+        <FavoriteIndexItem restaurant={fav} key = {idx}/>
+      )
+    })
+
+    return(
+      <div>
+        {favoriteRestaurants}
+      </div>
+    )
+  }
+
 }
+
+
+export default FavoriteIndex;
+
+
+
+
+// export default function favorite_index() {
+
+//   return (
+
+//     <div>
+//       <h1>all favorites here</h1>
+//       <FavoriteIndexItem />
+//       <FavoriteIndexItem />
+//       <FavoriteIndexItem />
+//     </div>
+//   )
+// }
