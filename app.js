@@ -2,7 +2,6 @@
 const express = require('express');
 const app = express();
 
-const favorites = require('./routes/api/favorites');
 
 const bodyParser = require('body-parser');
 const passport = require("passport");
@@ -11,6 +10,9 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const preferences = require("./routes/api/preferences");
 const yelp = require('./routes/api/yelp');
+const favorites = require('./routes/api/favorites');
+const visited = require('./routes/api/visited');
+
 
 // middleware
 app.use(passport.initialize());
@@ -36,6 +38,7 @@ app.use('/api/restaurants', favorites);
 app.use("/api/users", users); // for user login, signup
 app.use("/api/preferences", preferences); // for user add, edit preferences
 app.use('/api/yelp', yelp);
+app.use('/api/visited', visited);
 
 
 // set up the app port

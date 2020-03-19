@@ -10,7 +10,7 @@ class FavoriteIndex extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchFavorites()
+    this.props.fetchFavorites(this.props.user.id)
   }
 
   render(){

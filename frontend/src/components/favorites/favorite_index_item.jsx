@@ -11,7 +11,11 @@ import './favorites.scss'
       </div>
       <div className='fav-rest-basic-info-div'>
           <div>
-            <Link className='fav-show-link' to='/'>{props.restaurant.name}</Link>
+            <Link 
+              className='fav-show-link' 
+              to={`/restaurants/${props.restaurant._id}`}>
+              {props.restaurant.name}
+            </Link>
           </div>
           <div>
             {props.restaurant.location}
