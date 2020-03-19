@@ -13,7 +13,7 @@ router.post("/signup", (req, res) => {
     const { errors, isValid } = validateSignUpInput(req.body);
     
     if(!isValid) {
-        return res.send(404).json(errors);
+        return res.sendStatus(404).json(errors);
     }
 
     User.findOne({ email: req.body.email })

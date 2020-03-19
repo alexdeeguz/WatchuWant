@@ -1,9 +1,14 @@
 import { connect } from "react-redux";
 import RestaurantPage from "./restaurant_page";
-
+import { receiveRestaurant } from '../../actions/restaurant'
 
 const mapStateToProps = state => ({
-    restaurant: state.restaurant
+    restaurants: state.restaurants,
+    restaurant: state.restaurants.restaurant,
 });
 
-export default connect(mapStateToProps, null)(RestaurantPage);
+const mDTP = dispatch => ({
+    receiveRestaurant: data => dispatch(receiveRestaurant(data))
+})
+
+export default connect(mapStateToProps, mDTP)(RestaurantPage);
