@@ -69,19 +69,22 @@ class LoginForm extends React.Component {
                 } else { clearInterval(inputUser); this.animateLogin(); }
             }, speed);
         }
-        
+
         if (this.state.email === email) {
             const inputPassword = setInterval(() => {
                 if (this.state.password !== password)
                     this.setState({password: password.slice(0, this.state.password.length + 1)})
-                else { clearInterval(inputPassword); this.animateLogin(); }
+                else { clearInterval(inputPassword); login(); }
             }, speed);
         }
 
-        if (this.state.password === password) {
+
+        const login = () => {
             this.props.login(this.state)
                 .then(() => this.props.history.push('/preferences'))
+            this.setState({email: "", password: ""});
         }
+
     }
 
 
