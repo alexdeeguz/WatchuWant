@@ -33,12 +33,13 @@ class RestaurantPage extends React.Component {
             }
         }
         getRestaurant(id).then(res => {
-            this.props.receiveRestaurant(res)
+            this.props.receiveRestaurant(res.data)
         })
     }
 
     render() {
-        const restaurant = this.state.restaurant
+        const restaurant = this.props.restaurants.restaurant;
+        if (restaurant === undefined) return null;
         return (
             <div id="restaurant-page-container">
                 <div id="restaurant-info-container" className="section-container">

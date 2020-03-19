@@ -22,16 +22,6 @@ router.get('/', (req, res) => {
     .catch( errors => res.jsonp(errors) );
 });
 
-router.get('/favorites', (req, res) => {
-  // let { userId } = req.query;
-
-  const config = {
-    headers: {'Authorization': `Bearer ${yelpKey}`},
-    params: {
-      id: "iansdo123inasdfo" //id of restaurant
-    }
-  };
-
 router.get('/restaurant', (req, res) => {
   let { id } = req.query
   const config = {

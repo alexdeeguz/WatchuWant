@@ -3,7 +3,8 @@ import RestaurantPage from "./restaurant_page";
 import { receiveRestaurant } from '../../actions/restaurant'
 
 const mapStateToProps = state => ({
-    restaurants: Object.values(state.restaurants)
+    restaurants: state.restaurants,
+    restaurant: state.restaurants.restaurant,
 });
 
 const mDTP = dispatch => ({
