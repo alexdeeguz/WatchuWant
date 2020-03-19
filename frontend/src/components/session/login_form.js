@@ -15,6 +15,7 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
+        this.animateLogin = this.animateLogin.bind(this);
     }
 
     closeModal() {
@@ -47,19 +48,47 @@ class LoginForm extends React.Component {
             email: this.state.email,
             password: this.state.password
         };
+
         this.props.login(user)
             .then(() => this.props.history.push('/preferences'))
     }
 
-    handleDemoUser(e){
-        e.preventDefault();
-        let user = {
+    animateLogin(speed = 75) {
+        const user = {
             email: 'demo_user@gmail.com',
             password: 'password'
         }
 
-        this.props.login(user)
-            .then(() => this.props.history.push('/preferences'))
+        let {email, password} = user;
+
+        if (this.state.email !== email) {
+            const inputUser = setInterval(() => {
+                if (this.state.email !== email) {
+                    const temp = email.slice(0, this.state.email.length + 1);
+                    this.setState({email: temp});
+                } else { clearInterval(inputUser); this.animateLogin(); }
+            }, speed);
+        }
+        
+        if (this.state.email === email) {
+            const inputPassword = setInterval(() => {
+                if (this.state.password !== password)
+                    this.setState({password: password.slice(0, this.state.password.length + 1)})
+                else { clearInterval(inputPassword); this.animateLogin(); }
+            }, speed);
+        }
+
+        if (this.state.password === password) {
+            this.props.login(this.state)
+                .then(() => this.props.history.push('/preferences'))
+        }
+    }
+
+
+    handleDemoUser(e){
+        e.preventDefault();
+
+        this.animateLogin();
     }
 
     // Render the session errors if there are any
