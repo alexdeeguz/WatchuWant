@@ -19,7 +19,7 @@
 //     width: 100vw;
 
 #slideshow { 
-    margin: 50px auto; 
+    // margin: 50px auto; 
     position: relative; 
     width: 100vw; 
     padding: 10px; 
@@ -28,30 +28,9 @@
 }
 
 
-.splashbackground > h1 {
-  background: linear-gradient(to right, transparent 50%, transparent 50%);
-  background-size: 200% 100%;
-  background-position:right bottom;
-  transition: all 0.5s ease;
-  letter-spacing: 3px;
-  padding: 20px;
-  float: right;
-  margin-right: 1%;
-  margin-top: 1%;
-  outline: none;
-}
-
-.splashbackground > h1:hover {
-  background-position: left bottom;
-  transition: all 0.5s ease;
-  color: white;
-  cursor: pointer;
-  outline: none;
-}
-
 #slideshow > div { 
     position: absolute; 
-    top: 10px; 
+    top: 1px; 
     left: 0px; 
     right: 0px; 
     bottom: 10px; 
