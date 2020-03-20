@@ -75,12 +75,6 @@ select {
     outline: none;
 }
 
-button {
-    height: 5vh;
-    width: 25%;
-    letter-spacing: 2px;
-    padding: 5px;
-}
 
 .preference-form > div {
     /* border: 1px solid red; */
