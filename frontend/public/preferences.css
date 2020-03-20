@@ -1,18 +1,21 @@
 #preference-page {
     background-image: url("splash-page-pic-2.jpg");
     height: 100%;
-    /* animation: slideFromRight 1s ease-in-out; */
+    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .preferences {
-    padding-top: 2%;
+    width: 80%;
 }
 
 #preference-form {
     background-color: #e7e7e7;
     border-radius: 4px;
     margin: 0 auto;
-    width: 65%;
+    width: 100%;
 }
 
 .question {
