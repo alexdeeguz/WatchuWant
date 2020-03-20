@@ -7,7 +7,7 @@ import { getRestaurant } from '../../util/yelp_api'
 class RestaurantPage extends React.Component {
 
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     getRestaurant() {

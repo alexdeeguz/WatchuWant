@@ -1,6 +1,6 @@
 import React from 'react'
 import PreferenceForm from './preferences_form'
-import './preferences.css'
+// import './preferences.css'
 import $ from 'jquery'
 
 class Preferences extends React.Component {
@@ -16,9 +16,9 @@ class Preferences extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="preference-page">
                 <h1 className="logo">Whatchu Want?</h1>
-                <img id="home-pic" src="splash-page-pic.jpg"></img>
+                {/* <img id="home-pic" src="splash-page-pic.jpg"></img> */}
                 <div className="preferences">
                    <PreferenceForm {...this.props} receiveRestaurants={this.props.receiveRestaurants}/>
                 </div>

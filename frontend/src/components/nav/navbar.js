@@ -28,13 +28,13 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div>
-                    <button onClick={this.logoutUser}>LOGOUT</button>
+                    <button className='nav-item' onClick={this.logoutUser}>LOGOUT</button>
                 </div>
             );
         } else {
             return (
                 <div>
-                    <button onClick={this.openModal}>LOGIN</button>
+                    <button className='nav-item' onClick={this.openModal}>LOGIN</button>
                 </div>
             );
         }
@@ -43,8 +43,13 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="nav-container">
-                {this.getLinks()}
-                <Modal {...this.props} />
+                <div id="header-container">
+                    <div className="logo">
+                        <img src='wcw_logo.png'/>
+                    </div>
+                    {this.getLinks()}
+                    <Modal {...this.props} />
+                </div>
             </div>
         );
     }
