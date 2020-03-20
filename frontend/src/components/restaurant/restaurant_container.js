@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import RestaurantPage from "./restaurant_page";
 import { receiveRestaurant } from '../../actions/restaurant'
+import { postVisited } from '../../actions/visited'
 
 const mapStateToProps = state => ({
 
@@ -9,7 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mDTP = dispatch => ({
-    receiveRestaurant: data => dispatch(receiveRestaurant(data))
+    receiveRestaurant: data => dispatch(receiveRestaurant(data)),
+    addToVisited: data => dispatch(postVisited(data))
 })
 
 export default connect(mapStateToProps, mDTP)(RestaurantPage);
