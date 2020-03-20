@@ -8,7 +8,6 @@ router.get("/test", (req, res) => res.json({ msg: "This is the visited route" })
 // post
 router.post('/',
     (req, res)=>{
-
         const { errors, isValid } = validateVisitedInput(req.body);
         if (!isValid){
             return res.status(400).json(errors);   
