@@ -7,6 +7,7 @@ const mapStateToProps = state => ({
 
     restaurants: state.restaurants,
     restaurant: state.restaurants.restaurant,
+    user: state.session.user
 });
 
 const mDTP = dispatch => ({

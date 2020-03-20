@@ -9,11 +9,20 @@ class RestaurantPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.test = this.test.bind(this)
+        this.addToVisited = this.addToVisited.bind(this)
     }
 
-    test() {
-        console.log("test")
+    addToVisited() {
+        const { id, name, image_url, location } = this.props.restaurant
+        const visitedRestaurant = {
+            restaurantId: id,
+            name: name,
+            imageUrl: image_url,
+            userId: this.props.user.id,
+            location: location.address1
+        }
+        this.props.addToVisited(visitedRestaurant)
+            .then(() => this.props.history.push('/user'))
     }
 
     getRestaurant() {
@@ -67,8 +76,8 @@ class RestaurantPage extends React.Component {
                         <p>{restaurant.display_phone}</p>
                     </div>
                     <div className="choices">
-                        <p>EAT HERE</p>
-                        <p onClick={this.test}>PICK ANOTHER</p>
+                        <p onClick={this.addToVisited}>EAT HERE</p>
+                        <p>PICK ANOTHER</p>
                     </div>
                 </div>
             </div>

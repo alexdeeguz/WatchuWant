@@ -68,7 +68,6 @@ class PreferenceForm extends React.Component {
                 rating: 4.5, //decminal 1 through 5
             }
         }
-        console.log(preferences)
         
         search(preferences)
             .then(res => { 
