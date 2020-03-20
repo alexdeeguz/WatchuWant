@@ -23,12 +23,10 @@
 #restaurant-info-container {
     width: 40%;
     height: 100%;
-    /* border: 1px solid red; */
 }
 
 #name {
     font-size: 10vh;
-    margin-top: 10%;
 }
 
 .image-container {
@@ -48,9 +46,9 @@ img {
 .container {
     position: absolute;
     top: 0;
-    /* left: 22%; */
     color: white;
     width: 100%;
+    margin-top: 10%;
 }
 
 .restaurant-details {

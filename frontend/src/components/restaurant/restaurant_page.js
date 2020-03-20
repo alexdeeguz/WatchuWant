@@ -9,6 +9,11 @@ class RestaurantPage extends React.Component {
 
     constructor(props) {
         super(props);
+        this.test = this.test.bind(this)
+    }
+
+    test() {
+        console.log("test")
     }
 
     getRestaurant() {
@@ -63,7 +68,7 @@ class RestaurantPage extends React.Component {
                     </div>
                     <div className="choices">
                         <p>EAT HERE</p>
-                        <p>PICK ANOTHER</p>
+                        <p onClick={this.test}>PICK ANOTHER</p>
                     </div>
                 </div>
             </div>
