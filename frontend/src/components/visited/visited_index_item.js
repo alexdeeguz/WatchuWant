@@ -1,27 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import './visited.scss';
+class VisitedIndexItem extends React.Component{
 
+    constructor(props){
+        super(props);
+        this.handlePost = this.handlePost.bind(this);
+    }
 
-const VisitedIndexItem = (props) =>{
-    return(
-        <div className='visited-res-wrap'>
-            <div className='visited-rest-img-div'>
-                <img src={props.visitedRestaurant.imageUrl} alt=""/>
-            </div>
-            <div className='visited-rest-basic-info-div'>
-                <div>
-                    <Link 
-                    className='visited-show-link' 
-                    to={`/restaurants/${props.visitedRestaurant._id}`}>
-                        {props.visitedRestaurant.name}
-                    </Link>
+    handlePost(){
+        this.props.postFavorite(this.props.visitedRestaurant)
+    }
+
+    // const urlString = `url('${props.visitedRestaurant.imageUrl}')`
+    render(){
+        return(
+            <div className='most-outter-wrap'>
+                <div className='visited-res-wrap'>
+                    <div className='visited-rest-img-div'>
+                        <img src={this.props.visitedRestaurant.imageUrl} alt=""/>
+                    </div>
+                    <div className='visited-rest-basic-info-div'>
+                        <div className='basic-info'>
+                            <Link 
+                            className='visited-show-link' 
+                            to={`/restaurants/${this.props.visitedRestaurant._id}`}>
+                                {this.props.visitedRestaurant.name}
+                            </Link>
+                        </div>
+                        <div className='basic-info'>
+                            {this.props.visitedRestaurant.location}
+                        </div>
+                        <div>
+                            <button className='res-btn' onClick={this.handlePost}>Add To Favorites</button>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    {props.visitedRestaurant.location}
-                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 
