@@ -1,8 +1,9 @@
 .modal-container {
   animation: loginModal ease-in-out 0.25s;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

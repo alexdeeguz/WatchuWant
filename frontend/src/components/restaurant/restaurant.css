@@ -4,13 +4,97 @@
 
 #restaurant-page-container {
     display: flex;
-    height: 100%;
-    width: 100%;
+    justify-content: space-around;
+    height: 50vh;
+    margin-top: 3%;
+    /* border: 1px solid blue; */
 }
 
 .section-container {
     position: relative;
     width: 50%;
-    height: 100%;
 }
 
+#map-container {
+    height: 100%;
+    width: 40%;
+}
+
+#restaurant-info-container {
+    width: 40%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+#name {
+    font-size: 10vh;
+    margin-top: 10%;
+}
+
+.image-container {
+    height: 100%;
+    width: 100%;
+}
+img {
+    height: 100%;
+    width: 100%;
+}
+
+#background-image {
+    height: 130vh;
+    width: 100vw;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    /* left: 22%; */
+    color: white;
+    width: 100%;
+}
+
+.restaurant-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.choices {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/* .choices > p {
+    cursor: pointer;
+    padding: 20px;
+    width: 10vw;
+    background-color: blue;
+    color: white;
+    border: 1px solid white;
+} */
+
+
+.choices > p {
+  background: linear-gradient(to right, transparent 50%, blue 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 0.5s ease;
+  letter-spacing: 3px;
+  padding: 20px;
+  width: 15vw;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.choices > p:hover {
+  background-position: left bottom;
+  transition: all 0.5s ease;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}

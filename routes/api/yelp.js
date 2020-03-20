@@ -22,17 +22,16 @@ router.get('/', (req, res) => {
     .catch( errors => res.jsonp(errors) );
 });
 
-router.get('/favorites', (req, res) => {
-  // let { userId } = req.query;
-
+router.get('/restaurant', (req, res) => {
+  let { id } = req.query
   const config = {
     headers: {'Authorization': `Bearer ${yelpKey}`},
     params: {
-      id: "iansdo123inasdfo" //id of restaurant
+      id: id //id of restaurant
     }
   };
 
-  axios.get(yelpUrl, config)
+  axios.get(`https://api.yelp.com/v3/businesses/${id}`, config)
     .then( ans => res.jsonp(ans.data) )
     .catch( errors => res.jsonp(errors) );
 });

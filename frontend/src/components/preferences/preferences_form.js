@@ -70,11 +70,6 @@ class PreferenceForm extends React.Component {
                 }
              })
             .catch(errors => console.log(errors));
-        
-        //TODO:
-        //redirect to results page
-
-        // <Redirect to={`/results`}/>
     }
 
 
