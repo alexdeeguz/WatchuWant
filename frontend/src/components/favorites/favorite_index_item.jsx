@@ -5,23 +5,24 @@ import './favorites.scss'
  const FavoriteIndexItem = (props) =>{
    
   return(
-    <div className='outter-fav-wrap'>
-      <div className='fav-rest-img-div'>
-        <img src={props.restaurant.imageUrl} alt=""/>
+    <div className='most-outter-wrap'>
+      <div className='visited-res-wrap'>
+        <div className='visited-rest-img-div'>
+          <img src={props.restaurant.imageUrl} alt=""/>
+        </div>
+        <div className='visited-rest-basic-info-div'>
+            <div className='basic-info'>
+              <Link 
+                className='visited-show-link' 
+                to={`/restaurants/${props.restaurant._id}`}>
+                {props.restaurant.name}
+              </Link>
+            </div>
+            <div className='basic-info'>
+              {props.restaurant.location}
+            </div>
+        </div>
       </div>
-      <div className='fav-rest-basic-info-div'>
-          <div className='basic-info'>
-            <Link 
-              className='fav-show-link' 
-              to={`/restaurants/${props.restaurant._id}`}>
-              {props.restaurant.name}
-            </Link>
-          </div>
-          <div className='basic-info'>
-            {props.restaurant.location}
-          </div>
-      </div>
-
     </div>
   )
 }

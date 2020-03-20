@@ -1,0 +1,52 @@
+#user-show{
+    // background: url('https://images.unsplash.com/photo-1556742205-e10c9486e506?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+    // background-size: cover;
+    // height: 100%;
+}
+
+
+.user-background-img{
+    background: url('https://images.unsplash.com/photo-1484659619207-9165d119dafe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
+    background-size: cover;
+    // border: 1px solid blue;
+    height: 70vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.user-background-img h1{
+    color:white;
+    padding-left: 5%;
+    padding-top: 5%;
+    font-size: 50px;
+    font-family: 'Playball', cursive;
+}
+
+.collections{
+    display:flex;
+    // justify-content: flex-start;
+    justify-content: space-evenly;
+    // justify-content: space-between;
+    // align-items: flex-start;
+    // justify-content: center;
+    padding-left: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-right:3%;
+}
+
+.collection{
+    display: flex;
+    // justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.collection-title{
+    font-family: 'Bad Script', cursive;
+    font-size:30px;
+    font-weight: 600;
+    padding-bottom: 2%;
+}

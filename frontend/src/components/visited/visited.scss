@@ -1,17 +1,39 @@
+.most-outter-wrap{
+    // padding: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-radius: 2px;
+    width: 30vw;
+    border-top: 1px solid grey;
+
+    // transition: all 0.1s ease-in;
+
+}
+
 .visited-res-wrap{
     display:flex;
-    border-top: 1px solid grey;
+    // border-top: 1px solid grey;
     padding-top: 2%;
     padding-bottom: 2%;
     justify-content: flex-start;
-
+    align-items: flex-start;
+    // padding: 3%;
 }
+
+.most-outter-wrap:hover{
+    border: 3px solid darkblue;
+}
+
 
 
 .visited-rest-img-div{
     object-fit:cover;
     height: 15vh;
     width: 10vw;
+}
+.visited-rest-img-div img{
+    border-radius: 2px;
 }
 
 .visited-rest-basic-info-div{
