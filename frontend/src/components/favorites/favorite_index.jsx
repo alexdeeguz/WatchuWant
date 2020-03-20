@@ -13,10 +13,18 @@ class FavoriteIndex extends React.Component{
     this.props.fetchFavorites(this.props.user.id)
   }
 
+  // componentWillUnmount(){
+  //   this.props.fetchFavorites(this.props.user.id)
+  // }
+
   render(){
     const favoriteRestaurants = this.props.favorites.map((fav,idx)=>{
       return(
-        <FavoriteIndexItem restaurant={fav} key = {idx}/>
+        <FavoriteIndexItem 
+        restaurant={fav} key={idx} 
+        deleteFavorite={this.props.deleteFavorite}
+        removeFavoriteFromState ={this.props.removeFavoriteFromState}
+        />
       )
     })
 
@@ -32,18 +40,3 @@ class FavoriteIndex extends React.Component{
 
 export default FavoriteIndex;
 
-
-
-
-// export default function favorite_index() {
-
-//   return (
-
-//     <div>
-//       <h1>all favorites here</h1>
-//       <FavoriteIndexItem />
-//       <FavoriteIndexItem />
-//       <FavoriteIndexItem />
-//     </div>
-//   )
-// }

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import VisitedIndex from './visited_index';
 import { fetchAllVisited } from '../../actions/visited';
+import { postFavorite } from '../../actions/favorites';
 
 const mapStateToProps = state =>({
     user: state.session.user,
@@ -8,7 +9,8 @@ const mapStateToProps = state =>({
 })
 
 const mapDispatchToProps = dispatch =>({
-    fetchAllVisited: ((userId) => dispatch(fetchAllVisited(userId)))
+    fetchAllVisited: ((userId) => dispatch(fetchAllVisited(userId))),
+    postFavorite: (favorite => dispatch(postFavorite(favorite)))
 })
 
 
