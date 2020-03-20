@@ -5,9 +5,9 @@ import {
 
 const restaurantsReducer = (state = {}, action) => {
     Object.freeze(state);
-    const newState = {};
+    let newState = {};
     if(action.type === RECEIVE_RESTAURANT) {
-        newState.restaurant = action.restaurant;
+        newState = Object.assign({}, state, {restaurant: action.restaurant});
         return newState;
     } else if(action.type === RECEIVE_RESTAURANTS) {
         if (action.restaurants.name === 'Error') return state;
