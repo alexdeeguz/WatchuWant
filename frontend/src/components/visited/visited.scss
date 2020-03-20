@@ -1,5 +1,18 @@
+.res-btn-div{
+    // padding-top: 10%
+}
+
 .res-btn{
     width: 100%;
+    padding: 2%;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.res-btn:hover{
+    cursor: pointer;
+    // color: darkblue;
+    font-weight: 600;
 }
 
 .most-outter-wrap{
@@ -22,13 +35,13 @@
     padding-bottom: 2%;
     justify-content: flex-start;
     align-items: flex-start;
+    // height: 100%
     // padding: 3%;
 }
 
 .most-outter-wrap:hover{
     border: 3px solid darkblue;
 }
-
 
 
 .visited-rest-img-div{
@@ -43,8 +56,12 @@
 .visited-rest-basic-info-div{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     text-align: left;
     padding-left: 3%;
+    // border: 1px solid green;
+    // height:100%;
+    height: 15vh;
 }
 
 

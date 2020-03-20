@@ -23,19 +23,22 @@ class FavoriteIndexItem extends React.Component{
             <img src={this.props.restaurant.imageUrl} alt=""/>
           </div>
           <div className='visited-rest-basic-info-div'>
-              <div className='basic-info'>
-                <Link 
-                  className='visited-show-link' 
-                  to={`/restaurants/${this.props.restaurant._id}`}>
-                  {this.props.restaurant.name}
-                </Link>
+              <div className='hold-text'>
+                <div className='basic-info'>
+                  <Link 
+                    className='visited-show-link' 
+                    to={`/restaurants/${this.props.restaurant._id}`}>
+                    {this.props.restaurant.name}
+                  </Link>
+                </div>
+                <div className='basic-info'>
+                  {this.props.restaurant.location}
+                </div>
               </div>
-              <div className='basic-info'>
-                {this.props.restaurant.location}
-              </div>
-              <div>
-                <button className='res-btn' onClick={this.handleDelete}>Remove</button> 
-              </div>
+              
+                <div className='res-btn-div'>
+                  <span className='res-btn' onClick={this.handleDelete}>Remove</span> 
+                </div>
           </div>
         </div>
       </div>

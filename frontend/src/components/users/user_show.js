@@ -16,7 +16,8 @@ class UserShow extends Component {
     return (
       <div id='user-show'>
         <div className='user-background-img'>
-        <h1>Welcome Back</h1>
+          <div></div>
+          <h1 className='welcome-header'>Welcome Back</h1>
         </div>
         <div className='collections'>
           <div className='collection'>
@@ -29,7 +30,7 @@ class UserShow extends Component {
           </div>
           <div className='collection'>
             <div className='collection-title'>
-              Previously Visited Restaurants
+              Visited Restaurants
             </div>
             <div>
               <VisitedIndexContainer />
