@@ -43,13 +43,11 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="nav-container">
-                <div id="header-container">
-                    <div className="logo">
-                        <img src='wcw_logo.png'/>
-                    </div>
-                    {this.getLinks()}
-                    <Modal {...this.props} />
+                <Modal {...this.props} />
+                <div className="nav-item logo">
+                    <img src='wcw_logo.png'/>
                 </div>
+                {this.getLinks()}
             </div>
         );
     }

@@ -1,3 +1,13 @@
+#preference-page {
+    background-image: url("splash-page-pic-2.jpg");
+    height: 100%;
+    /* animation: slideFromRight 1s ease-in-out; */
+}
+
+.preferences {
+    padding-top: 2%;
+}
+
 #preference-form {
     background-color: #e7e7e7;
     border-radius: 4px;
@@ -12,15 +22,6 @@
     font-weight: bold;
     justify-content: space-between;
     padding: 5%;
-}
-
-.preferences {
-    padding-top: 2%;
-}
-
-#preference-page {
-    background-image: url("splash-page-pic-2.jpg");
-    height: 100%;
 }
 
 #find-restaurant {
