@@ -1,7 +1,8 @@
 import React from 'react';
-// import './preferences.css';
+import './preferences.scss';
 import { search } from '../../util/yelp_api';
 import { Redirect } from 'react-router-dom';
+
 
 class PreferenceForm extends React.Component {
     constructor(props) {
@@ -84,38 +85,45 @@ class PreferenceForm extends React.Component {
 
     render() {
         return (
-            <section  id="preference-form">
-                <div className="question">
-                    <label>How far would you like to travel?</label>
-                    <div id="distance-input-container">
-                        <input value={this.state.distance} onChange={this.updateDistance}/> mile(s)
+            <div  id="preference-form">
+                <div className='form-opacity-holder'>
+                    <div className='form-opacity'>
+                        <div className='pref-form-container'>
+                            <h1>Please Fill Out Your Preferences</h1>
+                            <div className="question">
+                                <label>How far would you like to travel?</label>
+                                <div id="distance-input-container">
+                                    <input value={this.state.distance} onChange={this.updateDistance}/> mile(s)
+                                </div>
+                            </div>
+                            <div className="question">
+                                <label>What's your price range?</label>
+                                <div id="price-container">
+                                    <button onClick={this.updatePrice} className={this.state.price === "$" ? "selected" : ""}>$</button>
+                                    <button onClick={this.updatePrice} className={this.state.price === "$$" ? "selected" : ""}>$$</button>
+                                    <button onClick={this.updatePrice} className={this.state.price === "$$$" ? "selected" : ""}>$$$</button>
+                                    <button onClick={this.updatePrice} className={this.state.price === "$$$$" ? "selected" : ""}>$$$$</button>
+                                </div>
+                            </div>
+                            <div className="question">
+                                <label>What type of food are you craving?</label>
+                                <select defaultValue={'default'} onChange={this.updateCuisine}>
+                                    <option disabled value='default'>Select a food category</option>
+                                    <option value="asian">Asian</option>
+                                    <option value="mexican">Mexican</option>
+                                    <option value="american">American</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="italian">Italian</option>
+                                    <option value="mediterranean">Mediterranean</option>
+                                </select>
+                            </div>
+                            <div id="find-restaurant">
+                                <button id="find-button" onClick={this.getLocation}>Let's find a place!</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="question">
-                    <label>What's your price range?</label>
-                    <div id="price-container">
-                        <button onClick={this.updatePrice} className={this.state.price === "$" ? "selected" : ""}>$</button>
-                        <button onClick={this.updatePrice} className={this.state.price === "$$" ? "selected" : ""}>$$</button>
-                        <button onClick={this.updatePrice} className={this.state.price === "$$$" ? "selected" : ""}>$$$</button>
-                        <button onClick={this.updatePrice} className={this.state.price === "$$$$" ? "selected" : ""}>$$$$</button>
-                    </div>
-                </div>
-                <div className="question">
-                    <label>What type of food are you craving?</label>
-                    <select defaultValue={'default'} onChange={this.updateCuisine}>
-                        <option disabled value='default'>Select a food category</option>
-                        <option value="asian">Asian</option>
-                        <option value="mexican">Mexican</option>
-                        <option value="american">American</option>
-                        <option value="indian">Indian</option>
-                        <option value="italian">Italian</option>
-                        <option value="mediterranean">Mediterranean</option>
-                    </select>
-                </div>
-                <div id="find-restaurant">
-                    <button id="find-button" onClick={this.getLocation}>Let's find a place!</button>
-                </div>
-            </section>
+            </div>
         )
     }
 }
