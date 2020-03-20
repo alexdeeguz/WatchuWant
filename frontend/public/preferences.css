@@ -1,8 +1,21 @@
+#preference-page {
+    background-image: url("splash-page-pic-2.jpg");
+    height: 100%;
+    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preferences {
+    width: 80%;
+}
+
 #preference-form {
     background-color: #e7e7e7;
     border-radius: 4px;
     margin: 0 auto;
-    width: 65%;
+    width: 100%;
 }
 
 .question {
@@ -12,15 +25,6 @@
     font-weight: bold;
     justify-content: space-between;
     padding: 5%;
-}
-
-.preferences {
-    padding-top: 2%;
-}
-
-#preference-page {
-    background-image: url("splash-page-pic-2.jpg");
-    height: 100%;
 }
 
 #find-restaurant {
