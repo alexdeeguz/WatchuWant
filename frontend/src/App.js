@@ -8,7 +8,6 @@ import { Switch} from 'react-router-dom';
 
 //components
 import NavBarContainer from './components/nav/navbar_container';
-import MainPage from './components/main/main_page';
 import UserShowContainer from './components/users/user_show_container';
 // import Footer from './components/footer/footer';
 import PreferencesContainer from './components/preferences/preferences_container'
@@ -19,6 +18,7 @@ import VisitedIndexContainer from './components/visited/visited_index_container'
 
 // testing
 import {Route} from 'react-router-dom';
+import SplashCarousel from './components/carousel/splash';
 
 const App = () => {
   return (
@@ -31,7 +31,7 @@ const App = () => {
             <ProtectedRoute path='/restaurants/:id' component={RestaurantContainer}/>
             <ProtectedRoute path="/preferences" component={PreferencesContainer} />
             <ProtectedRoute path="/user" component={UserShowContainer} />
-            <AuthRoute path="/" component={MainPage} />
+            <AuthRoute path="/" component={SplashCarousel} />
         </Switch>
     </div>
   );
