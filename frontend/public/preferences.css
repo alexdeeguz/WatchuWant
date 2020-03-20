@@ -1,56 +1,63 @@
-#preference-page {
-    background-image: url("splash-page-pic-2.jpg");
+/* #preference-page {
+    /* background-image: url("splash-page-pic-2.jpg"); */
+    /* background-image: url("fruit.jpg.jpg");
     height: 100%;
     animation: fadeIn 0.5s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
+} */
+/* 
 .preferences {
-    width: 80%;
-}
+    width: 70%;
+} */
 
-#preference-form {
+/* #preference-form {
     background-color: #e7e7e7;
     border-radius: 4px;
     margin: 0 auto;
     width: 100%;
-}
+    border: 1px solid green;
+} */
 
-.question {
+/* .pref-form-container{
+    border: 1px solid purple;
+    height: 50vh;
+} */ 
+
+/* .question {
     align-items: center;
     display: flex;
-    font-size: 2vw;
-    font-weight: bold;
-    justify-content: space-between;
+    /* font-size: 2vw; */
+    /* font-weight: bold; */
+    /* justify-content: space-between;
     padding: 5%;
-}
-
+} */ 
+/* 
 #find-restaurant {
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 5%;
-    padding-right: 5%;
-}
+    /* padding-bottom: 5%;
+    padding-right: 5%; */
 
-#distance-input-container {
+
+/* #distance-input-container {
     align-items: center;
     display: flex;
     justify-content: flex-end;
-}
+} */
 
 #distance-input-container input {
-    padding: 2%;
-    margin-right: 5%;
-    text-align: center;
-    width: 25%;
+    /* padding: 2%;
+    margin-right: 5%; */
+    /* text-align: center; */
+    /* width: 25%; */
 }
 
-select {
-    height: 50px;
-}
-
+/* select { */
+    /* height: 50px; */
+/* } */
+/* 
 .selected {
     background-color: darkblue;
     color: white;
@@ -64,26 +71,29 @@ select {
     font-size: 1.5vw;
     font-weight: 600;
     padding: 2%;
-}
+} */
 
 #price-container {
-    border-radius: 4px;
+    /* border-radius: 4px;
     text-align: right;
-    width: 50%;
+    width: 50%; */
 }
 
 #price-container button {
-    background-color: green;
+    /* background-color: green;
     font-size: 2vw;
     font-weight: 600;
-    padding: 5%;
+    padding: 5%; */
 }
 
 #price-container > button:not(:first-child) {
-    border-left: none;
+    /* border-left: none; */
 }
 
 
+
+
+/* end of try's code */
 /* input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 

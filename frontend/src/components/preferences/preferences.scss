@@ -1,0 +1,110 @@
+#preference-page {
+    // background: url('https://images.unsplash.com/photo-1496174883999-edcc585a373f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
+    background: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
+    // background: url('https://images.unsplash.com/photo-1491600395818-515d7b81de11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=763&q=80') no-repeat center center fixed;
+    // background: url('https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preferences{
+    width: 70%;
+}
+
+
+.form-opacity-holder{
+    position:relative;
+    height: 70vh;
+    width:80vw;
+    display: flex;
+    justify-content: center;
+}
+.form-opacity{
+    height: 100%;
+    width: 100%;
+    background-color: #F3B5A5;
+    // background-color: lightgrey;
+    opacity: 0.9;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.pref-form-container{
+    position: absolute;
+    padding:5%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 5;
+    width: 80%;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.pref-form-container h1{
+    font-size: 35px;
+    padding-bottom: 3%;
+}
+
+#preference-form {
+    border-radius: 4px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.pref-form-container{
+    height: 50vh;
+}
+.question{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+
+#price-container {
+    border-radius: 4px;
+    text-align: right;
+    width: 50%;
+}
+
+#price-container button {
+    // background-color: green;
+    background-color: #EB6481;
+    font-size: 2vw;
+    font-weight: 600;
+    padding: 5%;
+}
+
+#price-container > button:not(:first-child) {
+    border-left: none; 
+}
+
+
+#find-button {
+    // background-color: green;
+    background-color: #EB6481;
+    border: none;
+    color: #fff;
+    font-size: 1.5vw;
+    font-weight: 600;
+    padding: 2%;
+} 
+
+#find-restaurant {
+    display: flex;
+    justify-content: flex-end;
+    // padding-bottom: 5%;
+    // padding-right: 5%; 
+    // padding-top: 5%;
+    // border: 1px solid purple;
+}
+#find-button{
+
+}
