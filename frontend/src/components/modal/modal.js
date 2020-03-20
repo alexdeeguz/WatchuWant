@@ -23,8 +23,6 @@ class modal extends React.Component {
     render() {
         return (
             <div className='modal-container hidden'>
-                <div className='modal'>
-                </div>
                 <div className="modal-content">
                     <span onClick={this.closeModal} className="close">&times;</span>
                     <div className="modal-content-form">

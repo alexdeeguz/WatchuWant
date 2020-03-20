@@ -1,6 +1,11 @@
 .App {
   height: 100%;
   text-align: center;
+  width: 100%;
+}
+
+.App > div:nth-child(2) {
+  height: 100%;
 }
 
 .App-logo {
