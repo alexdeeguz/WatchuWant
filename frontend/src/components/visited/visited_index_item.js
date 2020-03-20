@@ -34,11 +34,11 @@ class VisitedIndexItem extends React.Component{
                             </div>
                          </div>
                             <div className='res-btn-div'>
-                                <span 
+                                <button 
                                 className='res-btn' 
                                 onClick={this.handlePost}>
                                     Add To Favorites
-                                </span>
+                                </button>
                             </div>
                     </div>
                 </div>
