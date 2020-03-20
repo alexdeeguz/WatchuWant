@@ -12,7 +12,6 @@ class PreferenceForm extends React.Component {
             price: "",
             cuisine: ""
         };
-
         this.updateDistance = this.updateDistance.bind(this);
         this.updatePrice = this.updatePrice.bind(this);
         this.commenceSearch = this.commenceSearch.bind(this)
