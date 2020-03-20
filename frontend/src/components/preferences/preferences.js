@@ -17,7 +17,6 @@ class Preferences extends React.Component {
     render() {
         return (
             <div id="preference-page">
-                {/* <img id="home-pic" src="splash-page-pic.jpg"></img> */}
                 <div className="preferences">
                    <PreferenceForm {...this.props} receiveRestaurants={this.props.receiveRestaurants}/>
                 </div>
