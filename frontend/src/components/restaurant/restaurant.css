@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-around;
     height: 50vh;
-    width: 80%;
+    width: 70%;
 }
 
 .section-container {
@@ -14,22 +14,17 @@
     width: 50%;
 }
 
-#map-container {
+#map-container, #restaurant-info-container {
     height: 100%;
     width: 50%;
-    margin: 20px;
-}
-
-#restaurant-info-container {
-    width: 50%;
-    height: 100%;
     margin: 20px;
 }
 
 #name {
     margin-top: 5%;
     font-size: 7vh;
-    text-shadow: 0 0 2px black;
+    text-shadow: 0 0 10px white;
+    mix-blend-mode: difference;
 }
 
 .image-container {
@@ -67,7 +62,8 @@ img {
 }
 
 .restaurant-details p {
-    font-size: 32px;
+    font-size: 175%;
+    mix-blend-mode: difference;
 }
 
 .choices {
@@ -76,16 +72,6 @@ img {
     width: 50%;
     justify-content: space-evenly;
 }
-
-/* .choices > p {
-    cursor: pointer;
-    padding: 20px;
-    width: 10vw;
-    background-color: blue;
-    color: white;
-    border: 1px solid white;
-} */
-
 
 .choices > p {
   background: linear-gradient(to right, transparent 50%, blue 50%);
