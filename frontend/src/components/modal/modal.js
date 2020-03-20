@@ -31,8 +31,8 @@ class modal extends React.Component {
                         </div>
                         <div className="login-signup">
                             {this.state.formType === 'login'
-                                ? <p>Don't have an account? <p className='btm-modal-btn' onClick={() => this.setState({ formType: "signup" })}>Sign up</p></p> 
-                                : <p>Already have an account? <p className='btm-modal-btn' onClick={() => this.setState({ formType: "login" })}>Log in</p></p>}
+                                ? <p>Don't have an account? <button className='btm-modal-btn' onClick={() => this.setState({ formType: "signup" })}>Sign up</button></p> 
+                                : <p>Already have an account? <button className='btm-modal-btn' onClick={() => this.setState({ formType: "login" })}>Log in</button></p>}
                         </div> 
                     </div>
                 </div>

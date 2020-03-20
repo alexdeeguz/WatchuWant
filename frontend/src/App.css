@@ -4,10 +4,6 @@
   width: 100%;
 }
 
-.App > div:nth-child(2) {
-  height: 100%;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -42,4 +38,4 @@
     transform: rotate(360deg);
   }
 }
-
+/* animation: App-logo-spin 10s infinite */

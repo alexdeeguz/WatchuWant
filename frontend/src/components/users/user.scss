@@ -1,45 +1,57 @@
-#user-show{
-    // background: url('https://images.unsplash.com/photo-1556742205-e10c9486e506?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
-    // background-size: cover;
-    // height: 100%;
-}
+
 
 
 .user-background-img{
-    // background: url('https://images.unsplash.com/photo-1484659619207-9165d119dafe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
     background: url('https://images.unsplash.com/photo-1491600395818-515d7b81de11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=763&q=80') no-repeat center center fixed;
-    // background: url('https://images.unsplash.com/photo-1495214783159-3503fd1b572d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
     background-size: cover;
-    // border: 1px solid blue;
     height: 70vh;
     display: flex;
     justify-content: flex-start;
 }
 
-.user-background-img h1{
-    color:white;
-    padding-left: 5%;
+
+.banner-holder{
+    position:relative;
+}
+.user-background-img div{
+}
+
+.banner{
+    margin-top: 10%;
+    padding-left: 2%;
     padding-top: 5%;
     font-size: 50px;
+    width:100vw;
+    height: 10%;
     font-family: 'Playball', cursive;
+    background-color: #F3B5A5;
+    opacity: 50%;
+}
+
+.welcome-header{
+    position: absolute;
+    color:black;
+    margin-top: 7%;
+    padding-top: 5%;
+    font-size: 60px;
+    text-align: center;
+    width:100%;
+    font-family: 'Playball', cursive;
+    top:0;
 }
 
 .collections{
     display:flex;
-    // justify-content: flex-start;
-    justify-content: space-evenly;
-    // justify-content: space-between;
-    // align-items: flex-start;
-    // justify-content: center;
+    justify-content: space-between;
     padding-left: 3%;
     padding-top: 3%;
     padding-bottom: 3%;
     padding-right:3%;
+    background-color:#FFFFFF;
 }
 
 .collection{
     display: flex;
-    // justify-content: space-between;
     flex-direction: column;
     align-items: center;
     width: 100%;
