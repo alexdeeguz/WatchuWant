@@ -1,5 +1,5 @@
 import React from 'react';
-import './preferences.css';
+// import './preferences.css';
 import { search } from '../../util/yelp_api';
 import { Redirect } from 'react-router-dom';
 
@@ -12,7 +12,6 @@ class PreferenceForm extends React.Component {
             price: "",
             cuisine: ""
         };
-
         this.updateDistance = this.updateDistance.bind(this);
         this.updatePrice = this.updatePrice.bind(this);
         this.commenceSearch = this.commenceSearch.bind(this)
@@ -26,9 +25,18 @@ class PreferenceForm extends React.Component {
     }
 
     updateDistance(e) {
-        this.setState({
-            distance: Number(e.target.value) 
-        })
+        if(e.target.value === '') {
+            this.setState({
+                distance: ''
+            })
+        } else {
+            const checkNum = Number(e.target.value);
+            if(!isNaN(checkNum)) {
+                this.setState({
+                    distance: checkNum
+                })
+            }
+        }
     }
 
     updatePrice(e) {
@@ -67,45 +75,38 @@ class PreferenceForm extends React.Component {
 
     render() {
         return (
-            <div className="preference-form">
-                <h1>HOW FAR ARE YOU WILLING TO TRAVEL?</h1>
-                <div>
-                <input type="number" value={this.state.distance} onChange={this.updateDistance}></input> MILE(S)
-                </div>
-
-                <h1>HOW MUCH ARE YOU WILLING TO SPEND?</h1>
-                <div>
-                    <button onClick={this.updatePrice} className={this.state.price === "$" ? "selected" : ""}>$</button>
-                    <button onClick={this.updatePrice} className={this.state.price === "$$" ? "selected" : ""}>$$</button>
-                    <button onClick={this.updatePrice} className={this.state.price === "$$$" ? "selected" : ""}>$$$</button>
-                    <button onClick={this.updatePrice} className={this.state.price === "$$$$" ? "selected" : ""}>$$$$</button>
-                </div>
-
-                <h1>WHAT FOOD DO YOU WANT?</h1>
-                <select defaultValue={'default'} onChange={this.updateCuisine}>
-                    <option disabled value='default'>--Please select an option--</option>
-                    <option value="asian">Asian</option>
-                    <option value="mexican">Mexican</option>
-                    <option value="american">American</option>
-                    <option value="indian">Indian</option>
-                    <option value="italian">Italian</option>
-                    <option value="mediterranean">Mediterranean</option>
-                </select>
-                {/* <div className="cuisine-types">
-                    <div className="cuisine-one">
-                        <button onClick={this.updateCuisine} className={this.state.cuisine === "Asian" ? "selected" : ""}>Asian</button>
-                        <button onClick={this.updateCuisine} className={this.state.cuisine === "Mexican" ? "selected" : ""}>Mexican</button>
-                        <button onClick={this.updateCuisine} className={this.state.cuisine === "American" ? "selected" : ""}>American</button>
+            <section  id="preference-form">
+                <div className="question">
+                    <label>How far would you like to travel?</label>
+                    <div id="distance-input-container">
+                        <input value={this.state.distance} onChange={this.updateDistance}/> mile(s)
                     </div>
-                    <div className="cuisine-two">
-                        <button onClick={this.updateCuisine} className={this.state.cuisine === "Indian" ? "selected" : ""}>Indian</button>
-                        <button onClick={this.updateCuisine} className={this.state.cuisine === "Italian" ? "selected" : ""}>Italian</button>
-                        <button onClick={this.updateCuisine} className={this.state.cuisine === "Mediteranean" ? "selected" : ""}>Mediteranean</button>
+                </div>
+                <div className="question">
+                    <label>What's your price range?</label>
+                    <div id="price-container">
+                        <button onClick={this.updatePrice} className={this.state.price === "$" ? "selected" : ""}>$</button>
+                        <button onClick={this.updatePrice} className={this.state.price === "$$" ? "selected" : ""}>$$</button>
+                        <button onClick={this.updatePrice} className={this.state.price === "$$$" ? "selected" : ""}>$$$</button>
+                        <button onClick={this.updatePrice} className={this.state.price === "$$$$" ? "selected" : ""}>$$$$</button>
                     </div>
-
-                </div> */}
-                <button onClick={this.commenceSearch}>CHOOSE A PLACE!</button>
-            </div>
+                </div>
+                <div className="question">
+                    <label>What type of food are you craving?</label>
+                    <select defaultValue={'default'} onChange={this.updateCuisine}>
+                        <option disabled value='default'>Select a food category</option>
+                        <option value="asian">Asian</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="american">American</option>
+                        <option value="indian">Indian</option>
+                        <option value="italian">Italian</option>
+                        <option value="mediterranean">Mediterranean</option>
+                    </select>
+                </div>
+                <div id="find-restaurant">
+                    <button id="find-button" onClick={this.commenceSearch}>Let's find a place!</button>
+                </div>
+            </section>
         )
     }
 }

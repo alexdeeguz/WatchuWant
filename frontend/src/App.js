@@ -25,8 +25,8 @@ const App = () => {
     <div className='App'>
         <NavBarContainer className="nav-bar"/>
         <Switch>
+            <Route exact path='/testing/favs' component={favoriteIndexContainer} />
             <Route exact path='/testing/favs' component={FavoriteIndexContainer} />
-            <Route exact path='/testing/visited' component={VisitedIndexContainer} />
 
             <ProtectedRoute path='/restaurants/:id' component={RestaurantContainer}/>
             <ProtectedRoute path="/preferences" component={PreferencesContainer} />
