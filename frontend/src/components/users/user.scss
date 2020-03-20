@@ -2,27 +2,27 @@
 
 
 .user-background-img{
-    // background: url('https://images.unsplash.com/photo-1484659619207-9165d119dafe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
     background: url('https://images.unsplash.com/photo-1491600395818-515d7b81de11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=763&q=80') no-repeat center center fixed;
-    // background: url('https://images.unsplash.com/photo-1495214783159-3503fd1b572d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
     background-size: cover;
-    // border: 1px solid blue;
     height: 70vh;
     display: flex;
     justify-content: flex-start;
 }
 
+
+.banner-holder{
+    position:relative;
+}
 .user-background-img div{
-    color:white;
+}
+
+.banner{
     margin-top: 10%;
     padding-left: 2%;
     padding-top: 5%;
     font-size: 50px;
-    // border: 1px solid blue;
-    width:100%;
+    width:100vw;
     height: 10%;
-    // font-family: 'Bad Script', cursive;
-    // font-weight: bold;
     font-family: 'Playball', cursive;
     background-color: #F3B5A5;
     opacity: 50%;
@@ -32,14 +32,12 @@
     position: absolute;
     color:black;
     margin-top: 7%;
-    // padding-left: 2%;
     padding-top: 5%;
     font-size: 60px;
-    z-index:2;
     text-align: center;
-    // border:1px solid purple;
     width:100%;
     font-family: 'Playball', cursive;
+    top:0;
 }
 
 .collections{
@@ -54,7 +52,6 @@
 
 .collection{
     display: flex;
-    // justify-content: space-between;
     flex-direction: column;
     align-items: center;
     width: 100%;

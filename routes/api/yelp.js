@@ -7,12 +7,14 @@ const yelpUrl = 'https://api.yelp.com/v3/businesses/search';
 // const yelpUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search'; 
 
 router.get('/', (req, res) => {
-  let {location, categories, limit, price, term, radius, rating} = req.query;
+  let {location, latitude, longitude, categories, limit, price, term, radius, rating} = req.query;
   const config = {
     headers: {'Authorization': `Bearer ${yelpKey}`},
     params: {
-      location: location,
-      categories: categories,
+      location,
+      latitude,
+      longitude,
+      categories,
       limit, price, term, radius, rating
     }
   };

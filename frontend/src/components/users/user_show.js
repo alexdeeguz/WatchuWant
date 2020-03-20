@@ -16,8 +16,10 @@ class UserShow extends Component {
     return (
       <div id='user-show'>
         <div className='user-background-img'>
-          <div></div>
-          <h1 className='welcome-header'>Welcome Back</h1>
+          <div className='banner-holder'>
+            <div className='banner'></div>
+            <h1 className='welcome-header'>Welcome Back</h1>
+          </div>
         </div>
         <div className='collections'>
           <div className='collection'>

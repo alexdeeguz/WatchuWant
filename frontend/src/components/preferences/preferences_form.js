@@ -16,6 +16,7 @@ class PreferenceForm extends React.Component {
         this.updatePrice = this.updatePrice.bind(this);
         this.commenceSearch = this.commenceSearch.bind(this)
         this.updateCuisine = this.updateCuisine.bind(this)
+        this.getLocation = this.getLocation.bind(this)
     }
 
     updateCuisine(e) {
@@ -45,13 +46,21 @@ class PreferenceForm extends React.Component {
         })
     }
 
-    commenceSearch(e) {
+    getLocation(e) {
         e.preventDefault();
+        navigator.geolocation.getCurrentPosition((pos) => {
+            this.commenceSearch(pos)
+        })
+    }
+
+    commenceSearch(pos) {
         const preferences = {
             //keys names can't be changed. Yelp api looks specifically for them
             params: {
-                location: 'san francisco', //location or coordinates
-                categories: [], //array of string, yelp has list of supported categories
+                // location: 'san francisco', //location or coordinates
+                latitude: pos.coords.latitude,
+                longitude: pos.coords.longitude,
+                categories: ["Food", "food", this.state.cuisine], //array of string, yelp has list of supported categories
                 limit: 10, // limits search, max 50
                 price: String(this.state.price.length), //string "1", "2", "3", or "4"
                 term: this.state.cuisine,  //specific search term
@@ -59,6 +68,7 @@ class PreferenceForm extends React.Component {
                 rating: 4.5, //decminal 1 through 5
             }
         }
+        console.log(preferences)
         
         search(preferences)
             .then(res => { 
@@ -104,7 +114,7 @@ class PreferenceForm extends React.Component {
                     </select>
                 </div>
                 <div id="find-restaurant">
-                    <button id="find-button" onClick={this.commenceSearch}>Let's find a place!</button>
+                    <button id="find-button" onClick={this.getLocation}>Let's find a place!</button>
                 </div>
             </section>
         )

@@ -3,11 +3,17 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import './restaurant.css';
 import keys from '../../keys_dev';
 import { getRestaurant } from '../../util/yelp_api'
+import Loading from '../loading/spinner';
 
 class RestaurantPage extends React.Component {
 
     constructor(props) {
         super(props);
+        this.test = this.test.bind(this)
+    }
+
+    test() {
+        console.log("test")
     }
 
     getRestaurant() {
@@ -34,8 +40,7 @@ class RestaurantPage extends React.Component {
 
     render() {
         const restaurant = this.props.restaurants.restaurant;
-        console.log(restaurant)
-        if (restaurant === undefined) return null;
+        if (restaurant === undefined) return <Loading />;
         return (
             <div>
                 <img id="background-image" src="https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img>
@@ -63,7 +68,7 @@ class RestaurantPage extends React.Component {
                     </div>
                     <div className="choices">
                         <p>EAT HERE</p>
-                        <p>PICK ANOTHER</p>
+                        <p onClick={this.test}>PICK ANOTHER</p>
                     </div>
                 </div>
             </div>
