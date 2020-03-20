@@ -63,7 +63,7 @@ class RestaurantPage extends React.Component {
                     </div>
                     <div className="choices">
                         <p>EAT HERE</p>
-                        <p>PICK ANOTHER</p>
+                        <p onClick={this.pickAnother}>PICK ANOTHER</p>
                     </div>
                 </div>
             </div>
