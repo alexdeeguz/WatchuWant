@@ -12,6 +12,7 @@ class FavoriteIndexItem extends React.Component{
 
   handleDelete(){
     this.props.deleteFavorite(this.props.restaurant._id)
+    this.props.removeFavoriteFromState(this.props.restaurant)
   }
   
   render(){

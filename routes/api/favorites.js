@@ -34,12 +34,17 @@ router.post('/',
 )
 
 router.delete('/:id',
+
     (req, res)=>{
         Favorite.deleteOne({_id: req.params.id})
-            .then(()=>res.json("Restaurant removed from favorite"))
+            .then(()=>{
+                // debugger
+                res.json("Restaurant removed from favorite")
+            })
             .catch( err => res.status(500).json({favoritedeletion: 'Could not remove restaurant'}))
     }
 )
+// npm run dev:debug
 
 router.get('/:id',
     (req,res)=>{
