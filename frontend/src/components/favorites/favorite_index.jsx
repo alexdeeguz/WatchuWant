@@ -20,7 +20,11 @@ class FavoriteIndex extends React.Component{
   render(){
     const favoriteRestaurants = this.props.favorites.map((fav,idx)=>{
       return(
-        <FavoriteIndexItem restaurant={fav} key={idx} deleteFavorite={this.props.deleteFavorite}/>
+        <FavoriteIndexItem 
+        restaurant={fav} key={idx} 
+        deleteFavorite={this.props.deleteFavorite}
+        removeFavoriteFromState ={this.props.removeFavoriteFromState}
+        />
       )
     })
 

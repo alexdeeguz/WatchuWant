@@ -43,6 +43,8 @@ export const postFavorite = data => dispatch =>(
 
 export const deleteFavorite = favoriteId => dispatch =>(
     favoriteRestaurantAPIUtil.deleteFavorite(favoriteId)
-        .then(favorite => dispatch(removeFavorite(favorite)))
+        // .then(favorite => dispatch(removeFavorite(favorite)))
 )
+// we don't have to hit out normal action creator, I did the call in the component, 
+// this is just for the call to update the backend
 

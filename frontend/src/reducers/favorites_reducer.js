@@ -16,23 +16,21 @@ const favoritesReducer = (state ={}, action) =>{
     
     switch (action.type) {
         case RECEIVE_FAVORITES:
+            
             action.favorites.data.forEach((fav, idx)=>{
                 nextState[fav._id] = fav
             })
             return nextState;
         case REMOVE_FAVORITE:
-            // might change this to just an axios call in the component
+
             delete nextState[action.favorite._id]
-            // return {};
             return nextState;
         case RECEIVE_FAVORITE:
 
             nextState[action.favorite.data._id] = action.favorite.data
-            // return {[action.favorite.data._id]: action.favorite.data};
             return nextState;
         case RECEIVE_NEW_FAVORITE:
             nextState[action.favorite.data._id] = action.favorite.data
-            // return {[action.favorite.data._id]: action.favorite.data};
             return nextState;
         default:
             return state;
