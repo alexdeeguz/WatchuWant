@@ -10,14 +10,14 @@ import './favorites.scss'
         <img src={props.restaurant.imageUrl} alt=""/>
       </div>
       <div className='fav-rest-basic-info-div'>
-          <div>
+          <div className='basic-info'>
             <Link 
               className='fav-show-link' 
               to={`/restaurants/${props.restaurant._id}`}>
               {props.restaurant.name}
             </Link>
           </div>
-          <div>
+          <div className='basic-info'>
             {props.restaurant.location}
           </div>
       </div>
