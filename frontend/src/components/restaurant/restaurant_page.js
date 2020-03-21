@@ -4,6 +4,7 @@ import './restaurant.css';
 import keys from '../../keys_dev';
 import { getRestaurant } from '../../util/yelp_api'
 import Loading from '../loading/spinner';
+import { Link } from 'react-router-dom';
 
 class RestaurantPage extends React.Component {
 
@@ -48,12 +49,14 @@ class RestaurantPage extends React.Component {
         })
     }
 
-    handlePickAnother(){
-        let nextRest = this.props.nextRestaurants.pop();
-        this.props.receiveRestaurant(nextRest);
-    }
-
+    // handlePickAnother(nextRest){
+    //     debugger
+    //     this.props.receiveRestaurant(nextRest);
+    // }
+    
     render() {
+        let nextRest = this.props.nextRestaurants.pop();
+
         const restaurant = this.props.restaurants.restaurant;
         if (restaurant === undefined) return <Loading />;
         return (
@@ -83,7 +86,8 @@ class RestaurantPage extends React.Component {
                     </div>
                     <div className="choices">
                         <p onClick={this.addToVisited}>EAT HERE</p>
-                        <p onClick={this.handlePickAnother}>PICK ANOTHER</p>
+                        {/* <Link path={`/restaurants/${nextRest.id}`}></Link> */}
+                        <p onClick={this.handlePickAnother(nextRest)}>PICK ANOTHER</p>
                     </div>
                 </div>
             </div>
