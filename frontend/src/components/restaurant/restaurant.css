@@ -57,11 +57,11 @@ img {
 .restaurant-details {
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 70%;
 }
 
 .restaurant-details p {
-    font-size: 175%;
+    font-size: 200%;
     mix-blend-mode: difference;
 }
 
