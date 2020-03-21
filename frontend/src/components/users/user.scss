@@ -1,8 +1,7 @@
-
 .user-background-img {
     background: url('https://images.unsplash.com/photo-1491600395818-515d7b81de11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=763&q=80') no-repeat center center fixed;
     background-size: cover;
-    height: 70vh;
+    height: 50vh;
     display: flex;
     justify-content: flex-start;
 }
@@ -55,7 +54,7 @@
 
 .collection-title {
     font-family: 'Bad Script', cursive;
-    font-size:30px;
+    font-size: 30px;
     font-weight: 600;
     margin-bottom: 10px;
     border-bottom: 3px groove rgba(#ec79fc, 1);
