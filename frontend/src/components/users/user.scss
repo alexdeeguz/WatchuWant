@@ -1,6 +1,4 @@
 
-
-
 .user-background-img{
     background: url('https://images.unsplash.com/photo-1491600395818-515d7b81de11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=763&q=80') no-repeat center center fixed;
     background-size: cover;
@@ -40,25 +38,21 @@
     top:0;
 }
 
-.collections{
+.collections {
     display:flex;
-    justify-content: space-between;
-    padding-left: 3%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    padding-right:3%;
+    justify-content: space-evenly;
+    padding: 3%;
     background-color:#FFFFFF;
 }
 
-.collection{
+.collection {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    
+    width: 40%;
 }
 
-.collection-title{
+.collection-title {
     font-family: 'Bad Script', cursive;
     font-size:30px;
     font-weight: 600;

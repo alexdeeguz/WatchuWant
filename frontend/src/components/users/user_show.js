@@ -26,17 +26,13 @@ class UserShow extends Component {
             <div className='collection-title'>
               Favorite Restaurants
             </div>
-            <div>
-               <FavoritesIndexContainer />
-            </div>
+              <FavoritesIndexContainer />
           </div>
           <div className='collection'>
             <div className='collection-title'>
               Visited Restaurants
             </div>
-            <div>
-              <VisitedIndexContainer />
-            </div>
+            <VisitedIndexContainer />
           </div>
         </div>
       </div>
