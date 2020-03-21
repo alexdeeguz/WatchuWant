@@ -4,14 +4,6 @@ import VisitedIndexContainer from '../visited/visited_index_container';
 import './user.scss'
 
 class UserShow extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
-
-  }
-
   render() {
     return (
       <div className='fadeMe' id='user-show'>

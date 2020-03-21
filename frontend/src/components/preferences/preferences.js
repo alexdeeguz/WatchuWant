@@ -3,9 +3,9 @@ import PreferenceForm from './preferences_form'
 import $ from 'jquery'
 
 class Preferences extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     componentWillMount() {
         const modal = $(".modal-container")

@@ -70,13 +70,13 @@ class RestaurantPage extends React.Component {
         let restaurant = this.state.currRest;
         return (
             <div>
-                <img id="background-image" src="https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img>
+                <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img>
                 <div className="container">
                     <h1 id="name">{restaurant.name}</h1>
                     <div id="restaurant-page-container">
                         <div id="restaurant-info-container" className="section-container">
                             <div className="image-container">
-                                <img src={restaurant.image_url}></img>
+                                <img alt='restaurant' src={restaurant.image_url}></img>
                             </div>
                         </div>
                         <div id="map-container" className="section-container">

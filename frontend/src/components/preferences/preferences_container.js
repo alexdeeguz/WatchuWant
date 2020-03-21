@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Preferences from "./preferences";
-import {getRestaurants, receiveRestaurants} from "../../actions/restaurant";
+import { receiveRestaurants} from "../../actions/restaurant";
 import { postPreferences } from '../../actions/preference';
 
 
