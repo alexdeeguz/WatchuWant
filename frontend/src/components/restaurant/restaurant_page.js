@@ -10,6 +10,7 @@ class RestaurantPage extends React.Component {
     constructor(props) {
         super(props);
         this.addToVisited = this.addToVisited.bind(this)
+        this.handlePickAnother = this.handlePickAnother.bind(this);
     }
 
     addToVisited() {
@@ -47,6 +48,11 @@ class RestaurantPage extends React.Component {
         })
     }
 
+    handlePickAnother(){
+        let nextRest = this.props.nextRestaurants.pop();
+        this.props.receiveRestaurant(nextRest);
+    }
+
     render() {
         const restaurant = this.props.restaurants.restaurant;
         if (restaurant === undefined) return <Loading />;
@@ -77,7 +83,7 @@ class RestaurantPage extends React.Component {
                     </div>
                     <div className="choices">
                         <p onClick={this.addToVisited}>EAT HERE</p>
-                        <p>PICK ANOTHER</p>
+                        <p onClick={this.handlePickAnother}>PICK ANOTHER</p>
                     </div>
                 </div>
             </div>

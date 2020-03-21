@@ -18,6 +18,7 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
+import { postPreferences, patchPreferences, retrievePreferences } from './actions/preference';
 
 // testing
 // import {fetchFavorite, fetchFavorites, postFavorite, deleteFavorite} from './actions/favorites'
@@ -36,19 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
             store.dispatch(logout());
             window.location.href = '/login';
         }
-     } else store = configureStore({});
+    } else {
+         store = configureStore({});
+    }
 
     //  TESTING -kmo
      window.getState = store.getState;
      window.dispatch = store.dispatch;
-    //  window.fetchFavorite = fetchFavorite;
-    //  window.fetchFavorites = fetchFavorites;
-    //  window.postFavorite = postFavorite;
-    //  window.deleteFavorite = deleteFavorite
-    //  window.postVisited = postVisited;
-    //  window.fetchAllVisited = fetchAllVisited;
-    //  window.fetchSingleVisited = fetchSingleVisited;
-    //  window.postVisited = window.postVisited; 
+     window.postPreferences = postPreferences;
+     window.patchPreferences = patchPreferences;
+     window.retrievePreferences = retrievePreferences;
+    // 
 
 
     const root = document.getElementById('root');
