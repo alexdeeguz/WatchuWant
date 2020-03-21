@@ -28,13 +28,14 @@ router.post('/',
     }
 )
 
-// router.delete('/:id',
-//     (req, res)=>{
-//         Favorite.deleteOne({_id: req.params.id})
-//             .then(()=>res.json("Restaurant removed from favorite"))
-//             .catch( err => res.status(500).json({favoritedeletion: 'Could not remove restaurant'}))
-//     }
-// )
+// for testing purposes, visited delete function in the back end
+router.delete('/:id',
+    (req, res)=>{
+        Visited.deleteOne({_id: req.params.id})
+            .then(()=>res.json("Restaurant removed from visited"))
+            .catch( err => res.status(500).json({visitedDeletion: 'Could not remove restaurant'}))
+    }
+)
 
 router.get('/:id',
     (req,res)=>{
