@@ -57,7 +57,7 @@ class RestaurantPage extends React.Component {
         if (nextRest){
             this.props.receiveRestaurant(nextRest);
         } else{
-            alert('Out of restaurants with those preferences in the area')
+            alert('Out of restaurants with those specified preferences')
         }
     }
     
