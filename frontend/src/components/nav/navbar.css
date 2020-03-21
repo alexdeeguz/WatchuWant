@@ -40,7 +40,11 @@
   margin: 10px;
   width: 64px;
   cursor: pointer;
-  animation: App-logo-spin 7s linear infinite;
+  border-radius: 100%;
+  animation: 
+    color-cycle-shadow 4s linear infinite alternate-reverse,
+    App-logo-spin 8s linear infinite;
+  /* box-shadow:  0 10px 5px 5px red; */
 }
 
 
