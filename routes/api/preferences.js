@@ -40,7 +40,7 @@ router.patch("/edit", (req, res) => {
 
 // need the user in order to retrieve preferences to use for Yelp API
 router.get("/retrieve", (req, res) => {
-    const userID = req.body.userID;
+    const userID = req.query.userID;
     Preference.findOne({userID})
         .then(preference => res.json(preference))
 })
