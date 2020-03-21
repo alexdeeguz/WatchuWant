@@ -14,6 +14,7 @@ class VisitedIndexItem extends React.Component{
 
     // const urlString = `url('${props.visitedRestaurant.imageUrl}')`
     render(){
+        console.log(this.props.visitedRestaurant)
         return(
             <div className='most-outter-wrap'>
                 <div className='visited-res-wrap'>
@@ -25,7 +26,7 @@ class VisitedIndexItem extends React.Component{
                             <div className='basic-info'>
                                 <Link 
                                 className='visited-show-link' 
-                                to={`/restaurants/${this.props.visitedRestaurant._id}`}>
+                                to={`/restaurants/${this.props.visitedRestaurant.restaurantId}`}>
                                     {this.props.visitedRestaurant.name}
                                 </Link>
                             </div>
