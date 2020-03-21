@@ -10,6 +10,9 @@ class RestaurantPage extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            nextRestaurants: this.props.nextRestaurants
+        }
         this.addToVisited = this.addToVisited.bind(this)
         this.handlePickAnother = this.handlePickAnother.bind(this);
     }
@@ -49,13 +52,12 @@ class RestaurantPage extends React.Component {
         })
     }
 
-    // handlePickAnother(nextRest){
-    //     debugger
-    //     this.props.receiveRestaurant(nextRest);
-    // }
+    handlePickAnother(){
+        let nextRest = this.state.nextRestaurants.pop();
+        this.props.receiveRestaurant(nextRest);
+    }
     
     render() {
-        let nextRest = this.props.nextRestaurants.pop();
 
         const restaurant = this.props.restaurants.restaurant;
         if (restaurant === undefined) return <Loading />;
@@ -87,7 +89,7 @@ class RestaurantPage extends React.Component {
                     <div className="choices">
                         <p onClick={this.addToVisited}>EAT HERE</p>
                         {/* <Link path={`/restaurants/${nextRest.id}`}></Link> */}
-                        <p onClick={this.handlePickAnother(nextRest)}>PICK ANOTHER</p>
+                        <p onClick={this.handlePickAnother}>PICK ANOTHER</p>
                     </div>
                 </div>
             </div>
