@@ -1,5 +1,5 @@
 
-.user-background-img{
+.user-background-img {
     background: url('https://images.unsplash.com/photo-1491600395818-515d7b81de11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=763&q=80') no-repeat center center fixed;
     background-size: cover;
     height: 70vh;
@@ -8,41 +8,42 @@
 }
 
 
-.banner-holder{
+.banner-holder {
     position:relative;
-}
-.user-background-img div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .banner{
-    margin-top: 10%;
-    padding-left: 2%;
-    padding-top: 5%;
+    position: relative;
     font-size: 50px;
-    width:100vw;
+    width: 100%;
     height: 10%;
     font-family: 'Playball', cursive;
-    background-color: #F3B5A5;
-    opacity: 50%;
+    background-color: rgba(#F3B5A5, 0.7);
+    border-radius: 5px;
+    margin: 4% 0;
+    padding: 2% 0;
 }
 
 .welcome-header{
-    position: absolute;
-    color:black;
-    margin-top: 7%;
-    padding-top: 5%;
+    color: black;
     font-size: 60px;
     text-align: center;
-    width:100%;
+    width: 100%;
+    text-shadow: 0 0 15px rgb(255, 230, 0);
     font-family: 'Playball', cursive;
-    top:0;
 }
 
 .collections {
     display:flex;
     justify-content: space-evenly;
-    padding: 3%;
-    background-color:#FFFFFF;
+    background-color: rgba(#dfbdfa, 0.3);
+    border-radius: 2rem;
+    padding-top: 2rem;
 }
 
 .collection {
@@ -56,5 +57,6 @@
     font-family: 'Bad Script', cursive;
     font-size:30px;
     font-weight: 600;
-    padding-bottom: 2%;
+    margin-bottom: 10px;
+    border-bottom: 3px groove rgba(#ec79fc, 1);
 }

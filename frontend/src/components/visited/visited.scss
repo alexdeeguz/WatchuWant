@@ -61,7 +61,9 @@
 .most-outter-wrap{
     padding: 3%;
     border-radius: 5px;
-    border-top: 1px groove rgba(247, 170, 183, 0.711);
+    border-top: 1px dotted rgba(247, 170, 183, 0.711);
+    border-left: 1px dotted rgba(247, 170, 183, 0.5);
+    border-right: 1px dotted rgba(247, 170, 183, 0.5);
     transition: background-color 0.1s linear;
 }
 
