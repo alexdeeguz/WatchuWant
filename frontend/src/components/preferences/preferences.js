@@ -16,7 +16,7 @@ class Preferences extends React.Component {
 
     render() {
         return (
-            <div id="preference-page">
+            <div className='fadeMe' id="preference-page">
                 <div className="preferences">
                    <PreferenceForm {...this.props} receiveRestaurants={this.props.receiveRestaurants}/>
                 </div>
