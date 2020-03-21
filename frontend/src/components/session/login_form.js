@@ -126,10 +126,10 @@ class LoginForm extends React.Component {
                         />
                         <br />
                         <input type="submit" value="LOGIN" />
-                        {this.renderErrors()}
                     </div>
                 </form>
                 <input className='demo-user-btn' type="submit" value="DEMO USER" onClick={this.handleDemoUser} />
+                {this.renderErrors()}
             </div>
         );
     }

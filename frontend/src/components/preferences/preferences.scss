@@ -14,11 +14,24 @@
     width: 70%;
 }
 
+.selected {
+    color: white;
+    outline: none;
+}
+
+.cuisine-one > button:hover, .cuisine-two > button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#preference-form{
+    width: 80vw;
+}
 
 .form-opacity-holder{
     position:relative;
     height: 70vh;
-    width:80vw;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -102,4 +115,8 @@
 }
 #find-button{
 
+}
+
+.miles{
+    text-align: end;
 }
