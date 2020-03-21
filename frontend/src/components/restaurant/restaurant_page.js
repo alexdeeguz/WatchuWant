@@ -10,7 +10,8 @@ class RestaurantPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            nextRestaurants: this.props.nextRestaurants
+            nextRestaurants: this.props.nextRestaurants,
+            currRest: undefined,
         }
         this.addToVisited = this.addToVisited.bind(this)
         this.handlePickAnother = this.handlePickAnother.bind(this);
@@ -48,23 +49,25 @@ class RestaurantPage extends React.Component {
             }
         }
         getRestaurant(id).then(res => {
-            this.props.receiveRestaurant(res.data)
-        })
+            this.props.receiveRestaurant(res.data);
+            this.setState({currRest: Object.assign({}, res.data)});
+        })  
     }
 
     handlePickAnother(){
         let nextRest = this.state.nextRestaurants.pop();
         if (nextRest){
             this.props.receiveRestaurant(nextRest);
+            this.setState({currRest: nextRest});
         } else{
             alert('Out of restaurants with those specified preferences')
         }
     }
     
     render() {
-
-        const restaurant = this.props.restaurants.restaurant;
-        if (restaurant === undefined) return <Loading />;
+        
+        if (this.state.currRest === undefined) return <Loading />;
+        let restaurant = this.state.currRest;
         return (
             <div>
                 <img id="background-image" src="https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img>
@@ -81,6 +84,7 @@ class RestaurantPage extends React.Component {
                                 google={this.props.google}
                                 zoom={15}
                                 initialCenter={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
+                                center={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
                             >
                                 <Marker position={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}} />
                             </Map>
