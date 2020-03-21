@@ -19,12 +19,15 @@ class VisitedIndex extends React.Component{
 
         const visitedRestaurants = this.props.visitedRestaurants.map((visitedRes, idx)=>{
             return(
-                <VisitedIndexItem visitedRestaurant={visitedRes} key={idx} postFavorite={this.props.postFavorite}/>
+                <VisitedIndexItem 
+                    visitedRestaurant={visitedRes} 
+                    key={idx} postFavorite={this.props.postFavorite}
+                />
             )
         })
 
         return(
-            <div>
+            <div className='scroll'>
                 {visitedRestaurants}
             </div>
         )
