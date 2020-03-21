@@ -31,3 +31,8 @@
       opacity: 1; 
    } 
 } 
+
+@keyframes shrinkGrow {
+  from { width: 10px; height: 10px; }
+  to { width: 50px; height: 50px; }
+}
