@@ -93,7 +93,7 @@ class PreferenceForm extends React.Component {
                             <div className="question">
                                 <label>How far would you like to travel?</label>
                                 <div id="distance-input-container">
-                                    <input value={this.state.distance} onChange={this.updateDistance}/> mile(s)
+                                    <input className='miles' value={this.state.distance} onChange={this.updateDistance} placeholder="mile(s)"/>
                                 </div>
                             </div>
                             <div className="question">
