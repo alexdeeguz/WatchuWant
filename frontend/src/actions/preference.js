@@ -3,7 +3,7 @@ import * as PreferenceAPI from '../util/preference_util';
 // action constants
 export const RECEIVE_PREFERENCES = "ADD_PREFERENCES";
 export const RETRIEVE_PREFERNCES = "RETRIEVE_PREFERENCES";
-
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS'
 
 // regular action creators
 export const receivePreferences = preferences => ({
@@ -11,10 +11,16 @@ export const receivePreferences = preferences => ({
     preferences
 })
 
+export const receivePreferenceErrors = errors =>({
+    type: RECEIVE_ERRORS,
+    errors
+})
+
 // thunk action
 export const postPreferences = preferences => dispatch => {
-    PreferenceAPI.addPreferences(preferences)
-        .then(res => dispatch(receivePreferences(res.data)))
+    return PreferenceAPI.addPreferences(preferences)
+        .then(res => dispatch(receivePreferences(res.data)),
+            errs => dispatch(receivePreferenceErrors(errs.responseJSON)))
 }
 
 export const patchPreferences = preferences => dispatch => (

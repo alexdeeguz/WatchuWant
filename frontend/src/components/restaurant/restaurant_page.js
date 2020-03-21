@@ -56,8 +56,12 @@ class RestaurantPage extends React.Component {
 
     handlePickAnother(){
         let nextRest = this.state.nextRestaurants.pop();
-        this.props.receiveRestaurant(nextRest);
-        this.setState({currRest: nextRest});
+        if (nextRest){
+            this.props.receiveRestaurant(nextRest);
+            this.setState({currRest: nextRest});
+        } else{
+            alert('Out of restaurants with those specified preferences')
+        }
     }
     
     render() {
