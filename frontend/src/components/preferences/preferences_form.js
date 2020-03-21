@@ -80,7 +80,8 @@ class PreferenceForm extends React.Component {
                     this.props.history.push(`/restaurants/${rests[idx].id}`);
                 }
              })
-            .catch(errors => console.log(errors));
+            .catch(errors => alert('No restuarants found with entered preferences'));
+            // .catch(errors => console.log(errors));
 
         
         // console.log(preferences)
