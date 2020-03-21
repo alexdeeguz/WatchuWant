@@ -1,8 +1,5 @@
 #preference-page {
-    // background: url('https://images.unsplash.com/photo-1496174883999-edcc585a373f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
     background: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
-    // background: url('https://images.unsplash.com/photo-1491600395818-515d7b81de11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=763&q=80') no-repeat center center fixed;
-    // background: url('https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80') no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     display: flex;
@@ -38,24 +35,31 @@
 .form-opacity{
     height: 100%;
     width: 100%;
-    background-color: #F3B5A5;
-    // background-color: lightgrey;
-    opacity: 0.9;
-    border-radius: 3px;
+    background-color: rgba(#F3B5A5, 0.9);
+    border-radius: 5px;
     display: flex;
     justify-content: center;
 }
 
 .pref-form-container{
     position: absolute;
-    padding:5%;
-    display:flex;
+    padding: 5%;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     z-index: 5;
     width: 80%;
     justify-content: space-between;
     height: 100%;
+
+    *:hover {
+        text-shadow: 0 0 10px hsla(180, 100%, 75%, 1);
+    }
+
+    button:hover {
+        box-shadow: 0 0 10px 1px hsla(180, 100%, 75%, 1);
+        color: hsla(120, 100%, 75%, 1);
+    }
 }
 
 .pref-form-container h1{
@@ -83,6 +87,9 @@
 #price-container {
     border-radius: 4px;
     text-align: right;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     width: 50%;
 }
 

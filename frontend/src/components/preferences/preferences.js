@@ -1,6 +1,5 @@
 import React from 'react'
 import PreferenceForm from './preferences_form'
-// import './preferences.css'
 import $ from 'jquery'
 
 class Preferences extends React.Component {
