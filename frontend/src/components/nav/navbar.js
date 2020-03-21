@@ -45,6 +45,7 @@ class NavBar extends React.Component {
             <div className="nav-container">
                 <Modal {...this.props} />
                 <div className="nav-item logo">
+                    <div id='color-wheel'></div>
                     <img alt='logo' src='wcw_logo.png'/>
                 </div>
                 {this.getLinks()}
