@@ -49,9 +49,10 @@ class RestaurantPage extends React.Component {
         })
     }
 
-    handlePickAnother(nextRest){
-        // this.props.receiveRestaurant(nextRest);
-    }
+    // handlePickAnother(nextRest){
+    //     debugger
+    //     this.props.receiveRestaurant(nextRest);
+    // }
     
     render() {
         let nextRest = this.props.nextRestaurants.pop();
