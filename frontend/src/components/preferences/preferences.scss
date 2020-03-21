@@ -16,14 +16,12 @@
 }
 
 .selected {
-    // background-color: darkblue;
     color: white;
     outline: none;
 }
 
 .cuisine-one > button:hover, .cuisine-two > button:hover {
     cursor: pointer;
-    // background-color: darkblue;
     color: white;
 }
 
@@ -34,8 +32,6 @@
 .form-opacity-holder{
     position:relative;
     height: 70vh;
-    // height: 100%;
-    // width:90%;
     width: 100%;
     display: flex;
     justify-content: center;

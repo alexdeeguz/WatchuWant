@@ -45,3 +45,20 @@ input[type="submit"]:hover {
   background-color: blue;
   box-shadow: 0 0 3px 1px hsl(204, 100%, 50%);
 }
+
+.demo-user-btn{
+  height: 7vh;
+  width: 90%;
+  font-size: 3vh;
+  margin: 12px;
+  padding-left: 10px;
+  background-color: darkblue;
+  color: white;
+  transition: all 0.25s;
+}
+
+.demo-user-btn:hover{
+  cursor: pointer;
+  background-color: blue;
+  box-shadow: 0 0 3px 1px hsl(204, 100%, 50%);
+}
