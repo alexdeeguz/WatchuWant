@@ -4,7 +4,6 @@ import './restaurant.css';
 import keys from '../../keys_dev';
 import { getRestaurant } from '../../util/yelp_api'
 import Loading from '../loading/spinner';
-import { Link } from 'react-router-dom';
 
 class RestaurantPage extends React.Component {
 
@@ -27,7 +26,8 @@ class RestaurantPage extends React.Component {
             location: location.address1
         }
         this.props.addToVisited(visitedRestaurant)
-            .then(() => this.props.history.push('/user'))
+            .then(() => this.props.history.push('/user'),
+            () => this.props.history.push('/user'))
     }
 
     getRestaurant() {
