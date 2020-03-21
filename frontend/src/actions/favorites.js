@@ -41,7 +41,7 @@ export const postFavorite = data => dispatch =>(
         .then(favorite=> (dispatch(receiveNewFavorite(favorite))))
 )
 
-export const deleteFavorite = favoriteId => dispatch =>(
+export const deleteFavorite = favoriteId => dispatch => (
     favoriteRestaurantAPIUtil.deleteFavorite(favoriteId)
         // .then(favorite => dispatch(removeFavorite(favorite)))
 )
