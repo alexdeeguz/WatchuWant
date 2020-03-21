@@ -24,13 +24,9 @@ class LoginForm extends React.Component {
         modal.addClass("hidden")
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-            //redirect to show page
-        }
-
-        // Set or clear errors
-        this.setState({ errors: nextProps.errors })
+    componentDidUpdate(prevProps) {
+        if (prevProps.errors.length !== this.props.errors.length)
+            this.setState({ errors: this.props.errors })
     }
 
     // Handle field updates (called in the render method)

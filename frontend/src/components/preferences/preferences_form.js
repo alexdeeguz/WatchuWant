@@ -1,7 +1,7 @@
 import React from 'react';
 import './preferences.scss';
 import { search } from '../../util/yelp_api';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 
 class PreferenceForm extends React.Component {

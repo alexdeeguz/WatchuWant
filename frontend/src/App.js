@@ -14,7 +14,7 @@ import RestaurantContainer from './components/restaurant/restaurant_container';
 import Loading from './components/loading/spinner';
 
 // testing
-import {Route} from 'react-router-dom';
+// import {Route} from 'react-router-dom';
 import SplashCarousel from './components/carousel/splash';
 
 
