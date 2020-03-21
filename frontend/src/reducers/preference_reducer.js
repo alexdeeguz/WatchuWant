@@ -1,4 +1,6 @@
-import { RECEIVE_PREFERENCES } from "../actions/preference";
+import { 
+    RECEIVE_PREFERENCES
+} from "../actions/preference";
 
 const preferenceReducer = (state = {}, action) => {
     Object.freeze(state);
