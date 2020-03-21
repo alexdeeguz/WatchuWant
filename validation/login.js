@@ -9,13 +9,14 @@ const validateLoginInput = data => {
     
     const errors = {};
 
+    if(!Validator.isEmail(data.email)) {
+        errors.email = "Email is invalid";
+    }
+    
     if(Validator.isEmpty(data.email)) {
         errors.email = "Email is required";
     }
 
-    if(!Validator.isEmail(data.email)) {
-        errors.email = "Email is invalid";
-    }
 
     if(Validator.isEmpty(data.password)) {
         errors.password = "Password is required"
@@ -23,7 +24,7 @@ const validateLoginInput = data => {
 
     return {
         errors,
-        isValid: Object.values(errors).length === 0
+        isValid: Object.keys(errors).length === 0
     }
 }
 

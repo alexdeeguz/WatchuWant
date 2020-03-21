@@ -62,3 +62,8 @@ input[type="submit"]:hover {
   background-color: blue;
   box-shadow: 0 0 3px 1px hsl(204, 100%, 50%);
 }
+
+.sess-errors{
+  color:red;
+  font-weight: 600;
+}

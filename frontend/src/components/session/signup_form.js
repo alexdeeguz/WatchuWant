@@ -13,6 +13,7 @@ class SignupForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
+        this.renderErrors = this.renderErrors.bind(this)
     }
 
 
@@ -32,17 +33,21 @@ class SignupForm extends React.Component {
         };
         this.props.signup(user, this.props.history);
     }
-
-    renderErrors() {
-        return (
+    
+    renderErrors(){
+        return(
             <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`} className='sess-errors'>
+                        {error}
                     </li>
                 ))}
             </ul>
-        );
+        )
+    }
+
+    componentWillUnmount() {
+        this.props.clearErrors()
     }
 
     render() {
@@ -70,9 +75,9 @@ class SignupForm extends React.Component {
                         />
                         <br />
                         <input type="submit" value="CREATE ACCOUNT" />
-                        {this.renderErrors()}
                     </div>
                 </form>
+                    {this.renderErrors()}
             </div>
         );
     }
