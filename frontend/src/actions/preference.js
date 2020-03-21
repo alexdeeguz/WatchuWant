@@ -17,11 +17,12 @@ export const receivePreferenceErrors = errors =>({
 })
 
 // thunk action
-export const postPreferences = preferences => dispatch => {
-    return PreferenceAPI.addPreferences(preferences)
-        .then(res => dispatch(receivePreferences(res.data)),
-            errs => dispatch(receivePreferenceErrors(errs.responseJSON)))
-}
+export const postPreferences = preferences => dispatch => (
+    PreferenceAPI.addPreferences(preferences)
+        .then(res => dispatch(receivePreferences(res.data)))
+            // errs => dispatch(receivePreferenceErrors(errs.responseJSON)))
+        
+)
 
 export const patchPreferences = preferences => dispatch => (
     PreferenceAPI.editPreferences(preferences)
