@@ -4,13 +4,15 @@ import errors from './errors_reducer';
 import favorites from './favorites_reducer';
 import restaurants from './restaurants_reducer';
 import visited from './visited_reducer';
+import preferences from './preference_reducer';
 
 const RootReducer = combineReducers({
     session,
     errors,
     favorites,
     visited,
-    restaurants
+    restaurants,
+    preferences
 });
 
 export default RootReducer;

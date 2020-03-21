@@ -69,6 +69,7 @@ class PreferenceForm extends React.Component {
                 rating: 4.5, //decminal 1 through 5
             }
         }
+        // debugger
         
         search(preferences)
             .then(res => { 
@@ -80,6 +81,11 @@ class PreferenceForm extends React.Component {
                 }
              })
             .catch(errors => console.log(errors));
+
+        
+        // console.log(preferences)
+        // this.props.postPreferences(preferences)
+        // debugger
     }
 
 
