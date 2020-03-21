@@ -113,6 +113,13 @@ class PreferenceForm extends React.Component {
                             </div>
                             <div className="question">
                                 <label>What type of food are you craving?</label>
+                                <div id="distance-input-container">
+                                    <input className='cuisine' value={this.state.cuisine} onChange={this.updateCuisine} placeholder="ex. asian food" />
+                                </div>
+                            </div>
+                            
+                            {/* <div className="question">
+                                <label>What type of food are you craving?</label>
                                 <select defaultValue={'default'} onChange={this.updateCuisine}>
                                     <option disabled value='default'>Select a food category</option>
                                     <option value="asian">Asian</option>
@@ -122,7 +129,7 @@ class PreferenceForm extends React.Component {
                                     <option value="italian">Italian</option>
                                     <option value="mediterranean">Mediterranean</option>
                                 </select>
-                            </div>
+                            </div> */}
                             <div id="find-restaurant">
                                 <button id="find-button" onClick={this.getLocation}>Let's find a place!</button>
                             </div>

@@ -27,7 +27,7 @@ class FavoriteIndexItem extends React.Component{
                 <div className='basic-info'>
                   <Link 
                     className='visited-show-link' 
-                    to={`/restaurants/${this.props.restaurant._id}`}>
+                    to={`/restaurants/${this.props.restaurant.restaurantId}`}>
                     {this.props.restaurant.name}
                   </Link>
                 </div>
