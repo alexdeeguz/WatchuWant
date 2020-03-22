@@ -46,7 +46,6 @@ class SplashCarousel extends React.Component{
                         <img className="food-slide-pic" src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80" alt='food-6'></img>
                     </div> 
                 </div>
-                {/* < Banner /> */}
             </div>
         )
     }

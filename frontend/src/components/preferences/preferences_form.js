@@ -111,19 +111,6 @@ class PreferenceForm extends React.Component {
                                     <input className='cuisine' value={this.state.cuisine} onChange={this.updateCuisine} placeholder="ex. asian food" />
                                 </div>
                             </div>
-                            
-                            {/* <div className="question">
-                                <label>What type of food are you craving?</label>
-                                <select defaultValue={'default'} onChange={this.updateCuisine}>
-                                    <option disabled value='default'>Select a food category</option>
-                                    <option value="asian">Asian</option>
-                                    <option value="mexican">Mexican</option>
-                                    <option value="american">American</option>
-                                    <option value="indian">Indian</option>
-                                    <option value="italian">Italian</option>
-                                    <option value="mediterranean">Mediterranean</option>
-                                </select>
-                            </div> */}
                             <div id="find-restaurant">
                                 <button id="find-button" onClick={() => this.props.history.push('/user')}>Past visited restaurants</button>
                                 <button id="find-button" onClick={this.getLocation}>Let's find a place!</button>

@@ -12,9 +12,7 @@ class VisitedIndexItem extends React.Component{
         this.props.postFavorite(this.props.visitedRestaurant)
     }
 
-    // const urlString = `url('${props.visitedRestaurant.imageUrl}')`
     render(){
-        // console.log(this.props.visitedRestaurant)
         return(
             <div className='most-outter-wrap'>
                 <div className='visited-res-wrap'>

@@ -20,8 +20,7 @@ export const receivePreferenceErrors = errors =>({
 export const postPreferences = preferences => dispatch => (
     PreferenceAPI.addPreferences(preferences)
         .then(res => dispatch(receivePreferences(res.data)))
-            // errs => dispatch(receivePreferenceErrors(errs.responseJSON)))
-        
+    
 )
 
 export const patchPreferences = preferences => dispatch => (

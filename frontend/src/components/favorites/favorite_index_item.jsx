@@ -48,12 +48,3 @@ class FavoriteIndexItem extends React.Component{
 
 export default FavoriteIndexItem;
 
-// export default function FavoriteIndexItem() {
-//   return (
-//     <div>
-//       <div>
-//         {props.restaurant}
-//       </div>
-//     </div>
-//   )
-// }
