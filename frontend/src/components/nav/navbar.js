@@ -3,12 +3,20 @@ import './navbar.css';
 import Modal from '../modal/modal'
 import $ from 'jquery'
 import './navbar.css'
+import {Link} from 'react-router-dom';
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
-        this.openModal = this.openModal.bind(this)
+        this.openModal = this.openModal.bind(this);
+        this.handleLogoClick = this.handleLogoClick.bind(this);
+    }
+
+    handleLogoClick(e) {
+        e.preventDefault();
+        if (this.props.location.pathname !== '/')
+            this.props.history.push('/');
     }
 
     openModal() {
@@ -45,8 +53,9 @@ class NavBar extends React.Component {
                 <Modal {...this.props} />
                 <div className="nav-item logo">
                     <div id='color-wheel'></div>
-                    <img alt='logo' src='wcw_logo.png'/>
+                    <img onClick={this.handleLogoClick} alt='logo' src='wcw_logo.png'/>
                 </div>
+                <Link to='/JAKT_Team'>The Team</Link>
                 {this.getLinks()}
             </div>
         );
