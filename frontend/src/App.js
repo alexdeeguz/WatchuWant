@@ -12,7 +12,7 @@ import UserShowContainer from './components/users/user_show_container';
 import PreferencesContainer from './components/preferences/preferences_container'
 import RestaurantContainer from './components/restaurant/restaurant_container';
 import Loading from './components/loading/spinner';
-import Team from './components/team/team'
+import Team from './components/team/team.js'
 
 import SplashCarousel from './components/carousel/splash';
 

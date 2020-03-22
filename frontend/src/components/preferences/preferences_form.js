@@ -82,7 +82,7 @@ class PreferenceForm extends React.Component {
 
         search(preferences)
             .then(res => { 
-                if (res.data.total === 0) throw "no restaurants";
+                if (res.data.total === 0) throw RangeError;
                 this.props.receiveRestaurants(res.data);
                 const rests = res.data.businesses;
                 if (rests.length !== 0) {
