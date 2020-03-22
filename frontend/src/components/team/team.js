@@ -24,7 +24,7 @@ export default class Team extends PureComponent {
         />
 
         <Person
-          name={"Alexander De Guzman"}
+          name={"Alex De Guzman"}
           github={"#"}
           linkedin={"#"}
           angelco={"#"}
