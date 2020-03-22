@@ -1,3 +1,5 @@
+$radioactive-green: hsla(180, 100%, 75%, 1);
+
 #preference-page {
     background: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
     background-size: cover;
@@ -56,7 +58,7 @@
         text-shadow: none;
         transition: text-shadow 0.25s linear;
         &:hover {
-            text-shadow: 0 0 10px hsla(180, 100%, 75%, 1);
+            text-shadow: 0 0 10px $radioactive-green;
         }
     }
 
@@ -64,7 +66,7 @@
         box-shadow: none;
         transition: all 0.1s linear;
         &:hover {
-            box-shadow: 0 0 10px 1px hsla(180, 100%, 75%, 1);
+            box-shadow: 0 0 10px 1px $radioactive-green;
             color: hsla(120, 100%, 75%, 1);
         }
     }
@@ -106,6 +108,10 @@
     font-size: 2vw;
     font-weight: 600;
     padding: 5%;
+
+    &:active {
+        color: hsla(120, 100%, 75%, 1);
+    }
 }
 
 #price-container > button:not(:first-child) {

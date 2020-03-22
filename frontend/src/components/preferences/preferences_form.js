@@ -40,10 +40,15 @@ class PreferenceForm extends React.Component {
         }
     }
 
-    updatePrice(e) {
-        this.setState({
-            price: e.target.innerHTML
-        })
+    updatePrice(price) {
+        return (e) => {
+            const priceButtons = document.getElementsByClassName("price-button");
+            for (let i = 0; i < priceButtons.length; i++) {
+                priceButtons[i].classList.remove('selected');
+            }
+            e.target.classList.add("selected");
+            this.setState({ price: price })
+        }
     }
 
     getLocation(e) {
@@ -105,10 +110,11 @@ class PreferenceForm extends React.Component {
                             <div className="question">
                                 <label>What's your price range?</label>
                                 <div id="price-container">
-                                    <button onClick={this.updatePrice} className={this.state.price === "1" ? "selected" : ""}>$</button>
-                                    <button onClick={this.updatePrice} className={this.state.price === "1,2" ? "selected" : ""}>$$</button>
-                                    <button onClick={this.updatePrice} className={this.state.price === "1,2,3" ? "selected" : ""}>$$$</button>
-                                    <button onClick={this.updatePrice} className={this.state.price === "1,2,3,4" ? "selected" : ""}>$$$$</button>
+                                    <button onClick={this.updatePrice("1,2,3,4")} className="price-button">Any</button>
+                                    <button onClick={this.updatePrice("1")} className="price-button">$</button>
+                                    <button onClick={this.updatePrice("2")} className="price-button">$$</button>
+                                    <button onClick={this.updatePrice("3")} className="price-button">$$$</button>
+                                    <button onClick={this.updatePrice("4")} className="price-button">$$$$</button>
                                 </div>
                             </div>
                             <div className="question">
