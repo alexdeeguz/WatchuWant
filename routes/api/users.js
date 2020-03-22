@@ -58,9 +58,8 @@ router.post("/signup", (req, res) => {
 
 router.post("/login", (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
-
     if(!isValid) {
-        return res.send(404).json(errors);
+        return res.status(404).json(errors);
     }
 
     User.findOne({email: req.body.email})
