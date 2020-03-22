@@ -5,18 +5,15 @@
 
 .banner-wrap{
     top:45%;
-    z-index: 1;
     width: 100%;
     position: absolute;
     display:flex;
-    // align-items: center;
     justify-content: center;
 }
 
 .opaque-me{
-    // position: absolute;
-    // z-index: 0;
     width: 100%;
+    z-index: 1;
     height: 20vh;
     background: rgb(131,58,180);
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
@@ -25,8 +22,7 @@
 
 .logo-title{
     position: absolute;
-    // position: relative;
-    // z-index: 0;
+    z-index: 1;
     top: 23%;
     font-size: 10vh;
     font-family: 'Playball', cursive;
