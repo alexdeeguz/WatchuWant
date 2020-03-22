@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 3;
 }
 
 .modal {
@@ -34,7 +34,7 @@
 
 
 .modal-content {
-    z-index: 1;
+    z-index: 3;
     padding: 20px;
     border: 1px solid #888;
     width: 30%;
