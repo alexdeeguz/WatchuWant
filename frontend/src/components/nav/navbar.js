@@ -55,7 +55,7 @@ class NavBar extends React.Component {
                     <div id='color-wheel'></div>
                     <img onClick={this.handleLogoClick} alt='logo' src='wcw_logo.png'/>
                 </div>
-                <Link to='/JAKT_Team'>The Team</Link>
+                <Link className='team-link' to='/JAKT_Team'>The Team</Link>
                 {this.getLinks()}
             </div>
         );
