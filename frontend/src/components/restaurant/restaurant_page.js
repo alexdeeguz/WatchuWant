@@ -1,7 +1,7 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import './restaurant.css';
-import keys from '../../keys_dev';
+import keys from '../../config/keys';
 import { getRestaurant } from '../../util/yelp_api'
 import Loading from '../loading/spinner';
 
