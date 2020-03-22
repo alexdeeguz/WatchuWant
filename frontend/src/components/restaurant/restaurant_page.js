@@ -66,7 +66,7 @@ class RestaurantPage extends React.Component {
     }
     
     render() {
-        
+        console.log(keys.googleMapsAPIKey)
         if (this.state.currRest === undefined) return <Loading />;
         let restaurant = this.state.currRest;
         return (
@@ -109,5 +109,5 @@ class RestaurantPage extends React.Component {
         )
     }
 }
-console.log(keys.googleMapsAPIKey)
+
 export default GoogleApiWrapper({ apiKey: keys.googleMapsAPIKey })(RestaurantPage);
