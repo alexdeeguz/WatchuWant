@@ -1,7 +1,6 @@
 import React from 'react';
 import './preferences.scss';
 import { search } from '../../util/yelp_api';
-// import { Redirect } from 'react-router-dom';
 
 
 class PreferenceForm extends React.Component {
@@ -69,8 +68,7 @@ class PreferenceForm extends React.Component {
                 rating: 4.5, //decminal 1 through 5
             }
         }
-        // debugger
-        
+
         search(preferences)
             .then(res => { 
                 if (res.data.total === 0) throw "no restaurants";
@@ -82,12 +80,6 @@ class PreferenceForm extends React.Component {
                 }
              })
             .catch(errors => alert('No restuarants found with entered preferences'));
-            // .catch(errors => console.log(errors));
-
-        
-        // console.log(preferences)
-        // this.props.postPreferences(preferences)
-        // debugger
     }
 
 

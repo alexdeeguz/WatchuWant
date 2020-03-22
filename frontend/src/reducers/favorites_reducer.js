@@ -9,14 +9,11 @@ import {
 import {
     RECEIVE_USER_LOGOUT   
 } from '../actions/session_actions'
-// const _nullState = {
-//     restaurantId: null
-// }
+
 
 const favoritesReducer = (state ={}, action) =>{
     Object.freeze(state);
     let nextState = Object.assign({}, state)
-    // debugger
     
     switch (action.type) {
         case RECEIVE_FAVORITES:

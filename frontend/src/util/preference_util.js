@@ -9,7 +9,6 @@ export const editPreferences = preferences => (
 )
 
 export const retrievePreferences = userID => {
-    // debugger
     return axios.get('/api/preferences/retrieve', userID)
 }
 
