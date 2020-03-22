@@ -66,7 +66,6 @@ class RestaurantPage extends React.Component {
     }
     
     render() {
-        console.log(keys)
         if (this.state.currRest === undefined) return <Loading />;
         let restaurant = this.state.currRest;
         return (
