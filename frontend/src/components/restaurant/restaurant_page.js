@@ -66,7 +66,7 @@ class RestaurantPage extends React.Component {
     }
     
     render() {
-        console.log(keys.yelpAPIKey)
+        console.log(process.env.NODE_ENV)
         if (this.state.currRest === undefined) return <Loading />;
         let restaurant = this.state.currRest;
         return (
