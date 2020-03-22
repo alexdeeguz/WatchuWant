@@ -6,7 +6,7 @@ export default class Team extends PureComponent {
 
   render() {
     return (
-      <div id="team-page">
+      <div className='fadeMe' id="team-page">
         <Person
           name={"John Chau"}
           github={"https://github.com/jwchau"}
