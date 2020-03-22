@@ -41,7 +41,7 @@
     display:flex;
     justify-content: space-evenly;
     background-color: rgba(#dfbdfa, 0.3);
-    border-radius: 2rem;
+    // border-radius: 2rem;
     padding-top: 2rem;
 }
 
@@ -58,4 +58,29 @@
     font-weight: 600;
     margin-bottom: 10px;
     border-bottom: 3px groove rgba(#ec79fc, 1);
+}
+
+.preference-button-div {
+    background-color: rgba(#dfbdfa, 0.3);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.preference-button-div > div {
+    display: flex;
+    margin-top: 2%;
+}
+
+
+#preference-button {
+    width: 15vw;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+}
+
+#preference-button:hover {
+    color: purple;
 }

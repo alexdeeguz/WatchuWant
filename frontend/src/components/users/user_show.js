@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FavoritesIndexContainer from '../favorites/favorite_index_container';
 import VisitedIndexContainer from '../visited/visited_index_container';
 import './user.scss'
+import { Link } from 'react-router-dom'
 
 class UserShow extends Component {
   render() {
@@ -13,6 +14,13 @@ class UserShow extends Component {
               <h1 className='welcome-header'>Welcome Back</h1>
             </div>
           </div>
+        </div>
+        <div className="preference-button-div">
+            <div>
+              <Link id='preference-button' to={`/preferences`}>
+                Back to preferences
+              </Link>
+            </div>
         </div>
         <div className='collections'>
           <div className='collection'>
