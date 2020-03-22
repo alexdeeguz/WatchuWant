@@ -31,9 +31,9 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch(err => console.log(err));
 
 // route paths
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, './front-end', 'build', 'index.html'));
-})
+// app.get('/*', function(req, res) {
+//   res.sendFile(path.join(__dirname, './front-end', 'build', 'index.html'));
+// })
 
 
 app.use('/api/restaurants', favorites);
