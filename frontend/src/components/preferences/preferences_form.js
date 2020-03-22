@@ -132,6 +132,7 @@ class PreferenceForm extends React.Component {
                                 </select>
                             </div> */}
                             <div id="find-restaurant">
+                                <button id="find-button" onClick={() => this.props.history.push('/user')}>Past visited restaurants</button>
                                 <button id="find-button" onClick={this.getLocation}>Let's find a place!</button>
                             </div>
                         </div>
