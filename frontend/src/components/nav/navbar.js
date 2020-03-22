@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import './navbar.css';
 import Modal from '../modal/modal'
 import $ from 'jquery'
@@ -44,13 +43,10 @@ class NavBar extends React.Component {
         return (
             <div className="nav-container">
                 <Modal {...this.props} />
-                {/* <div className='logo-with-title'> */}
                 <div className="nav-item logo">
                     <div id='color-wheel'></div>
                     <img alt='logo' src='wcw_logo.png'/>
                 </div>
-                     {/* <div className='app-name'>WhatChu Want?</div> */}
-                {/* </div>  */}
                 {this.getLinks()}
             </div>
         );
