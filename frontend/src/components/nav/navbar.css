@@ -1,6 +1,6 @@
 .nav-container {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,5 +62,15 @@
 
 .logo > img {
   width: 100%;
+}
+
+.app-name{
+  font-size: 4vh;
+  font-weight: 600;
+}
+
+.logo-with-title{
+  display:flex;
+  align-items: center;
 }
 
