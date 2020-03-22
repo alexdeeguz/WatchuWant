@@ -1,6 +1,5 @@
 .form-title{
   padding-top: 10%;
-  /* font-size: 100px; */
 }
 
 .session-form{
@@ -14,7 +13,6 @@
   font-size: 3vh;
   margin: 12px;
   padding-left: 10px;
-  /* background-color: rgba(207, 202, 202, 0.4); */
   border: 1px solid lightgrey;
   outline: none;
   transition: all 0.25s;

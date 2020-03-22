@@ -20,10 +20,6 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import { postPreferences, patchPreferences, retrievePreferences } from './actions/preference';
 
-// testing
-// import {fetchFavorite, fetchFavorites, postFavorite, deleteFavorite} from './actions/favorites'
-// import { fetchAllVisited, fetchSingleVisited, postVisited } from './actions/visited';
-
 document.addEventListener('DOMContentLoaded', () => {
     let store;
     if (localStorage.jwtToken) {
@@ -40,15 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
          store = configureStore({});
     }
-
-    //  TESTING -kmo
-     window.getState = store.getState;
-     window.dispatch = store.dispatch;
-     window.postPreferences = postPreferences;
-     window.patchPreferences = patchPreferences;
-     window.retrievePreferences = retrievePreferences;
-    // 
-
 
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);

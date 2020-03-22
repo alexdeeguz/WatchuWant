@@ -1,6 +1,5 @@
 import React from 'react'
 import FavoriteIndexItem from './favorite_index_item';
-import './favorites.scss'
 
 class FavoriteIndex extends React.Component{
   componentDidMount(){

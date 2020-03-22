@@ -20,13 +20,11 @@ const visitedReducer = ( state = {}, action)=>{
             })
             return nextState;
         case RECEIVE_SINGLE_VISITED:
-            
-            // return {[action.singleVisited.data._id]: action.singleVisited.data};
+
             nextState[action.singleVisited.data._id] = action.singleVisited.data;
             return nextState;
         case RECEIVE_NEW_VISITED:
 
-            // return {[action.singleVisited.data._id]: action.singleVisited.data};
             nextState[action.singleVisited.data._id] = action.singleVisited.data;
             return nextState;
         case RECEIVE_USER_LOGOUT:
