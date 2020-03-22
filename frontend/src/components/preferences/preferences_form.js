@@ -9,7 +9,7 @@ class PreferenceForm extends React.Component {
         this.state = {
             form: "distance",
             distance: "",
-            price: "",
+            price: undefined,
             cuisine: ""
         };
         this.updateDistance = this.updateDistance.bind(this);
@@ -54,18 +54,24 @@ class PreferenceForm extends React.Component {
     }
 
     commenceSearch(pos) {
+        const price = this.state.price || "1,2,3,4";
+        const distance = (this.state.distance !== "")
+            ? Number(this.state.distance) * 1609
+            : 40000;
+        const { cuisine } = this.state;
+
         const preferences = {
             //keys names can't be changed. Yelp api looks specifically for them
             params: {
                 // location: 'san francisco', //location or coordinates
                 latitude: pos.coords.latitude,
                 longitude: pos.coords.longitude,
-                categories: ["Food", "food", this.state.cuisine], //array of string, yelp has list of supported categories
-                limit: 10, // limits search, max 50
-                price: String(this.state.price.length), //string "1", "2", "3", or "4"
-                term: this.state.cuisine,  //specific search term
-                radius: (Number(this.state.distance) * 1609), //radius in meters, max is 40_000meters approx 25miles
-                rating: 4.5, //decminal 1 through 5
+                categories: "food", //string delimited by commas
+                limit: 15, // limits search, max 50
+                price: price, //optional inclusive less, string "1", "2", "3", or "4"
+                term: cuisine,  //specific search term
+                radius: distance, //radius in meters, max is 40_000meters approx 25miles
+                rating: 4.25, //min decminal 1 through 5
             }
         }
 
@@ -99,10 +105,10 @@ class PreferenceForm extends React.Component {
                             <div className="question">
                                 <label>What's your price range?</label>
                                 <div id="price-container">
-                                    <button onClick={this.updatePrice} className={this.state.price === "$" ? "selected" : ""}>$</button>
-                                    <button onClick={this.updatePrice} className={this.state.price === "$$" ? "selected" : ""}>$$</button>
-                                    <button onClick={this.updatePrice} className={this.state.price === "$$$" ? "selected" : ""}>$$$</button>
-                                    <button onClick={this.updatePrice} className={this.state.price === "$$$$" ? "selected" : ""}>$$$$</button>
+                                    <button onClick={this.updatePrice} className={this.state.price === "1" ? "selected" : ""}>$</button>
+                                    <button onClick={this.updatePrice} className={this.state.price === "1,2" ? "selected" : ""}>$$</button>
+                                    <button onClick={this.updatePrice} className={this.state.price === "1,2,3" ? "selected" : ""}>$$$</button>
+                                    <button onClick={this.updatePrice} className={this.state.price === "1,2,3,4" ? "selected" : ""}>$$$$</button>
                                 </div>
                             </div>
                             <div className="question">
