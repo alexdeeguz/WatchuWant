@@ -6,16 +6,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const passport = require("passport");
 
-const path = require('path');
-
-// build folder in front end
-app.use(express.static(path.join(__dirname, './front-end', 'build')));
-
-// for any path, go into the index.html file that's in the build, which is in the front-end folder
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, './front-end', 'build', 'index.html'));
-})
-
 // api routes
 const users = require("./routes/api/users");
 const preferences = require("./routes/api/preferences");
@@ -56,3 +46,11 @@ app.use('/api/visited', visited);
 // set up the app port
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+const path = require('path');
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/build'));
+    app.get('/', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    })
+}
