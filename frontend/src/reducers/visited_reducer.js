@@ -4,6 +4,10 @@ import {
     RECEIVE_NEW_VISITED
 } from '../actions/visited'
 
+import {
+    RECEIVE_USER_LOGOUT
+} from '../actions/session_actions'
+
 const visitedReducer = ( state = {}, action)=>{
     Object.freeze(state);
 
@@ -25,6 +29,8 @@ const visitedReducer = ( state = {}, action)=>{
             // return {[action.singleVisited.data._id]: action.singleVisited.data};
             nextState[action.singleVisited.data._id] = action.singleVisited.data;
             return nextState;
+        case RECEIVE_USER_LOGOUT:
+            return {};
         default:
             return state;
     }

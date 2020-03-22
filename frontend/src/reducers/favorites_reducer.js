@@ -5,6 +5,10 @@ import {
     REMOVE_FAVORITE
 } from '../actions/favorites';
 
+
+import {
+    RECEIVE_USER_LOGOUT   
+} from '../actions/session_actions'
 // const _nullState = {
 //     restaurantId: null
 // }
@@ -32,6 +36,8 @@ const favoritesReducer = (state ={}, action) =>{
         case RECEIVE_NEW_FAVORITE:
             nextState[action.favorite.data._id] = action.favorite.data
             return nextState;
+        case RECEIVE_USER_LOGOUT:
+            return {};
         default:
             return state;
     }
