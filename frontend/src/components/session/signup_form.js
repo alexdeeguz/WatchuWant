@@ -16,8 +16,6 @@ class SignupForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this)
     }
 
-
-
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -31,7 +29,9 @@ class SignupForm extends React.Component {
             password: this.state.password,
             password2: this.state.password2
         };
-        this.props.signup(user, this.props.history);
+     
+        this.props.signup(user)
+        this.props.login(user)
     }
     
     renderErrors(){

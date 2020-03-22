@@ -26,7 +26,7 @@ class modal extends React.Component {
                 <div className="modal-content">
                     <span onClick={this.closeModal} className="close">&times;</span>
                     <div className="modal-content-form">
-                        <div>
+                        <div className='form-title'>
                             {this.state.formType === 'login' ? <LoginFormContainer /> : <SignupFormContainer />}
                         </div>
                         <div className="login-signup">

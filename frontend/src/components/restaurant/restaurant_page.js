@@ -70,8 +70,11 @@ class RestaurantPage extends React.Component {
         if (this.state.currRest === undefined) return <Loading />;
         let restaurant = this.state.currRest;
         return (
-            <div>
-                <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img>
+            <div className='background-div-res'>
+                {/* <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img> */}
+                {/* <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1502741126161-b048400d085d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"></img> */}
+                {/* <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1552089123-2d26226fc2b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"></img> */}
+                <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1516749622035-ab9e45262e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></img>
                 <div className="container">
                     <h1 id="name">{restaurant.name}</h1>
                     <div id="restaurant-page-container">
