@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const axios = require('axios');
 
-const yelpKey = require('../../config/keys').yelpAPIKey;
+const yelpKey = require('../../frontend/src/config/keys').yelpAPIKey;
 const yelpUrl = 'https://api.yelp.com/v3/businesses/search'; 
 // const yelpUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search'; 
 

@@ -16,14 +16,14 @@ const visited = require('./routes/api/visited');
 
 // middleware
 app.use(passport.initialize());
-require("./config/passport")(passport);
+require("./frontend/src/config/passport")(passport);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
 // allows use of mongodb
 const mongoose = require('mongoose');
-const db = require('./config/keys').mongoURI;
+const db = require('./frontend/src/config/keys').mongoURI;
 
 // connect to the mongo database
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
