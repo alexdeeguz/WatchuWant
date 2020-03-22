@@ -109,5 +109,5 @@ class RestaurantPage extends React.Component {
         )
     }
 }
-
+console.log(keys.googleMapsAPIKey)
 export default GoogleApiWrapper({ apiKey: keys.googleMapsAPIKey })(RestaurantPage);
