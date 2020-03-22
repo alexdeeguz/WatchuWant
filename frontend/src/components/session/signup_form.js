@@ -13,26 +13,8 @@ class SignupForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
-        // this.handleDemoUser = this.handleDemoUser.bind(this);
+        this.renderErrors = this.renderErrors.bind(this)
     }
-
-    // handleDemoUser(e){
-    //     e.preventDefault();
-    //     let user = {
-    //         email: 'demo_user@gmail.com',
-    //         password: 'password'
-    //     }
-
-    //     this.props.signup(user, this.props.history);
-    // }
-
-    // componentWillReceiveProps(nextProps) {
-        // if (nextProps.signedIn === true) {
-        //     this.props.history.push('/preferences');
-        // }
-        // debugger
-        // this.setState({ errors: nextProps.errors })
-    // }
 
     update(field) {
         return e => this.setState({
@@ -47,19 +29,25 @@ class SignupForm extends React.Component {
             password: this.state.password,
             password2: this.state.password2
         };
-        this.props.signup(user, this.props.history);
+     
+        this.props.signup(user)
+        this.props.login(user)
     }
-
-    renderErrors() {
-        return (
+    
+    renderErrors(){
+        return(
             <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`} className='sess-errors'>
+                        {error}
                     </li>
                 ))}
             </ul>
-        );
+        )
+    }
+
+    componentWillUnmount() {
+        this.props.clearErrors()
     }
 
     render() {
@@ -87,10 +75,9 @@ class SignupForm extends React.Component {
                         />
                         <br />
                         <input type="submit" value="CREATE ACCOUNT" />
-                        {this.renderErrors()}
                     </div>
                 </form>
-                {/* <input className='demo-user-btn' type="submit" value="DEMO USER" onClick={this.handleDemoUser} /> */}
+                    {this.renderErrors()}
             </div>
         );
     }

@@ -2,41 +2,38 @@ import React, { Component } from 'react'
 import FavoritesIndexContainer from '../favorites/favorite_index_container';
 import VisitedIndexContainer from '../visited/visited_index_container';
 import './user.scss'
+import { Link } from 'react-router-dom'
 
 class UserShow extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
-
-  }
-
   render() {
     return (
-      <div id='user-show'>
+      <div className='fadeMe' id='user-show'>
         <div className='user-background-img'>
           <div className='banner-holder'>
-            <div className='banner'></div>
-            <h1 className='welcome-header'>Welcome Back</h1>
+            <div className='banner'>
+              <h1 className='welcome-header'>Welcome Back</h1>
+            </div>
           </div>
+        </div>
+        <div className="preference-button-div">
+            <div>
+              <Link id='preference-button' to={`/preferences`}>
+                Back to preferences
+              </Link>
+            </div>
         </div>
         <div className='collections'>
           <div className='collection'>
             <div className='collection-title'>
               Favorite Restaurants
             </div>
-            <div>
-               <FavoritesIndexContainer />
-            </div>
+              <FavoritesIndexContainer />
           </div>
           <div className='collection'>
             <div className='collection-title'>
               Visited Restaurants
             </div>
-            <div>
-              <VisitedIndexContainer />
-            </div>
+            <VisitedIndexContainer />
           </div>
         </div>
       </div>

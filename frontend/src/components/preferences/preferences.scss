@@ -1,11 +1,7 @@
 #preference-page {
-    // background: url('https://images.unsplash.com/photo-1496174883999-edcc585a373f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
     background: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') no-repeat center center fixed;
-    // background: url('https://images.unsplash.com/photo-1491600395818-515d7b81de11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=763&q=80') no-repeat center center fixed;
-    // background: url('https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80') no-repeat center center fixed;
     background-size: cover;
     height: 100%;
-    animation: fadeIn 0.5s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,35 +11,63 @@
     width: 70%;
 }
 
+.selected {
+    color: white;
+    outline: none;
+}
+
+.cuisine-one > button:hover, .cuisine-two > button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#preference-form{
+    width: 80vw;
+}
 
 .form-opacity-holder{
     position:relative;
     height: 70vh;
-    width:80vw;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 .form-opacity{
     height: 100%;
     width: 100%;
-    background-color: #F3B5A5;
-    // background-color: lightgrey;
-    opacity: 0.9;
-    border-radius: 3px;
+    background-color: rgba(#F3B5A5, 0.9);
+    border-radius: 5px;
     display: flex;
     justify-content: center;
 }
 
 .pref-form-container{
     position: absolute;
-    padding:5%;
-    display:flex;
+    padding: 5%;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     z-index: 5;
     width: 80%;
     justify-content: space-between;
     height: 100%;
+    
+    * {
+        text-shadow: none;
+        transition: text-shadow 0.25s linear;
+        &:hover {
+            text-shadow: 0 0 10px hsla(180, 100%, 75%, 1);
+        }
+    }
+
+    button {
+        box-shadow: none;
+        transition: all 0.1s linear;
+        &:hover {
+            box-shadow: 0 0 10px 1px hsla(180, 100%, 75%, 1);
+            color: hsla(120, 100%, 75%, 1);
+        }
+    }
 }
 
 .pref-form-container h1{
@@ -71,6 +95,9 @@
 #price-container {
     border-radius: 4px;
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 50%;
 }
 
@@ -99,12 +126,12 @@
 
 #find-restaurant {
     display: flex;
-    justify-content: flex-end;
-    // padding-bottom: 5%;
-    // padding-right: 5%; 
-    // padding-top: 5%;
-    // border: 1px solid purple;
+    justify-content: space-between;
 }
 #find-button{
 
+}
+
+.miles, .cuisine {
+    text-align: end;
 }

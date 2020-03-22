@@ -23,7 +23,7 @@ const validateLoginInput = data => {
 
     return {
         errors,
-        isValid: Object.values(errors).length === 0
+        isValid: Object.keys(errors).length === 0
     }
 }
 

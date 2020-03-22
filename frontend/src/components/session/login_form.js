@@ -24,13 +24,9 @@ class LoginForm extends React.Component {
         modal.addClass("hidden")
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-            //redirect to show page
-        }
-
-        // Set or clear errors
-        this.setState({ errors: nextProps.errors })
+    componentDidUpdate(prevProps) {
+        if (prevProps.errors.length !== this.props.errors.length)
+            this.setState({ errors: this.props.errors })
     }
 
     // Handle field updates (called in the render method)
@@ -94,17 +90,20 @@ class LoginForm extends React.Component {
         this.animateLogin();
     }
 
-    // Render the session errors if there are any
     renderErrors() {
         return (
             <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`} className='sess-errors'>
+                        {error}
                     </li>
                 ))}
             </ul>
-        );
+        )
+    }
+
+    componentWillUnmount(){
+        this.props.clearErrors()
     }
 
     render() {
@@ -126,10 +125,10 @@ class LoginForm extends React.Component {
                         />
                         <br />
                         <input type="submit" value="LOGIN" />
-                        {this.renderErrors()}
                     </div>
                 </form>
                 <input className='demo-user-btn' type="submit" value="DEMO USER" onClick={this.handleDemoUser} />
+                {this.renderErrors()}
             </div>
         );
     }

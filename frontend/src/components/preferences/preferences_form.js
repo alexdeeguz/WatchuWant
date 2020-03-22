@@ -1,7 +1,6 @@
 import React from 'react';
 import './preferences.scss';
 import { search } from '../../util/yelp_api';
-import { Redirect } from 'react-router-dom';
 
 
 class PreferenceForm extends React.Component {
@@ -69,9 +68,10 @@ class PreferenceForm extends React.Component {
                 rating: 4.5, //decminal 1 through 5
             }
         }
-        
+
         search(preferences)
             .then(res => { 
+                if (res.data.total === 0) throw "no restaurants";
                 this.props.receiveRestaurants(res.data);
                 const rests = res.data.businesses;
                 if (rests.length !== 0) {
@@ -79,7 +79,7 @@ class PreferenceForm extends React.Component {
                     this.props.history.push(`/restaurants/${rests[idx].id}`);
                 }
              })
-            .catch(errors => console.log(errors));
+            .catch(errors => alert('No restuarants found with entered preferences'));
     }
 
 
@@ -93,7 +93,7 @@ class PreferenceForm extends React.Component {
                             <div className="question">
                                 <label>How far would you like to travel?</label>
                                 <div id="distance-input-container">
-                                    <input value={this.state.distance} onChange={this.updateDistance}/> mile(s)
+                                    <input className='miles' value={this.state.distance} onChange={this.updateDistance} placeholder="mile(s)"/>
                                 </div>
                             </div>
                             <div className="question">
@@ -107,6 +107,13 @@ class PreferenceForm extends React.Component {
                             </div>
                             <div className="question">
                                 <label>What type of food are you craving?</label>
+                                <div id="distance-input-container">
+                                    <input className='cuisine' value={this.state.cuisine} onChange={this.updateCuisine} placeholder="ex. asian food" />
+                                </div>
+                            </div>
+                            
+                            {/* <div className="question">
+                                <label>What type of food are you craving?</label>
                                 <select defaultValue={'default'} onChange={this.updateCuisine}>
                                     <option disabled value='default'>Select a food category</option>
                                     <option value="asian">Asian</option>
@@ -116,8 +123,9 @@ class PreferenceForm extends React.Component {
                                     <option value="italian">Italian</option>
                                     <option value="mediterranean">Mediterranean</option>
                                 </select>
-                            </div>
+                            </div> */}
                             <div id="find-restaurant">
+                                <button id="find-button" onClick={() => this.props.history.push('/user')}>Past visited restaurants</button>
                                 <button id="find-button" onClick={this.getLocation}>Let's find a place!</button>
                             </div>
                         </div>

@@ -5,14 +5,15 @@ import {
     REMOVE_FAVORITE
 } from '../actions/favorites';
 
-// const _nullState = {
-//     restaurantId: null
-// }
+
+import {
+    RECEIVE_USER_LOGOUT   
+} from '../actions/session_actions'
+
 
 const favoritesReducer = (state ={}, action) =>{
     Object.freeze(state);
     let nextState = Object.assign({}, state)
-    // debugger
     
     switch (action.type) {
         case RECEIVE_FAVORITES:
@@ -32,6 +33,8 @@ const favoritesReducer = (state ={}, action) =>{
         case RECEIVE_NEW_FAVORITE:
             nextState[action.favorite.data._id] = action.favorite.data
             return nextState;
+        case RECEIVE_USER_LOGOUT:
+            return {};
         default:
             return state;
     }

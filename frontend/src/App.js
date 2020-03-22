@@ -12,9 +12,10 @@ import UserShowContainer from './components/users/user_show_container';
 import PreferencesContainer from './components/preferences/preferences_container'
 import RestaurantContainer from './components/restaurant/restaurant_container';
 import Loading from './components/loading/spinner';
+// import Main from './components/main/main';
 
 // testing
-import {Route} from 'react-router-dom';
+// import {Route} from 'react-router-dom';
 import SplashCarousel from './components/carousel/splash';
 
 
@@ -28,6 +29,7 @@ const App = () => {
           <ProtectedRoute path="/preferences" component={PreferencesContainer} />
           <ProtectedRoute path="/user" component={UserShowContainer} />
           <AuthRoute path="/" component={SplashCarousel} />
+          {/* <AuthRoute path="/" component={ Main } /> */}
         </Switch>
         
     </div>

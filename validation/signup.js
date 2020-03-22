@@ -20,7 +20,7 @@ const validateSignUpInput = data => {
     
     return {
         errors,
-        isValid: Object.values(errors).length === 0 // valid if there are NO errors
+        isValid: Object.keys(errors).length === 0 // valid if there are NO errors
     }
 }
 

@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 
   axios.get(yelpUrl, config)
     .then( ans => res.jsonp(ans.data) )
-    .catch( errors => res.jsonp(errors) );
+    .catch( errors => res.status(422).json(errors));
 });
 
 router.get('/restaurant', (req, res) => {

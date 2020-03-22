@@ -1,12 +1,20 @@
+.form-title{
+  padding-top: 10%;
+  /* font-size: 100px; */
+}
+
+.session-form{
+  padding-top: 10%;
+}
 
 .session-form > input {
   height: 7vh;
   width: 90%;
-  font-family: 'Montserrat';
   font-size: 3vh;
   margin: 12px;
   padding-left: 10px;
-  background-color: rgba(207, 202, 202, 0.4);
+  /* background-color: rgba(207, 202, 202, 0.4); */
+  border: 1px solid lightgrey;
   outline: none;
   transition: all 0.25s;
 }
@@ -24,8 +32,7 @@
 
 .login-form > h1, .signup-form > h1 {
   margin-bottom: 5%;
-  font-size: 4vh;
-  font-family: 'Montserrat';
+  font-size: 6vh;
 }
 
 .login-signup > p {
@@ -46,4 +53,26 @@ input[type="submit"]:hover {
   cursor: pointer;
   background-color: blue;
   box-shadow: 0 0 3px 1px hsl(204, 100%, 50%);
+}
+
+.demo-user-btn{
+  height: 7vh;
+  width: 90%;
+  font-size: 3vh;
+  margin: 12px;
+  padding-left: 10px;
+  background-color: darkblue;
+  color: white;
+  transition: all 0.25s;
+}
+
+.demo-user-btn:hover{
+  cursor: pointer;
+  background-color: blue;
+  box-shadow: 0 0 3px 1px hsl(204, 100%, 50%);
+}
+
+.sess-errors{
+  color:red;
+  font-weight: 600;
 }

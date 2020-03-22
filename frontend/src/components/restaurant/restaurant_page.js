@@ -9,7 +9,12 @@ class RestaurantPage extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            nextRestaurants: this.props.nextRestaurants,
+            currRest: undefined,
+        }
         this.addToVisited = this.addToVisited.bind(this)
+        this.handlePickAnother = this.handlePickAnother.bind(this);
     }
 
     addToVisited() {
@@ -22,7 +27,8 @@ class RestaurantPage extends React.Component {
             location: location.address1
         }
         this.props.addToVisited(visitedRestaurant)
-            .then(() => this.props.history.push('/user'))
+            .then(() => this.props.history.push('/user'),
+            () => this.props.history.push('/user'))
     }
 
     getRestaurant() {
@@ -43,22 +49,38 @@ class RestaurantPage extends React.Component {
             }
         }
         getRestaurant(id).then(res => {
-            this.props.receiveRestaurant(res.data)
-        })
+            this.props.receiveRestaurant(res.data);
+            this.setState({currRest: Object.assign({}, res.data)});
+        })  
     }
 
+    handlePickAnother(){
+        let nextRest = this.state.nextRestaurants.pop();
+        if (nextRest){
+            this.props.receiveRestaurant(nextRest);
+            this.setState({currRest: nextRest});
+        } else{
+            alert('Out of restaurants with those specified preferences')
+            window.location.replace('http://localhost:3000/#/preferences')
+        }
+    }
+    
     render() {
-        const restaurant = this.props.restaurants.restaurant;
-        if (restaurant === undefined) return <Loading />;
+        
+        if (this.state.currRest === undefined) return <Loading />;
+        let restaurant = this.state.currRest;
         return (
-            <div>
-                <img id="background-image" src="https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img>
+            <div className='background-div-res'>
+                {/* <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img> */}
+                {/* <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1502741126161-b048400d085d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"></img> */}
+                {/* <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1552089123-2d26226fc2b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"></img> */}
+                <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1516749622035-ab9e45262e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></img>
                 <div className="container">
                     <h1 id="name">{restaurant.name}</h1>
                     <div id="restaurant-page-container">
                         <div id="restaurant-info-container" className="section-container">
                             <div className="image-container">
-                                <img src={restaurant.image_url}></img>
+                                <img alt='restaurant' src={restaurant.image_url}></img>
                             </div>
                         </div>
                         <div id="map-container" className="section-container">
@@ -66,6 +88,7 @@ class RestaurantPage extends React.Component {
                                 google={this.props.google}
                                 zoom={15}
                                 initialCenter={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
+                                center={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
                             >
                                 <Marker position={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}} />
                             </Map>
@@ -77,7 +100,9 @@ class RestaurantPage extends React.Component {
                     </div>
                     <div className="choices">
                         <p onClick={this.addToVisited}>EAT HERE</p>
-                        <p>PICK ANOTHER</p>
+                        <p onClick={this.handlePickAnother}>PICK ANOTHER</p>
+                        <p onClick={() => this.props.history.push('/user')}>CHOOSE FROM VISITED</p>
+                        <p onClick={() => this.props.history.push('/preferences')}>CHANGE PREFERENCES</p>
                     </div>
                 </div>
             </div>
