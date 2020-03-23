@@ -55,7 +55,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  .icon {
+  > .icon {
     border-radius: 100%;
     width: 64px;
     height: 64px;

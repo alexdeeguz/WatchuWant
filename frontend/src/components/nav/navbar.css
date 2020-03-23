@@ -60,9 +60,10 @@
     shrinkGrow 3s ease-in-out infinite alternate;
 }
 
-.logo > img {
+.visited-rest-img-div > img {
   width: 100%;
 }
+
 
 .app-name{
   font-size: 4vh;
