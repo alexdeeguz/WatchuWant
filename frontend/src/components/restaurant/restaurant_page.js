@@ -60,8 +60,11 @@ class RestaurantPage extends React.Component {
             this.setState({currRest: nextRest});
         } else{
             alert('Out of restaurants with those specified preferences')
-            // window.location.replace('https://watchuwant.herokuapp.com/#/preferences')
-            window.location.replace('http://localhost:3000/#/preferences')
+            if(process.env.NODE_ENV === 'production'){
+            window.location.replace('https://watchuwant.herokuapp.com/#/preferences')
+            } else {
+                window.location.replace('http://localhost:3000/#/preferences')
+            }
            
         }
     }
@@ -98,7 +101,7 @@ class RestaurantPage extends React.Component {
                     </div>
                     <div className="choices">
                         <p onClick={this.addToVisited}>EAT HERE</p>
-                        <p onClick={this.handlePickAnother}>PICK ANOTHER</p>
+                        <p onClick={this.handlePickAnother}>NEXT RESTAURANT</p>
                         <p onClick={() => this.props.history.push('/user')}>CHOOSE FROM VISITED</p>
                         <p onClick={() => this.props.history.push('/preferences')}>CHANGE PREFERENCES</p>
                     </div>
