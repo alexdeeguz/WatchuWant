@@ -17,8 +17,8 @@ export default class Team extends PureComponent {
 
         <Person
           name={"Try Khov"}
-          github={"#"}
-          linkedin={"#"}
+          github={"https://github.com/trykhov"}
+          linkedin={"https://www.linkedin.com/in/tckhov/"}
           angelco={"#"}
           photo={"https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/390/medium/Try_Khou_2.jpg?1578536628"}
         />
@@ -33,9 +33,9 @@ export default class Team extends PureComponent {
 
         <Person
           name={"Kendra Odrunia"}
-          github={"#"}
-          linkedin={"#"}
-          angelco={"#"}
+          github={"https://github.com/kendraodru"}
+          linkedin={"https://www.linkedin.com/in/kendra-odrunia-9272441a4/"}
+          angelco={"https://angel.co/kendra-odrunia"}
           photo={"https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/387/medium/Kendra_Odrunia_3.jpg?1578532870"}
         />
       </div>
