@@ -61,7 +61,8 @@ class RestaurantPage extends React.Component {
             this.setState({currRest: nextRest});
         } else{
             alert('Out of restaurants with those specified preferences')
-            window.location.replace('http://localhost:3000/#/preferences')
+            // window.location.replace('http://localhost:3000/#/preferences')
+            document.location.href('/#/preferences')
         }
     }
     
