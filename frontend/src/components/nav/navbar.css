@@ -10,7 +10,6 @@
 
 .nav-container .nav-item {
     height: 5%;
-    letter-spacing: 2px;
     padding: 5px;
     margin: 0 30px;
     border-radius: 2px;
@@ -38,8 +37,6 @@
 }
 
 .logo {
-  margin: 10px;
-  width: 64px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -60,10 +57,14 @@
     shrinkGrow 3s ease-in-out infinite alternate;
 }
 
+.logo > img {
+  width: 64px;
+  height: 64px
+}
+
 .visited-rest-img-div > img {
   width: 100%;
 }
-
 
 .app-name{
   font-size: 4vh;
