@@ -25,9 +25,9 @@ export default class Team extends PureComponent {
 
         <Person
           name={"Alex De Guzman"}
-          github={"#"}
-          linkedin={"#"}
-          angelco={"#"}
+          github={"https://github.com/alexdeeguz"}
+          linkedin={"https://www.linkedin.com/in/alex-de-guzman/"}
+          angelco={"https://angel.co/alexdeeguz"}
           photo={"/people/man.jpg"}
         />
 
