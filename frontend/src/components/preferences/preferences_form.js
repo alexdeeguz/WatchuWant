@@ -53,6 +53,10 @@ class PreferenceForm extends React.Component {
 
     getLocation(e) {
         e.preventDefault();
+        if (Number(this.state.distance > 24)) {
+            alert("Sorry, can only search up to 24 miles")
+            return
+        }
         navigator.geolocation.getCurrentPosition((pos) => {
             this.commenceSearch(pos)
         })
