@@ -35,6 +35,7 @@ $radioactive-green: hsla(180, 100%, 75%, 1);
     justify-content: center;
 }
 .form-opacity{
+    align-items: center;
     height: 100%;
     width: 100%;
     background-color: rgba(#F3B5A5, 0.9);
@@ -45,15 +46,12 @@ $radioactive-green: hsla(180, 100%, 75%, 1);
 
 .pref-form-container{
     position: absolute;
-    padding: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     z-index: 2;
     width: 80%;
-    justify-content: space-between;
     height: 100%;
-    
     * {
         text-shadow: none;
         transition: text-shadow 0.25s linear;
@@ -90,24 +88,21 @@ $radioactive-green: hsla(180, 100%, 75%, 1);
     align-items: center;
     display: flex;
     justify-content: space-between;
-    font-size: 25px;
+    font-size: 1.75vw;
 }
 
 
 #price-container {
     border-radius: 4px;
     text-align: right;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 50%;
+    width: 60%;
 }
 
 #price-container button {
     background-color: #EB6481;
     font-size: 2vw;
     font-weight: 600;
-    padding: 5%;
+    padding: 2%;
 
     &:active {
         color: hsla(120, 100%, 75%, 1);
@@ -131,9 +126,6 @@ $radioactive-green: hsla(180, 100%, 75%, 1);
 #find-restaurant {
     display: flex;
     justify-content: space-between;
-}
-#find-button{
-
 }
 
 .miles, .cuisine {
