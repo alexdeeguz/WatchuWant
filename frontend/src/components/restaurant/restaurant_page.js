@@ -66,7 +66,6 @@ class RestaurantPage extends React.Component {
     }
     
     render() {
-        
         if (this.state.currRest === undefined) return <Loading />;
         let restaurant = this.state.currRest;
         return (
@@ -85,7 +84,7 @@ class RestaurantPage extends React.Component {
                         </div>
                         <div id="map-container" className="section-container">
                             <Map
-                                google={this.props.google}
+                                google={window.google}
                                 zoom={15}
                                 initialCenter={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
                                 center={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
@@ -110,4 +109,4 @@ class RestaurantPage extends React.Component {
     }
 }
 
-export default GoogleApiWrapper({ apiKey: keys.googleMapsAPIKey })(RestaurantPage);
+export default RestaurantPage;
