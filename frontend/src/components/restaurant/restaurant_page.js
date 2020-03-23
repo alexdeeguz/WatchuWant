@@ -68,6 +68,7 @@ class RestaurantPage extends React.Component {
     render() {
         if (this.state.currRest === undefined) return <Loading />;
         let restaurant = this.state.currRest;
+        if (restaurant.coordinates === undefined) { this.setState({}); return <Loading />; }
         return (
             <div className='background-div-res'>
                 {/* <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"></img> */}
