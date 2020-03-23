@@ -7,7 +7,7 @@ class SplashCarousel extends React.Component{
 
 
     componentDidMount(){
-        const delay = 6000;
+        const delay = 8000;
 
         $("#slideshow > div:gt(0)").hide();
 
