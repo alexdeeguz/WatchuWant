@@ -101,7 +101,7 @@ class RestaurantPage extends React.Component {
                     </div>
                     <div className="choices">
                         <p onClick={this.addToVisited}>EAT HERE</p>
-                        <p onClick={this.handlePickAnother}>PICK ANOTHER</p>
+                        <p onClick={this.handlePickAnother}>NEXT RESTAURANT</p>
                         <p onClick={() => this.props.history.push('/user')}>CHOOSE FROM VISITED</p>
                         <p onClick={() => this.props.history.push('/preferences')}>CHANGE PREFERENCES</p>
                     </div>

@@ -139,3 +139,10 @@ $radioactive-green: hsla(180, 100%, 75%, 1);
 .miles, .cuisine {
     text-align: end;
 }
+
+
+.cuisine::placeholder{
+    font-size: 3vh;
+    width: 100%;
+    text-align: center;
+}
