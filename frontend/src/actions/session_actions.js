@@ -43,15 +43,6 @@ export const signup = user => dispatch => (
     ))
 );
 
-
-// export const signup = user => dispatch => (
-//     APIUtil.signup(user).then(() => (
-//         dispatch(receiveUserSignIn())
-//     ), err => (
-//         dispatch(receiveErrors(err.response.data))
-//     ))
-// );
-
 // Upon login, set the session token and dispatch the current user. Dispatch errors on failure.
 export const login = user => dispatch => (
     APIUtil.login(user).then(res => {
