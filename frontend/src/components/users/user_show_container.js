@@ -8,8 +8,5 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = dispatch => ({
 
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserShow);
+export default connect(mapStateToProps, null)(UserShow);
