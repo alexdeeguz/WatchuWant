@@ -124,7 +124,7 @@ class PreferenceForm extends React.Component {
                             <div className="question">
                                 <label>What type of food are you craving?</label>
                                 <div id="distance-input-container">
-                                    <input className='cuisine' value={this.state.cuisine} onChange={this.updateCuisine} placeholder="Sushi, Tacos, or Indian Food?" />
+                                    <input className='cuisine' value={this.state.cuisine} onChange={this.updateCuisine} placeholder="sushi, tacos, curry, etc..." />
                                 </div>
                             </div>
                             <div id="find-restaurant">
