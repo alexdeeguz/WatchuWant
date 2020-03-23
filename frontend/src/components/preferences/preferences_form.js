@@ -75,7 +75,7 @@ class PreferenceForm extends React.Component {
                 // location: 'san francisco', //location or coordinates
                 latitude: pos.coords.latitude,
                 longitude: pos.coords.longitude,
-                categories: "food", //string delimited by commas
+                categories: ["food", cuisine], //string delimited by commas
                 limit: 15, // limits search, max 50
                 price: price, //optional inclusive less, string "1", "2", "3", or "4"
                 term: cuisine,  //specific search term
