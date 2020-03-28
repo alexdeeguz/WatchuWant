@@ -4,21 +4,27 @@ import Banner from './banner'
 import "./splash.scss";
 
 class SplashCarousel extends React.Component{
-
-
-    componentDidMount(){
+    constructor() {
+        super();
         const delay = 8000;
+        this.splashCycle = setInterval(function() { 
+            $('#slideshow > div:first')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo('#slideshow');
+            },  delay);
+    }
 
-        $("#slideshow > div:gt(0)").hide();
+    componentDidMount() {
+        // debugger
+        $("#slideshow > div").hide();
+        $("#slideshow > div:first").show();
+    }
 
-        setInterval(function() { 
-        $('#slideshow > div:first')
-            .fadeOut(1000)
-            .next()
-            .fadeIn(1000)
-            .end()
-            .appendTo('#slideshow');
-        },  delay);
+    componentWillUnmount() {
+        clearInterval(this.splashCycle);
     }
 
 
