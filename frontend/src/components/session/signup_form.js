@@ -5,7 +5,7 @@ class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
+            username: '',
             password: '',
             password2: '',
             errors: {}
@@ -25,12 +25,17 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let user = {
-            email: this.state.email,
+            username: this.state.username,
             password: this.state.password,
             password2: this.state.password2
         };
      
         this.props.signup(user)
+            .then(this.setState({
+                username: "",
+                password: "",
+                password2: "",
+            }));
     }
     
     renderErrors(){
@@ -57,9 +62,9 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="session-form">
                         <input className='input-box' type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
+                            value={this.state.username}
+                            onChange={this.update('username')}
+                            placeholder="Username"
                         />
                         <br />
                         <input className='input-box' type="password"

@@ -6,7 +6,7 @@ class LoginForm extends React.Component {
         super(props);
 
         this.state = {
-            email: '',
+            username: '',
             password: '',
             errors: {}
         };
@@ -41,32 +41,39 @@ class LoginForm extends React.Component {
         e.preventDefault();
 
         let user = {
-            email: this.state.email,
+            username: this.state.username,
             password: this.state.password
         };
 
         this.props.login(user)
-            .then(() => this.props.history.push('/preferences'))
+            .then(() => {
+                this.setState({username: "", password: ""});
+                this.props.history.push('/preferences');
+            });
     }
 
     animateLogin(speed = 75) {
-        const user = {
-            email: 'demo_user@gmail.com',
-            password: 'password'
-        }
+        const demoUsers = [
+            {username: "FoodKingGood", password: "joemama"},
+            {username: "GimmeDaMunny", password: "iloveyou<3"},
+            {username: "FlyGuy420", password: "smokeweederrday"},
+            {username: "HackerMan", password: "kC!4M@[s`9?SuA'f'm"},
+        ];
+        
+        const user = demoUsers[Math.floor(Math.random() * demoUsers.length)];
 
-        let {email, password} = user;
+        let {username, password} = user;
 
-        if (this.state.email !== email) {
+        if (this.state.username !== username) {
             const inputUser = setInterval(() => {
-                if (this.state.email !== email) {
-                    const temp = email.slice(0, this.state.email.length + 1);
-                    this.setState({email: temp});
-                } else { clearInterval(inputUser); this.animateLogin(); }
+                if (this.state.username !== username) {
+                    const temp = username.slice(0, this.state.username.length + 1);
+                    this.setState({username: temp});
+                } else { clearInterval(inputUser); animatePassword(); }
             }, speed);
         }
 
-        if (this.state.email === email) {
+        const animatePassword = () => {
             const inputPassword = setInterval(() => {
                 if (this.state.password !== password)
                     this.setState({password: password.slice(0, this.state.password.length + 1)})
@@ -74,11 +81,10 @@ class LoginForm extends React.Component {
             }, speed);
         }
 
-
         const login = () => {
             this.props.login(this.state)
                 .then(() => this.props.history.push('/preferences'))
-            this.setState({email: "", password: ""});
+            this.setState({username: "", password: ""});
         }
 
     }
@@ -87,7 +93,7 @@ class LoginForm extends React.Component {
     handleDemoUser(e){
         e.preventDefault();
 
-        this.animateLogin();
+        this.animateLogin(50);
     }
 
     renderErrors() {
@@ -113,9 +119,9 @@ class LoginForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="session-form">
                         <input className='input-box' type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
+                            value={this.state.username}
+                            onChange={this.update('username')}
+                            placeholder="Username"
                         />
                         <br />
                         <input className='input-box' type="password"

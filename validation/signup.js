@@ -2,16 +2,28 @@ const Validator = require("validator");
 const validText = require('./valid_text');
 
 const validateSignUpInput = data => {
-    data.email = validText(data.email) ? data.email : "";
+    data.username = validText(data.username) ? data.username : "";
     data.password = validText(data.password) ? data.password : "";
     
     const errors = {};
-    if(Validator.isEmpty(data.email)) {
-        errors.email = "Email is required";
+    if(Validator.isEmpty(data.username)) {
+        errors.username = "Username is required";
+    }
+
+    if(!Validator.isLength(data.username, { min: 4 })) {
+        errors.username = "Username must be at least 4 characters"
     }
 
     if(Validator.isEmpty(data.password)) {
         errors.password = "Password is required";
+    }
+
+    if(Validator.isEmpty(data.password2)) {
+        errors.password = "Please confirm password";
+    }
+
+    if (data.password2 !== data.password) {
+        errors.password = "Passwords must match";
     }
 
     if(!Validator.isLength(data.password, { min: 6 })) {
