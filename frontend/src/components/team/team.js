@@ -36,6 +36,7 @@ export default class Team extends PureComponent {
           github={"https://github.com/kendraodru"}
           linkedin={"https://www.linkedin.com/in/kendra-odrunia-9272441a4/"}
           angelco={"https://angel.co/kendra-odrunia"}
+          // photo={"https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/contact/park.JPG"}
           photo={"https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/387/medium/Kendra_Odrunia_3.jpg?1578532870"}
         />
       </div>
