@@ -106,7 +106,7 @@ class PreferenceForm extends React.Component {
                         <div className='pref-form-container'>
                             <h1>Please Fill Out Your Preferences</h1>
                             <div className="question">
-                                <label>How far would you like to travel?</label>
+                                <label>How far are you willing to travel for food?</label>
                                 <div id="distance-input-container">
                                     <input className='miles' value={this.state.distance} onChange={this.updateDistance} placeholder="mile(s)"/>
                                 </div>

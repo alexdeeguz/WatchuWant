@@ -62,7 +62,8 @@
 
 .restaurant-details p {
     font-size: 200%;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
+    color: white;
 }
 
 .choices {
