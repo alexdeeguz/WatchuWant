@@ -12,7 +12,7 @@ export default class Team extends PureComponent {
           github={"https://github.com/jwchau"}
           linkedin={"https://linkedin.com/in/jwchau"}
           angelco={"https://angel.co/john-chau-4"}
-          photo={"https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/004/396/medium/John_Chau_2.jpg?1578532414"}
+          photo={"/people/john.png"}
         />
 
         <Person
