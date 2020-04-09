@@ -29,6 +29,56 @@ current location and preferences.
 Users can create an account and log in. User authentication for this web application was made using the BCrypt gem and SecureRandom module. 
 ***
 
+### Code
+
+```
+class FavoriteIndex extends React.Component{
+  componentDidMount(){
+    this.props.fetchFavorites(this.props.user.id)
+  }
+  render(){
+    const favoriteRestaurants = this.props.favorites.map((fav,idx)=>{
+      return(
+        <FavoriteIndexItem 
+          restaurant={fav} key={idx} 
+          deleteFavorite={this.props.deleteFavorite}
+          removeFavoriteFromState ={this.props.removeFavoriteFromState}
+        />
+      )
+    })
+
+    return(
+      <div className='scroll'>
+        {favoriteRestaurants}
+      </div>
+    )
+  }
+```
+Favorite restaurants react component is a collection of Favorite Items to keep things DRY
+
+```
+export const search = params => {
+    return axios.get('/api/yelp', params)
+};
+```
+Send a frontend call to the backend
+
+```
+router.get('/', (req, res) => {
+  let {location, latitude, longitude, categories, limit, price, term, radius, rating} = req.query;
+  const config = {
+    headers: {'Authorization': `Bearer ${yelpKey}`},
+    params: {
+      location,
+      latitude,
+      longitude,
+      categories,
+      limit, price, term, radius, rating
+    }
+  };
+```
+The backend calls Yelp API bypassing CORS a frontend API key exposure
+
 ### Favorites
 Users can add past visited restaurants to their favorites. 
 
