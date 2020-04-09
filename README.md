@@ -54,14 +54,14 @@ class FavoriteIndex extends React.Component{
     )
   }
 ```
-Favorite restaurants react component is a collection of Favorite Items to keep things DRY
+Favorite restaurants react component is a collection of Favorite Items react component to keep things DRY
 
 ```
 export const search = params => {
     return axios.get('/api/yelp', params)
 };
 ```
-Send a frontend call to the backend
+Send an axios async calls to the backend for data
 
 ```
 router.get('/', (req, res) => {
@@ -77,7 +77,7 @@ router.get('/', (req, res) => {
     }
   };
 ```
-The backend calls Yelp API bypassing CORS a frontend API key exposure
+The backend calls Yelp API bypassing CORS and protecting frontend API key exposure
 
 ### Favorites
 Users can add past visited restaurants to their favorites. 
