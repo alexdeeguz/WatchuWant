@@ -61,7 +61,7 @@ class RestaurantPage extends React.Component {
         } else{
             alert('Out of restaurants with those specified preferences')
             if(process.env.NODE_ENV === 'production'){
-            window.location.replace('https://watchuwant.herokuapp.com/#/preferences')
+                window.location.replace('https://watchuwant.herokuapp.com/#/preferences')
             } else {
                 window.location.replace('http://localhost:3000/#/preferences')
             }

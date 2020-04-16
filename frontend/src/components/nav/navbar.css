@@ -16,7 +16,7 @@
 }
 
 .nav-container > div > button {
-  background: linear-gradient(to right, transparent 50%, white 50%);
+  background: linear-gradient(to right, black 50%, white 50%);
   background-size: 200% 100%;
   background-position:right bottom;
   transition: all 0.5s ease;
@@ -31,7 +31,9 @@
 .nav-container > div > button:hover {
   background-position: left bottom;
   transition: all 0.5s ease;
+  mix-blend-mode: difference;
   color: white;
+  border: 1px solid white;
   cursor: pointer;
   outline: none;
 }
