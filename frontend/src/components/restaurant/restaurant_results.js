@@ -92,16 +92,6 @@ const extractCategories = (arr) => {
     });
 }
 
-// const createImageCarousel = (arr) => {
-//     return arr.map((photo, i) => {
-//         return (
-//             <Carousel.Item key={i}>
-//                 <img src={photo.url} alt={i}></img>
-//             </Carousel.Item>
-//         );
-//     });
-// }
-
 const createCarouselItems = (arr) => {
     return arr.map((restaurant, i) => {
         const {
@@ -126,7 +116,7 @@ const createCarouselItems = (arr) => {
                         </Map>
                     </div>
                 </div>
-                <div className='restaurant-info'>
+                <div className='flex-col start-center restaurant-info'>
                     <h3>Details</h3>
                     <a href={url}>Yelp Link</a>
                     <p>{location.display_address}</p>
@@ -135,7 +125,7 @@ const createCarouselItems = (arr) => {
                     <p>Price: {price}</p>
                     <p>transaction types: {transactions}</p>
                     <p>Categories: {extractCategories(categories).join(", ")}</p>
-                    <p>Distance away: {distance / 1000}km</p>
+                    <p>Distance away: {(distance / 1000).toFixed(2)}km</p>
                 </div>
             </Carousel.Item>
         );

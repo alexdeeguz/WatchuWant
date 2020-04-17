@@ -10,15 +10,26 @@
 #restaurants {
     max-width: 80%;
     z-index: 1;
+    margin-top: 2%;
+}
+
+.restaurant-item {
+    height: 100%;
+    align-items: center;
+}
+
+.restaurant-item > * {
+    margin: 1%;
+    flex-shrink: 1;
 }
 
 .restaurant-item > h1 {
-    font-size: 7rem;
+    font-size: 5rem;
     color: rgba(231, 87, 3, 0.973);
 }
 
 .image-map {
-    width: 80%;
+    width: 100%;
 }
 
 .image-map > * {
@@ -27,15 +38,42 @@
 
 
 .image-map > img {
-    width: 90%;
-    max-height: 700px;
+    object-fit: contain;
+    width: 50%;
+    max-height: 40vh;
 }
 
 .map-container {
     position: relative;
-    width: 90%;
-    height: 700px;
+    min-width: 500px;
+    min-height: 500px;
+    width: 50%;
+    height: 50%;
 }
+
+.restaurant-info {
+    background-color: rgba(64, 64, 64, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.restaurant-info > * {
+    width: 100%;
+}
+
+.restaurant-info > h3 {
+    font-style: oblique;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 0 1px black;
+}
+
+.restaurant-info > p {
+    font-size: 1rem;
+    margin: 0;
+    color: white;
+}
+
 
 .choices {
     display: flex;
