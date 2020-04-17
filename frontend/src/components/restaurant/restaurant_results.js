@@ -23,13 +23,15 @@ class RestaurantResults extends React.Component {
         super(props);
         this.state = {
             restaurants: [],
+            index: 0,
         }
         
-        this.addToVisited = this.addToVisited.bind(this)
+        this.addToVisited = this.addToVisited.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
     }
 
     addToVisited() {
-        const { id, name, image_url, location } = this.props.restaurant
+        const { id, name, image_url, location } = this.state.restaurants[this.state.index];
         const visitedRestaurant = {
             restaurantId: id,
             name: name,
@@ -50,6 +52,10 @@ class RestaurantResults extends React.Component {
         });  
     }
     
+    handleSelect(selectedIndex, e) {
+        this.setState({index: selectedIndex});
+    }
+
     render() {
         if (this.state.restaurants.length < 1) return <Loading />;
         return (
@@ -58,12 +64,17 @@ class RestaurantResults extends React.Component {
                     alt='background'
                     src="https://images.unsplash.com/photo-1516749622035-ab9e45262e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
                 </img>
-                <Carousel interval={null} className='w-hundred' id='restaurants'>
+                <Carousel
+                    activeIndex={this.state.index}
+                    onSelect={this.handleSelect}
+                    interval={null} 
+                    id='restaurants'
+                    className='w-hundred'>
                     {createCarouselItems(this.state.restaurants)}
                 </Carousel>
                 <div className="choices">
-                    <p onClick={this.addToVisited}>EAT HERE</p>
-                    <p onClick={() => this.props.history.push('/user')}>CHOOSE FROM VISITED</p>
+                    <p onClick={this.addToVisited}>ADD TO VISITED</p>
+                    <p onClick={() => this.props.history.push('/user')}>SEE VISITED RESTAURANTS</p>
                     <p onClick={() => this.props.history.push('/preferences')}>CHANGE PREFERENCES</p>
                 </div>
             </div>
