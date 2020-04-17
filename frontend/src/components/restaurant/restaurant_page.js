@@ -1,12 +1,18 @@
 import React from 'react';
-import { Map, Marker } from 'google-maps-react';
-import './restaurant.css';
+
+//api imports
 import { getRestaurant } from '../../util/yelp_api'
+
+//react components
+import { Map, Marker } from 'google-maps-react';
 import Loading from '../loading/spinner';
 
 
-//for carousel
+//css imports
+import './restaurant.css';
 import './bootstrap.css';
+
+//carousel import
 import Carousel from 'react-bootstrap/Carousel';
 
 class RestaurantPage extends React.Component {
@@ -81,41 +87,44 @@ class RestaurantPage extends React.Component {
 
         const {categories, rating, review_count, price, photos, hours, url} = restaurant;
         return (
-            <div className='background-div-res'>
+            <div id='restaurant-show-page'>
                 <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1516749622035-ab9e45262e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></img>
-                <div className="container">
-                    <h1 id="name">{restaurant.name}</h1>
-                    <div id="restaurant-page-container">
-                        <div id="restaurant-info-container" className="section-container">
-                            <div className="image-container">
-                                <img alt='restaurant' src={restaurant.image_url}></img>
-                            </div>
-                        </div>
-                        <div id="map-container" className="section-container">
-                            <Map
-                                google={window.google}
-                                zoom={15}
-                                initialCenter={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
-                                center={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
-                            >
-                                <Marker position={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}} />
-                            </Map>
-                        </div>
-                    </div>
-                    <div className="restaurant-details">
-                        <p>{restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state} {restaurant.location.zip_code}</p>
-                        <p>{restaurant.display_phone}</p>
-                    </div>
-                    <div className="choices">
-                        <p onClick={this.addToVisited}>EAT HERE</p>
-                        <p onClick={this.handlePickAnother}>NEXT RESTAURANT</p>
-                        <p onClick={() => this.props.history.push('/user')}>CHOOSE FROM VISITED</p>
-                        <p onClick={() => this.props.history.push('/preferences')}>CHANGE PREFERENCES</p>
-                    </div>
-                </div>
+                <h1 id="name">{restaurant.name}</h1>
+                    
             </div>
         )
     }
 }
 
 export default RestaurantPage;
+
+
+
+{/* <div id="restaurant-info-container" className="section-container">
+    <div className="image-container">
+        <img alt='restaurant' src={restaurant.image_url}></img>
+    </div>
+</div> */}
+
+{/* <div id="map-container" className="section-container">
+    <Map
+        google={window.google}
+        zoom={15}
+        initialCenter={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
+        center={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
+        >
+        <Marker position={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}} />
+    </Map>
+</div> */}
+
+{/* <div className="restaurant-details">
+    <p>{restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state} {restaurant.location.zip_code}</p>
+    <p>{restaurant.display_phone}</p>
+</div> */}
+
+{/* <div className="choices">
+    <p onClick={this.addToVisited}>EAT HERE</p>
+    <p onClick={this.handlePickAnother}>NEXT RESTAURANT</p>
+    <p onClick={() => this.props.history.push('/user')}>CHOOSE FROM VISITED</p>
+    <p onClick={() => this.props.history.push('/preferences')}>CHANGE PREFERENCES</p>
+</div> */}

@@ -4640,7 +4640,7 @@ a.close.disabled {
   content: none;
 }
 
-.modal-content {
+/* .modal-content {
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -4653,7 +4653,7 @@ a.close.disabled {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   outline: 0;
-}
+} */
 
 .modal-backdrop {
   position: fixed;
