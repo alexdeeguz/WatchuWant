@@ -61,6 +61,11 @@ class RestaurantResults extends React.Component {
                 <Carousel interval={null} className='w-hundred' id='restaurants'>
                     {createCarouselItems(this.state.restaurants)}
                 </Carousel>
+                <div className="choices">
+                    <p onClick={this.addToVisited}>EAT HERE</p>
+                    <p onClick={() => this.props.history.push('/user')}>CHOOSE FROM VISITED</p>
+                    <p onClick={() => this.props.history.push('/preferences')}>CHANGE PREFERENCES</p>
+                </div>
             </div>
         )
     }
@@ -119,11 +124,11 @@ const createCarouselItems = (arr) => {
                 <div className='flex-col start-center restaurant-info'>
                     <h3>Details</h3>
                     <a href={url}>Yelp Link</a>
-                    <p>{location.display_address}</p>
+                    <p>{location.display_address.join(", ")}</p>
                     <p>Phone: {display_phone}</p>
                     <p>Rated: {rating} by {review_count} reviews</p>
                     <p>Price: {price}</p>
-                    <p>transaction types: {transactions}</p>
+                    <p>Other transaction types: {transactions.join(", ")}</p>
                     <p>Categories: {extractCategories(categories).join(", ")}</p>
                     <p>Distance away: {(distance / 1000).toFixed(2)}km</p>
                 </div>
@@ -133,9 +138,3 @@ const createCarouselItems = (arr) => {
 }
 
 export default RestaurantResults;
-
-{/* <div className="choices">
-    <p onClick={this.addToVisited}>EAT HERE</p>
-    <p onClick={() => this.props.history.push('/user')}>CHOOSE FROM VISITED</p>
-    <p onClick={() => this.props.history.push('/preferences')}>CHANGE PREFERENCES</p>
-</div> */}
