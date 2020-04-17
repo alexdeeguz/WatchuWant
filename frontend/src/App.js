@@ -16,6 +16,8 @@ import Team from './components/team/team.js'
 
 import SplashCarousel from './components/carousel/splash';
 
+// import 'bootstrap/dist/css/bootstrap.css';
+
 
 const App = () => {
   return (

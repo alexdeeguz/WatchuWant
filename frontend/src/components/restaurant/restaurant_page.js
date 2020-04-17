@@ -4,6 +4,11 @@ import './restaurant.css';
 import { getRestaurant } from '../../util/yelp_api'
 import Loading from '../loading/spinner';
 
+
+//for carousel
+import './bootstrap.css';
+import Carousel from 'react-bootstrap/Carousel';
+
 class RestaurantPage extends React.Component {
 
     constructor(props) {
@@ -73,6 +78,8 @@ class RestaurantPage extends React.Component {
         if (this.state.currRest === undefined) return <Loading />;
         let restaurant = this.state.currRest;
         if (restaurant.coordinates === undefined) return <Loading />;
+
+        const {categories, rating, review_count, price, photos, hours, url} = restaurant;
         return (
             <div className='background-div-res'>
                 <img alt='background' id="background-image" src="https://images.unsplash.com/photo-1516749622035-ab9e45262e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></img>
