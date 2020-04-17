@@ -1,4 +1,19 @@
+#restaurant-show-page {
 
+}
+
+#restaurants {
+    max-width: 80%;
+}
+
+#background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    object-fit: cover;
+    z-index: -1;
+}
 
 .choices {
     display: flex;

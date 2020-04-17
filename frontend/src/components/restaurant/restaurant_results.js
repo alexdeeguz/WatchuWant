@@ -1,7 +1,8 @@
 import React from 'react';
 
 //api imports
-import { getRestaurant } from '../../util/yelp_api'
+import { getRestaurant, search } from '../../util/yelp_api'
+
 
 //react components
 import { Map, Marker } from 'google-maps-react';
@@ -11,20 +12,20 @@ import Loading from '../loading/spinner';
 //css imports
 import './restaurant.css';
 import './bootstrap.css';
+import '../../util.scss';
 
 //carousel import
 import Carousel from 'react-bootstrap/Carousel';
 
-class RestaurantPage extends React.Component {
+class RestaurantResults extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            nextRestaurants: this.props.nextRestaurants,
-            currRest: undefined,
+            restaurants: [],
         }
+        
         this.addToVisited = this.addToVisited.bind(this)
-        this.handlePickAnother = this.handlePickAnother.bind(this);
     }
 
     addToVisited() {
@@ -53,61 +54,66 @@ class RestaurantPage extends React.Component {
     }
 
     componentDidMount() {
-        const id = {
-            params: { 
-                id: this.props.match.params.id
-            }
-        }
-        getRestaurant(id).then(res => {
+        const {query} = this.props;
+        search(parse(query)).then(res => {
             this.props.receiveRestaurant(res.data);
-            this.setState({currRest: Object.assign({}, res.data)});
-        })  
-    }
-
-    handlePickAnother(){
-        let nextRest = this.state.nextRestaurants.pop();
-        if (nextRest){
-            this.props.receiveRestaurant(nextRest);
-            this.setState({currRest: nextRest});
-        } else{
-            alert('Out of restaurants with those specified preferences')
-            if(process.env.NODE_ENV === 'production'){
-                window.location.replace('https://watchuwant.herokuapp.com/#/preferences')
-            } else {
-                window.location.replace('http://localhost:3000/#/preferences')
-            }
-           
-        }
+            this.setState({restaurants: Object.values(res.data)});
+        });  
     }
     
     render() {
-        if (this.state.currRest === undefined) return <Loading />;
-        let restaurant = this.state.currRest;
-        if (restaurant.coordinates === undefined) return <Loading />;
+        if (this.state.restaurants.length < 1) return <Loading />;
 
-        const {categories, rating, review_count, price, photos, hours, url} = restaurant;
         return (
-            <div id='restaurant-show-page'>
+            <div className='w-hundred flex center-center' id='restaurant-show-page'>
                 <img id="background-image"
                     alt='background'
                     src="https://images.unsplash.com/photo-1516749622035-ab9e45262e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
                 </img>
-                <h1 id="name">{restaurant.name}</h1>
+                <Carousel className='w-hundred' id='restaurants'>
+                    {createCarouselItems(this.props.restaurants)}
+                </Carousel>
                 
             </div>
         )
     }
 }
 
-export default RestaurantPage;
+const parse = (str) => {
+    const keys = str.split('&');
+    const values = keys.map((k) => {
+        return k.split("=")[1];
+    });
+    const params = {
+        params: {
+            latitude: values[0],
+            longitude: values[1],
+            categories: values[2],
+            limit: values[3],
+            price: values[4],
+            term: values[5],
+            radius: values[6],
+            rating: values[7],
+        }
+    }
+    return params;
+}
 
+const createCarouselItems = (arr) => {
+    return null;
+    return (
+        <Carousel.Item>
+            {/* <h1 id="name">{r.name}</h1> */}
+            {/* <img alt='restaurant' src={r.image_url}></img> */}
+            <Carousel.Caption>
+                <h3>different information</h3>
+                <p>information</p>
+            </Carousel.Caption>
+        </Carousel.Item>
+    );
+}
 
-
-{/* <div id="restaurant-info-container" className="section-container">
-    <div className="image-container">
-        <img alt='restaurant' src={restaurant.image_url}></img>
-    </div>
-</div> */}
+export default RestaurantResults;
 
 {/* <div id="map-container" className="section-container">
     <Map
@@ -120,14 +126,8 @@ export default RestaurantPage;
     </Map>
 </div> */}
 
-{/* <div className="restaurant-details">
-    <p>{restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state} {restaurant.location.zip_code}</p>
-    <p>{restaurant.display_phone}</p>
-</div> */}
-
 {/* <div className="choices">
     <p onClick={this.addToVisited}>EAT HERE</p>
-    <p onClick={this.handlePickAnother}>NEXT RESTAURANT</p>
     <p onClick={() => this.props.history.push('/user')}>CHOOSE FROM VISITED</p>
     <p onClick={() => this.props.history.push('/preferences')}>CHANGE PREFERENCES</p>
 </div> */}

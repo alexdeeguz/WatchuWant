@@ -1,14 +1,14 @@
 import { connect } from "react-redux";
-import RestaurantPage from "./restaurant_page";
+import RestaurantResults from "./restaurant_results";
 import { receiveRestaurant } from '../../actions/restaurant'
 import { postVisited } from '../../actions/visited'
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
 
+    query: ownProps.match.params.query,
     restaurants: state.restaurants,
-    restaurant: state.restaurants.restaurant,
     user: state.session.user,
-    nextRestaurants: Object.values(state.restaurants)
+    nextRestaurants: Object.values(state.restaurants),
 });
 
 const mDTP = dispatch => ({
@@ -16,4 +16,4 @@ const mDTP = dispatch => ({
     addToVisited: data => dispatch(postVisited(data))
 })
 
-export default connect(mapStateToProps, mDTP)(RestaurantPage);
+export default connect(mapStateToProps, mDTP)(RestaurantResults);

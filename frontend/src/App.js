@@ -23,7 +23,7 @@ const App = () => {
         <Switch>
           <Route path='/JAKT_Team' component={Team}/>
           <ProtectedRoute path='/loading' component={Loading} />
-          <ProtectedRoute path='/restaurants/:id' component={RestaurantContainer}/>
+          <ProtectedRoute path='/restaurants/:query' component={RestaurantContainer}/>
           <ProtectedRoute path="/preferences" component={PreferencesContainer} />
           <ProtectedRoute path="/user" component={UserShowContainer} />
           <AuthRoute path="/" component={SplashCarousel} />
