@@ -5005,6 +5005,8 @@ a.close.disabled {
 
 .carousel {
   position: relative;
+  width: 100%;
+  height: 90%;
 }
 
 .carousel.pointer-event {
@@ -5013,9 +5015,14 @@ a.close.disabled {
 }
 
 .carousel-inner {
-  position: relative;
+  position: relative;;
+  height: 100%;
   width: 100%;
   overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel-inner::after {
@@ -5025,10 +5032,12 @@ a.close.disabled {
 }
 
 .carousel-item {
-  position: relative;
+  position: absolute;
   display: none;
-  float: left;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%;
+  height: 100%; */
   margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -5046,7 +5055,21 @@ a.close.disabled {
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item {
+    transition: none;
+  }
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: flex;
 }
 
 .carousel-item-next:not(.carousel-item-left),
@@ -5101,8 +5124,8 @@ a.close.disabled {
   align-items: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 15%;
-  color: #fff;
+  width: 7%;
+  color: black;
   text-align: center;
   opacity: 0.5;
   transition: opacity 0.15s ease;
@@ -5168,8 +5191,8 @@ a.close.disabled {
   box-sizing: content-box;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  width: 30px;
-  height: 3px;
+  width: 50px;
+  height: 10px;
   margin-right: 3px;
   margin-left: 3px;
   text-indent: -999px;
@@ -5190,6 +5213,9 @@ a.close.disabled {
 
 .carousel-indicators .active {
   opacity: 1;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px black;
 }
 
 .carousel-caption {

@@ -42,38 +42,25 @@ class RestaurantResults extends React.Component {
             () => this.props.history.push('/user'))
     }
 
-    getRestaurant() {
-        const restaurantId = this.props.match.params.id
-        const restaurants = this.props.restaurants
-        for (let i = 0; i < restaurants.length; i++) {
-            const restaurant = restaurants[i]
-            if (restaurant.id === restaurantId) {
-                return restaurant
-            }
-        }
-    }
-
     componentDidMount() {
         const {query} = this.props;
         search(parse(query)).then(res => {
             this.props.receiveRestaurant(res.data);
-            this.setState({restaurants: Object.values(res.data)});
+            this.setState({restaurants: res.data.businesses});
         });  
     }
     
     render() {
         if (this.state.restaurants.length < 1) return <Loading />;
-
         return (
-            <div className='w-hundred flex center-center' id='restaurant-show-page'>
+            <div className='w-hundred h-hundred flex-col start-center' id='restaurant-show-page'>
                 <img id="background-image"
                     alt='background'
                     src="https://images.unsplash.com/photo-1516749622035-ab9e45262e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
                 </img>
-                <Carousel className='w-hundred' id='restaurants'>
-                    {createCarouselItems(this.props.restaurants)}
+                <Carousel interval={null} className='w-hundred' id='restaurants'>
+                    {createCarouselItems(this.state.restaurants)}
                 </Carousel>
-                
             </div>
         )
     }
@@ -99,32 +86,63 @@ const parse = (str) => {
     return params;
 }
 
+const extractCategories = (arr) => {
+    return arr.map((kat) => {
+        return kat.title
+    });
+}
+
+// const createImageCarousel = (arr) => {
+//     return arr.map((photo, i) => {
+//         return (
+//             <Carousel.Item key={i}>
+//                 <img src={photo.url} alt={i}></img>
+//             </Carousel.Item>
+//         );
+//     });
+// }
+
 const createCarouselItems = (arr) => {
-    return null;
-    return (
-        <Carousel.Item>
-            {/* <h1 id="name">{r.name}</h1> */}
-            {/* <img alt='restaurant' src={r.image_url}></img> */}
-            <Carousel.Caption>
-                <h3>different information</h3>
-                <p>information</p>
-            </Carousel.Caption>
-        </Carousel.Item>
-    );
+    return arr.map((restaurant, i) => {
+        const {
+            name, image_url, price, rating,
+            review_count, transactions, url, 
+            categories, display_phone, location,
+            distance,
+        } = restaurant;
+        const {latitude, longitude} = restaurant.coordinates;
+        return (
+            <Carousel.Item className='w-hundred restaurant-item' key={i}>
+                <h1 id="name">{name}</h1>
+                <div className='flex center-center image-map'>
+                    <img src={image_url}></img>
+                    <div className='map-container'>
+                        <Map className='google-map'
+                            google={window.google}
+                            zoom={15}
+                            initialCenter={{ lat: latitude, lng: longitude}}
+                            center={{ lat: latitude, lng: longitude}}
+                        ><Marker position={{ lat: latitude, lng: longitude}} />
+                        </Map>
+                    </div>
+                </div>
+                <div className='restaurant-info'>
+                    <h3>Details</h3>
+                    <a href={url}>Yelp Link</a>
+                    <p>{location.display_address}</p>
+                    <p>Phone: {display_phone}</p>
+                    <p>Rated: {rating} by {review_count} reviews</p>
+                    <p>Price: {price}</p>
+                    <p>transaction types: {transactions}</p>
+                    <p>Categories: {extractCategories(categories).join(", ")}</p>
+                    <p>Distance away: {distance / 1000}km</p>
+                </div>
+            </Carousel.Item>
+        );
+    });
 }
 
 export default RestaurantResults;
-
-{/* <div id="map-container" className="section-container">
-    <Map
-        google={window.google}
-        zoom={15}
-        initialCenter={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
-        center={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}}
-        >
-        <Marker position={{ lat: restaurant.coordinates.latitude, lng: restaurant.coordinates.longitude}} />
-    </Map>
-</div> */}
 
 {/* <div className="choices">
     <p onClick={this.addToVisited}>EAT HERE</p>
