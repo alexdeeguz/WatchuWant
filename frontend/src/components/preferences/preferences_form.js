@@ -75,7 +75,7 @@ class PreferenceForm extends React.Component {
                 // location: 'san francisco', //location or coordinates
                 latitude: pos.coords.latitude,
                 longitude: pos.coords.longitude,
-                categories: ["food", cuisine], //string delimited by commas
+                categories: "food", //string delimited by commas
                 limit: 15, // limits search, max 50
                 price: price, //optional inclusive less, string "1", "2", "3", or "4"
                 term: cuisine,  //specific search term
@@ -90,8 +90,8 @@ class PreferenceForm extends React.Component {
                 this.props.receiveRestaurants(res.data);
                 const rests = res.data.businesses;
                 if (rests.length !== 0) {
-                    let idx = Math.floor(Math.random() * rests.length);
-                    this.props.history.push(`/restaurants/${rests[idx].id}`);
+                    const query = res.request.responseURL.split("?")[1];
+                    this.props.history.push(`/restaurants/${query}`);
                 }
              })
             .catch(() => alert('No restuarants found with entered preferences'));

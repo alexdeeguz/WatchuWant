@@ -1,0 +1,46 @@
+.w-hundred {
+  width: 100%;
+}
+
+.h-hundred {
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.start-center {
+  justify-content: start;
+  align-items: center;
+}
+
+.center-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.center-start {
+  justify-content: center;
+  align-items: start;
+}
+
+.spacea-center {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.spaceb-center {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spacee-center {
+  justify-content: space-evenly;
+  align-items: center;
+}

@@ -49,7 +49,6 @@ class NavBar extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <div className="nav-container">
                 <Modal {...this.props} />
