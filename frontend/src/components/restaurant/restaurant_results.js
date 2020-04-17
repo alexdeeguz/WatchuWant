@@ -119,9 +119,9 @@ const createCarouselItems = (arr) => {
         const {latitude, longitude} = restaurant.coordinates;
         return (
             <Carousel.Item className='w-hundred restaurant-item' key={i}>
-                <h1 id="name">{name}</h1>
+                <a href={url} target='_blank'><h1 id="name">{name}</h1></a>
                 <div className='flex center-center image-map'>
-                    <img src={image_url}></img>
+                    <a href={url} target='_blank'><img src={image_url}></img></a>
                     <div className='map-container'>
                         <Map className='google-map'
                             google={window.google}
@@ -134,7 +134,7 @@ const createCarouselItems = (arr) => {
                 </div>
                 <div className='flex-col start-center restaurant-info'>
                     <h3>Details</h3>
-                    <a href={url}>Yelp Link</a>
+                    <a href={url} target='_blank'>Yelp Link</a>
                     <p>{location.display_address.join(", ")}</p>
                     <p>Phone: {display_phone}</p>
                     <p>Rated: {rating} by {review_count} reviews</p>
