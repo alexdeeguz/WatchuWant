@@ -61,7 +61,7 @@ class RestaurantShow extends Component {
           alt='background'
           src="https://images.unsplash.com/photo-1516749622035-ab9e45262e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
         </img>
-        <h3>{name}</h3>
+        <h1 id="name">{name}</h1>
 
         <div className='photos'>
           {extractPhotos(photos)}
