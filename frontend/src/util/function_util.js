@@ -18,12 +18,11 @@ export const extractHours = (arr) => {
 
     let startH = parseInt(t.start.slice(0, 2));
     let startM = t.start.slice(2);
-    if (startH > 12) { M = 'PM'; OM = 'AM' }
+    if (startH > 12) { startH -= 12; M = 'PM'}
 
     let endH = parseInt(t.end.slice(0, 2));
     let endM = t.end.slice(2);
-    if (endH > 12) endH -= 12;
-    else if (M === 'PM') { OM = M }
+    if (endH > 12) { endH -= 12; OM = "AM" }
 
     return (
       <p key={dayTable[t.day]}>
