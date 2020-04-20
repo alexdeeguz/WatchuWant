@@ -31,7 +31,6 @@ class RestaurantResults extends React.Component {
     }
 
     addToVisited() {
-        console.log('add to visited clicked');
         const { id, name, image_url, location } = this.state.restaurants[this.state.index];
         const visitedRestaurant = {
             restaurantId: id,
@@ -42,11 +41,7 @@ class RestaurantResults extends React.Component {
         }
         this.props.addToVisited(visitedRestaurant)
             .then(() => this.props.history.push('/user'))
-            .catch((res) => {
-                // console.log(res);
-                console.log("Error adding restaurant");
-                console.log("try again later");
-            });
+            .catch(() => this.props.history.push('/user'));
     }
 
     componentDidMount() {
