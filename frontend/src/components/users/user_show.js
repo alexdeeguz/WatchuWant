@@ -11,7 +11,7 @@ class UserShow extends Component {
         <div className='user-background-img'>
           <div className='banner-holder'>
             <div className='banner'>
-              <h1 className='welcome-header'>Welcome Back</h1>
+              <h1 className='welcome-header'>Greetings, </h1>
             </div>
           </div>
         </div>

@@ -91,7 +91,7 @@ class PreferenceForm extends React.Component {
                 const rests = res.data.businesses;
                 if (rests.length !== 0) {
                     const query = res.request.responseURL.split("?")[1];
-                    this.props.history.push(`/restaurants/${query}`);
+                    this.props.history.push(`/search/${query}`);
                 }
              })
             .catch(() => alert('No restuarants found with entered preferences'));

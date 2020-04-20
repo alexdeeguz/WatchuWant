@@ -5,7 +5,6 @@ const FavoriteSchema = new Schema({
     restaurantId:{
         type: String,
         required: true,
-        unique: true
     },
     name:{
         type: String,
@@ -29,4 +28,5 @@ const FavoriteSchema = new Schema({
     }
 })
 
-module.exports = Favorites = mongoose.model('Favorite', FavoriteSchema)
+FavoriteSchema.index( { "restaurantId": 1, "userId": 1 }, { unique: true } );
+module.exports = Favorites = mongoose.model('Favorite', FavoriteSchema);

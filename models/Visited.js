@@ -5,7 +5,6 @@ const VisitedSchema = new Schema({
     restaurantId:{
         type: String,
         required: true,
-        unique: true
     },
     name:{
         type: String,
@@ -29,4 +28,7 @@ const VisitedSchema = new Schema({
     }
 })
 
-module.exports = Visited = mongoose.model('Visited', VisitedSchema)
+VisitedSchema.index( { "restaurantId": 1, "userId": 1 }, { unique: true } );
+
+
+module.exports = Visited = mongoose.model('Visited', VisitedSchema);

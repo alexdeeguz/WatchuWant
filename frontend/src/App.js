@@ -11,6 +11,7 @@ import NavBarContainer from './components/nav/navbar_container';
 import UserShowContainer from './components/users/user_show_container';
 import PreferencesContainer from './components/preferences/preferences_container'
 import RestaurantContainer from './components/restaurant/restaurant_container';
+import RestaurantShowContainer from './components/restaurant/restaurant_show_container';
 import Loading from './components/loading/spinner';
 import Team from './components/team/team.js'
 
@@ -23,7 +24,8 @@ const App = () => {
         <Switch>
           <Route path='/JAKT_Team' component={Team}/>
           <ProtectedRoute path='/loading' component={Loading} />
-          <ProtectedRoute path='/restaurants/:query' component={RestaurantContainer}/>
+          <ProtectedRoute path='/restaurants/:id' component={RestaurantShowContainer}/>
+          <ProtectedRoute path='/search/:query' component={RestaurantContainer}/>
           <ProtectedRoute path="/preferences" component={PreferencesContainer} />
           <ProtectedRoute path="/user" component={UserShowContainer} />
           <AuthRoute path="/" component={SplashCarousel} />

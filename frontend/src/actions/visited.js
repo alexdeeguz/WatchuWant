@@ -33,7 +33,8 @@ export const fetchSingleVisited = (visitedId) => dispatch =>(
         .then(visited => dispatch(receiveSingleVisited(visited)))
 );
 
-export const postVisited = (data) => dispatch =>(
-    visitedRestuarantAPIUtil.postVisited(data)
+export const postVisited = (data) => dispatch => {
+    console.log(data);
+    return visitedRestuarantAPIUtil.postVisited(data)
         .then(visited => dispatch(receiveNewVisited(visited)))
-);
+};

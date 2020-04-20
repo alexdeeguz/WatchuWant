@@ -1,7 +1,7 @@
 import React from 'react';
 
 //api imports
-import { getRestaurant, search } from '../../util/yelp_api'
+import { search } from '../../util/yelp_api'
 
 
 //react components
@@ -31,6 +31,7 @@ class RestaurantResults extends React.Component {
     }
 
     addToVisited() {
+        console.log('add to visited clicked');
         const { id, name, image_url, location } = this.state.restaurants[this.state.index];
         const visitedRestaurant = {
             restaurantId: id,
@@ -40,8 +41,12 @@ class RestaurantResults extends React.Component {
             location: location.address1
         }
         this.props.addToVisited(visitedRestaurant)
-            .then(() => this.props.history.push('/user'),
-            () => this.props.history.push('/user'))
+            .then(() => this.props.history.push('/user'))
+            .catch((res) => {
+                // console.log(res);
+                console.log("Error adding restaurant");
+                console.log("try again later");
+            });
     }
 
     componentDidMount() {
@@ -119,9 +124,9 @@ const createCarouselItems = (arr) => {
         const {latitude, longitude} = restaurant.coordinates;
         return (
             <Carousel.Item className='w-hundred restaurant-item' key={i}>
-                <a href={url} target='_blank'><h1 id="name">{name}</h1></a>
+                <a href={url} target='_blank' rel="noopener noreferrer"><h1 id="name">{name}</h1></a>
                 <div className='flex center-center image-map'>
-                    <a href={url} target='_blank'><img src={image_url}></img></a>
+                    <a href={url} target='_blank' rel="noopener noreferrer"><img src={image_url} alt={name}></img></a>
                     <div className='map-container'>
                         <Map className='google-map'
                             google={window.google}
@@ -134,7 +139,7 @@ const createCarouselItems = (arr) => {
                 </div>
                 <div className='flex-col start-center restaurant-info'>
                     <h3>Details</h3>
-                    <a href={url} target='_blank'>Yelp Link</a>
+                    <a href={url} target='_blank' rel="noopener noreferrer">Yelp Link</a>
                     <p>{location.display_address.join(", ")}</p>
                     <p>Phone: {display_phone}</p>
                     <p>Rated: {rating} by {review_count} reviews</p>
