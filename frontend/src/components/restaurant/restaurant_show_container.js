@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import React, { Component } from 'react'
 
+import { Map, Marker } from 'google-maps-react';
 import { receiveRestaurant } from '../../actions/restaurant'
 import { getRestaurant } from '../../util/yelp_api'
 import Loading from "../loading/spinner";
@@ -9,6 +10,12 @@ import Loading from "../loading/spinner";
 // import './restaurant.css';
 // import './bootstrap.css';
 // import '../../util.scss';
+
+import { 
+  extractCategories,
+  extractHours,
+  extractPhotos
+ } from '../../util/function_util';
 
 
 
@@ -43,15 +50,45 @@ class RestaurantShow extends Component {
     if (this.state.currRest.id === undefined) return <Loading />
 
     const {
-      
-    }
+      categories, hours, display_phone, coordinates,
+      location, name, photos, price,
+      rating, review_count, transactions, url,
+    } = this.state.currRest;
+    const { latitude, longitude } = coordinates;
     return (
       <div id='w-hundred h-hundred flex-col start-center restaurant-show'>
         <img id="background-image"
           alt='background'
           src="https://images.unsplash.com/photo-1516749622035-ab9e45262e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
         </img>
-        <h3></h3>
+        <h3>{name}</h3>
+
+        <div className='photos'>
+          {extractPhotos(photos)}
+        </div>
+
+        <div className='map-container'>
+          <Map className='google-map'
+              google={window.google}
+              zoom={15}
+              initialCenter={{ lat: latitude, lng: longitude}}
+              center={{ lat: latitude, lng: longitude}}
+          ><Marker position={{ lat: latitude, lng: longitude}} />
+          </Map>
+        </div>
+
+        <div className='flex-col start-center'>
+            <a href={url} target='_blank' rel="noopener noreferrer">Yelp Link</a>
+            <p>{location.display_address.join(", ")}</p>
+            <p>Phone: {display_phone}</p>
+            <p>Rated: {rating} by {review_count} reviews</p>
+            <p>Price: {price}</p>
+            <p>{(extractHours(hours).is_open_now) ? "Currently Open" : "Currently Closed"}</p>
+            <p>Hours: {extractHours(hours).times}</p>
+            <p>Other transaction types: {transactions.join(", ")}</p>
+            <p>Categories: {extractCategories(categories).join(", ")}</p>
+        </div>
+
       </div>
     );
   }

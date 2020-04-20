@@ -19,9 +19,6 @@ router.post('/', (req, res) => {
         restaurantId, userId, imageUrl, name, location
     });
 
-    if (Visited.find({restaurantId, userId}) !== null)
-        return res.json('restaurant already in visited');
-
     newVisited
         .save()
         .then(fav => {

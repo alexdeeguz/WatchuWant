@@ -44,7 +44,10 @@ class RestaurantResults extends React.Component {
         }
         this.props.addToVisited(visitedRestaurant)
             .then(() => this.props.history.push('/user'))
-            .catch(() => this.props.history.push('/user'));
+            .catch((res) => {
+                console.log(res);
+                this.props.history.push('/user')
+            });
     }
 
     componentDidMount() {
