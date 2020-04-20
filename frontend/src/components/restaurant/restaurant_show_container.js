@@ -7,9 +7,9 @@ import { getRestaurant } from '../../util/yelp_api'
 import Loading from "../loading/spinner";
 
 //css imports
-// import './restaurant.css';
-// import './bootstrap.css';
-// import '../../util.scss';
+import './restaurant.css';
+import './bootstrap.css';
+import '../../util.scss';
 
 import { 
   extractCategories,
@@ -56,7 +56,7 @@ class RestaurantShow extends Component {
     } = this.state.currRest;
     const { latitude, longitude } = coordinates;
     return (
-      <div id='w-hundred h-hundred flex-col start-center restaurant-show'>
+      <div className='w-hundred h-hundred flex-col center-center' id='restaurant-show'>
         <img id="background-image"
           alt='background'
           src="https://images.unsplash.com/photo-1516749622035-ab9e45262e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
@@ -77,14 +77,17 @@ class RestaurantShow extends Component {
           </Map>
         </div>
 
-        <div className='flex-col start-center'>
+        <div className='flex-col center-center restaurant-info'>
             <a href={url} target='_blank' rel="noopener noreferrer">Yelp Link</a>
             <p>{location.display_address.join(", ")}</p>
             <p>Phone: {display_phone}</p>
             <p>Rated: {rating} by {review_count} reviews</p>
             <p>Price: {price}</p>
             <p>{(extractHours(hours).is_open_now) ? "Currently Open" : "Currently Closed"}</p>
-            <p>Hours: {extractHours(hours).times}</p>
+            <div id='hours' className='flex-col start-center'>
+              <p>Hours: </p>
+              {extractHours(hours).times}
+            </div>
             <p>Other transaction types: {transactions.join(", ")}</p>
             <p>Categories: {extractCategories(categories).join(", ")}</p>
         </div>

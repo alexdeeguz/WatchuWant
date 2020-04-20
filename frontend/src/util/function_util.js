@@ -17,15 +17,19 @@ export const extractHours = (arr) => {
     let OM = 'PM';
 
     let startH = parseInt(t.start.slice(0, 2));
-    let startM = parseInt(t.start.slice(2));
+    let startM = t.start.slice(2);
     if (startH > 12) { M = 'PM'; OM = 'AM' }
 
     let endH = parseInt(t.end.slice(0, 2));
-    let endM = parseInt(t.end.slice(2));
+    let endM = t.end.slice(2);
     if (endH > 12) endH -= 12;
     else if (M === 'PM') { OM = M }
 
-    return `${dayTable[t.day]}: ${startH}:${startM}${M} to ${endH}:${endM}${OM} \n`;
+    return (
+      <p key={dayTable[t.day]}>
+        {`${dayTable[t.day]}: ${startH}:${startM}${M} to ${endH}:${endM}${OM}`}
+      </p>
+    );
   });
 
   return res;
