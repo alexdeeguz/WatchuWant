@@ -11,14 +11,13 @@ router.post('/', (req, res) => {
     if (!isValid){
         return res.status(400).json(errors);   
     }
+    const {
+        restaurantId, userId, imageUrl, name, location
+    } = req.body;
 
     const newVisited = new Visited({
-        restaurantId: req.body.restaurantId,
-        userId: req.body.userId,
-        imageUrl: req.body.imageUrl,
-        name: req.body.name,
-        location: req.body.location
-    })
+        restaurantId, userId, imageUrl, name, location
+    });
 
     newVisited
         .save()
@@ -27,7 +26,6 @@ router.post('/', (req, res) => {
             res.json(fav);
         })
         .catch(err=> {
-            console.log(err);
             res.status(400).json(err);
         });
     }

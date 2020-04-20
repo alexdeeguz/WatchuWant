@@ -17,6 +17,9 @@ import '../../util.scss';
 //carousel import
 import Carousel from 'react-bootstrap/Carousel';
 
+//other functions
+import { extractCategories } from '../../util/function_util'
+
 class RestaurantResults extends React.Component {
 
     constructor(props) {
@@ -31,7 +34,6 @@ class RestaurantResults extends React.Component {
     }
 
     addToVisited() {
-        console.log('add to visited clicked');
         const { id, name, image_url, location } = this.state.restaurants[this.state.index];
         const visitedRestaurant = {
             restaurantId: id,
@@ -43,9 +45,8 @@ class RestaurantResults extends React.Component {
         this.props.addToVisited(visitedRestaurant)
             .then(() => this.props.history.push('/user'))
             .catch((res) => {
-                // console.log(res);
-                console.log("Error adding restaurant");
-                console.log("try again later");
+                console.log(res);
+                this.props.history.push('/user')
             });
     }
 
@@ -107,11 +108,7 @@ const parse = (str) => {
     return params;
 }
 
-const extractCategories = (arr) => {
-    return arr.map((kat) => {
-        return kat.title
-    });
-}
+
 
 const createCarouselItems = (arr) => {
     return arr.map((restaurant, i) => {

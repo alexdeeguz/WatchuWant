@@ -8,7 +8,7 @@ class VisitedIndex extends React.Component{
     }
 
     render(){
-
+        
         const visitedRestaurants = this.props.visitedRestaurants.map((visitedRes, idx)=>{
             return(
                 <VisitedIndexItem 
