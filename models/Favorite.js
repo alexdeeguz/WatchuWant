@@ -5,6 +5,7 @@ const FavoriteSchema = new Schema({
     restaurantId:{
         type: String,
         required: true,
+        index: true,
     },
     name:{
         type: String,
