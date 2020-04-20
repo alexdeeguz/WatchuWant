@@ -17,6 +17,9 @@ import '../../util.scss';
 //carousel import
 import Carousel from 'react-bootstrap/Carousel';
 
+//other functions
+import { extractCategories } from '../../util/function_util'
+
 class RestaurantResults extends React.Component {
 
     constructor(props) {
@@ -102,11 +105,7 @@ const parse = (str) => {
     return params;
 }
 
-const extractCategories = (arr) => {
-    return arr.map((kat) => {
-        return kat.title
-    });
-}
+
 
 const createCarouselItems = (arr) => {
     return arr.map((restaurant, i) => {
