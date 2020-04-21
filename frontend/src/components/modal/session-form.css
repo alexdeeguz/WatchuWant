@@ -98,9 +98,9 @@ input[type="submit"]:hover {
   font-size:1.5vw;
 }
 
-.input-box::placeholder{
+/* .input-box::placeholder{
   padding:8%
-}
+} */
 
 
 
@@ -129,6 +129,7 @@ input[type="submit"]:hover {
   font-size:1.5vw;
 }
 
-input{
-  padding-left:10%
+#input-box{
+  padding-left:10%;
+  /* margin-left:10% */
 }

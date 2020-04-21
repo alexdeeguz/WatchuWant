@@ -68,14 +68,14 @@ class SignupForm extends React.Component {
                         />
                         <i id='new-name-icon' className="fas fa-user-alt"></i>
                         <br />
-                        <input className='input-box' type="password"
+                        <input className='input-box' id ='input-box' type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
                         <i id='new-password-icon' className="fas fa-lock"></i>
                         <br />
-                        <input className='input-box' type="password"
+                        <input className='input-box' id ='input-box' type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
