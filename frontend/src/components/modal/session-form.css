@@ -102,6 +102,8 @@ input[type="submit"]:hover {
   padding:8%
 }
 
+
+
 #new-name-icon{
   position: absolute;
   color: gray;
@@ -125,4 +127,8 @@ input[type="submit"]:hover {
   top:63%;
   left:8%;
   font-size:1.5vw;
+}
+
+input{
+  padding-left:10%
 }

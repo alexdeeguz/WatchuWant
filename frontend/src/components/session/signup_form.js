@@ -61,7 +61,7 @@ class SignupForm extends React.Component {
                 <h1>SIGN UP</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="session-form">
-                        <input className='input-box' type="text"
+                        <input className='input-box' id ='input-box' type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
                             placeholder="Username"
