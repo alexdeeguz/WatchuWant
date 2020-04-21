@@ -84,7 +84,8 @@ class LoginForm extends React.Component {
         const login = () => {
             this.props.login(this.state)
                 .then(() => this.props.history.push('/preferences'))
-            this.setState({username: "", password: ""});
+                .then(()=> this.setState({username: "", password: ""}))
+            // this.setState({username: "", password: ""});
         }
 
     }
@@ -113,22 +114,28 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        const usernameErrors = this.props.errors.includes('Username is required') ? 'red-border' : ''
+        const passwordErrors = this.props.errors.includes('Password is required') ? 'red-border' : ''
         return (
             <div className="login-form">
                 <h1>LOGIN</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="session-form">
                         <input className='input-box' type="text"
+                            id = {usernameErrors}
                             value={this.state.username}
                             onChange={this.update('username')}
                             placeholder="Username"
                         />
+                        <i id='username-icon' className="fas fa-user-alt"></i>
                         <br />
                         <input className='input-box' type="password"
+                            id = {passwordErrors}
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
+                        <i id='password-icon' className="fas fa-lock"></i>
                         <br />
                         <input type="submit" value="LOGIN" />
                     </div>
