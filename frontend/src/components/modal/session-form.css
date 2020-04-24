@@ -135,8 +135,7 @@ input[type="submit"]:hover {
   
   /* margin-left:10% */
 
-
-  /* #input-username{
+ #input-username{
     padding-left:10%;
   }
 
@@ -146,4 +145,4 @@ input[type="submit"]:hover {
 
   #input-password2{
     padding-left:10%;
-  } */
+  } 

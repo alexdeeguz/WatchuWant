@@ -20,13 +20,13 @@ class LoginForm extends React.Component {
         this.animateLogin = this.animateLogin.bind(this);
     }
 
-    componentDidMount(){
-        const inputBox = document.querySelectorAll('.input-box')
-        if (inputBox.length){
-            inputBox.forEach(el => el.style.padding = '0 0 0 10%')
+    // componentDidMount(){
+    //     const inputBox = document.querySelectorAll('.input-box')
+    //     if (inputBox.length){
+    //         inputBox.forEach(el => el.style.padding = '0 0 0 10%')
             
-        }
-    }
+    //     }
+    // }
 
     closeModal() {
         const modal = $(".modal-container")
