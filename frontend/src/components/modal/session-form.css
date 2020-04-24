@@ -119,6 +119,7 @@ input[type="submit"]:hover {
   left:8%;
   font-size:1.5vw;
 
+
 }
 
 #confirm-password-icon{
@@ -129,7 +130,20 @@ input[type="submit"]:hover {
   font-size:1.5vw;
 }
 
-.input-box{
-  padding-left:10%;
+/* .input-box{
+  /* background-color: blue; */
+  
   /* margin-left:10% */
-}
+
+
+  #input-username{
+    padding-left:10%;
+  }
+
+  #input-password{
+    padding-left:10%;
+  }
+
+  #input-password2{
+    padding-left:10%;
+  }

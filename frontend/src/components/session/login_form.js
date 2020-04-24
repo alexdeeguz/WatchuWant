@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import $ from 'jquery'
+import '../modal/session-form.css'
+
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
