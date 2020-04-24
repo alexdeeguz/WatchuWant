@@ -4,6 +4,7 @@
 
 .session-form{
   padding-top: 10%;
+  position: relative;
 
 }
 
@@ -76,4 +77,59 @@ input[type="submit"]:hover {
 .sess-errors{
   color:red;
   font-weight: 600;
+}
+
+#red-border{
+  border: 1px solid red;
+}
+
+#username-icon{
+  position: absolute;
+  color: gray;
+  top:25%;
+  left:8%;
+  font-size:1.5vw;
+}
+#password-icon{
+  position: absolute;
+  color: gray;
+  top:53%;
+  left:8%;
+  font-size:1.5vw;
+}
+
+/* .input-box::placeholder{
+  padding:8%
+} */
+
+
+
+#new-name-icon{
+  position: absolute;
+  color: gray;
+  top:20%;
+  left:8%;
+  font-size:1.5vw;
+}
+
+#new-password-icon{
+  position: absolute;
+  color: gray;
+  top:41.5%;
+  left:8%;
+  font-size:1.5vw;
+
+}
+
+#confirm-password-icon{
+  position: absolute;
+  color: gray;
+  top:63%;
+  left:8%;
+  font-size:1.5vw;
+}
+
+#input-box{
+  padding-left:10%;
+  /* margin-left:10% */
 }

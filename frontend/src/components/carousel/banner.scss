@@ -17,13 +17,16 @@
 
 .logo-title{
     position: absolute;
-    top: 20%;
+    top: -3%;
     font-size: 10vh;
     font-family: 'Playball', cursive;
 }
 
 .app-des{
-    margin-right: 8%;
+    position: absolute;
+    // margin-right: 8%;
+    top:85%;
+    left: 15%;
     font-size: 3vh;
     font-family: 'Playball', cursive;
 }
