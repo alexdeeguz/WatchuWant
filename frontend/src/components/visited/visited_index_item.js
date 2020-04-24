@@ -34,7 +34,7 @@ class VisitedIndexItem extends React.Component{
                          </div>
                             <div className='res-btn-div'>
                                 <button 
-                                className='res-btn' 
+                                className='res-btn no-outline' 
                                 onClick={this.handlePost}>
                                     Add To Favorites
                                 </button>

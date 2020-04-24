@@ -108,28 +108,28 @@ class PreferenceForm extends React.Component {
                             <div className="question">
                                 <label>How far are you willing to travel for food?</label>
                                 <div id="distance-input-container">
-                                    <input className='miles' value={this.state.distance} onChange={this.updateDistance} placeholder="mile(s)"/>
+                                    <input className='miles no-outline' value={this.state.distance} onChange={this.updateDistance} placeholder="mile(s)"/>
                                 </div>
                             </div>
                             <div className="question">
                                 <label>What's your price range?</label>
                                 <div id="price-container">
-                                    <button onClick={this.updatePrice("1,2,3,4")} className="price-button">Any</button>
-                                    <button onClick={this.updatePrice("1")} className="price-button">$</button>
-                                    <button onClick={this.updatePrice("2")} className="price-button">$$</button>
-                                    <button onClick={this.updatePrice("3")} className="price-button">$$$</button>
-                                    <button onClick={this.updatePrice("4")} className="price-button">$$$$</button>
+                                    <button onClick={this.updatePrice("1,2,3,4")} className="price-button no-outline">Any</button>
+                                    <button onClick={this.updatePrice("1")} className="price-button no-outline">$</button>
+                                    <button onClick={this.updatePrice("2")} className="price-button no-outline">$$</button>
+                                    <button onClick={this.updatePrice("3")} className="price-button no-outline">$$$</button>
+                                    <button onClick={this.updatePrice("4")} className="price-button no-outline">$$$$</button>
                                 </div>
                             </div>
                             <div className="question">
                                 <label>What type of food are you craving?</label>
                                 <div id="distance-input-container">
-                                    <input className='cuisine' value={this.state.cuisine} onChange={this.updateCuisine} placeholder="sushi, tacos, curry, etc..." />
+                                    <input className='cuisine no-outline' value={this.state.cuisine} onChange={this.updateCuisine} placeholder="sushi, tacos, curry, etc..." />
                                 </div>
                             </div>
                             <div id="find-restaurant">
-                                <button id="find-button" onClick={() => this.props.history.push('/user')}>Past visited restaurants</button>
-                                <button id="find-button" onClick={this.getLocation}>Let's find a place!</button>
+                                <button id="find-button" className="no-outline" onClick={() => this.props.history.push('/user')}>Past visited restaurants</button>
+                                <button id="find-button" className="no-outline" onClick={this.getLocation}>Let's find a place!</button>
                             </div>
                         </div>
                     </div>
