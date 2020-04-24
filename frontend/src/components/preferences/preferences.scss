@@ -70,6 +70,10 @@ $radioactive-green: hsla(180, 100%, 75%, 1);
     }
 }
 
+.no-outline:focus {
+  outline: none;
+}
+
 .pref-form-container h1{
     font-size: 35px;
     padding-bottom: 3%;
