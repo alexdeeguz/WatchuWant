@@ -20,6 +20,14 @@ class LoginForm extends React.Component {
         this.animateLogin = this.animateLogin.bind(this);
     }
 
+    componentDidMount(){
+        const inputBox = document.querySelectorAll('.input-box')
+        if (inputBox.length){
+            inputBox.forEach(el => el.style.padding = '0 0 0 10%')
+            
+        }
+    }
+
     closeModal() {
         const modal = $(".modal-container")
         modal.removeClass("show")
@@ -123,11 +131,14 @@ class LoginForm extends React.Component {
                 <h1>LOGIN</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="session-form">
-                        <input className='input-box' id ='input-username' type="text"
+                        <input className='input-box' 
+                            id ='input-username' 
+                            type="text"
                             // id = {usernameErrors}
                             value={this.state.username}
                             onChange={this.update('username')}
                             placeholder="Username"
+                            
                         />
                         <i id='username-icon' className="fas fa-user-alt"></i>
                         <br />
