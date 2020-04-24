@@ -11,6 +11,7 @@
 #restaurants {
     max-width: 80%;
     z-index: 1;
+    min-height: 700px;
 }
 
 .restaurant-item {
@@ -48,15 +49,15 @@
 .map-container {
     position: relative;
     min-width: 300px;
-    min-height: 300px;
     width: 40%;
-    height: 40%;
+    height: 90%;
 }
 
 .restaurant-info {
     background-color: rgba(64, 64, 64, 0.8);
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
+    overflow-y: auto;
 }
 
 .restaurant-info > * {
@@ -81,6 +82,7 @@
     display: flex;
     width: 80%;
     justify-content: space-evenly;
+    margin: 1%;
 }
 
 .choices > p {
@@ -89,8 +91,8 @@
   background-position:right bottom;
   transition: all 0.5s ease;
   letter-spacing: 3px;
-  padding: 15px;
-  width: 15vw;
+  padding: 1%;
+  width: 25%;
   border: 1px solid white;
   cursor: pointer;
   display: flex;
