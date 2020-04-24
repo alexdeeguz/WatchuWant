@@ -13,7 +13,7 @@
   width: 90%;
   font-size: 3vh;
   margin: 12px;
-  padding-left: 10px;
+  /* padding-left: 10px; */
   border: 1px solid lightgrey;
   outline: none;
   transition: all 0.25s;
