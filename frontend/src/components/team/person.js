@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Person = (props) => {
-  const {name, github, linkedin, angelco, photo} = props;
+  const { name, github, linkedin, angelco, photo, portfolio} = props;
   return (
     <div className='person'>
       <img className='photo' alt='john' src={photo}></img>
@@ -10,6 +10,7 @@ const Person = (props) => {
         <a href={github}><img alt='github' className='icon' src='/people/github.png'></img></a>
         <a href={linkedin}><img alt='linkedin' className='icon' src='/people/linkedin.png'></img></a>
         <a href={angelco}><img alt='angelco' className='icon' src='/people/angelco.png'></img></a>
+        <a href={portfolio}><i className="icon fab fa-dev"></i></a>
       </div>
 
     </div>

@@ -37,7 +37,7 @@ class FavoriteIndexItem extends React.Component{
               </div>
               
                 <div className='res-btn-div'>
-                  <button className='res-btn' onClick={this.handleDelete}>Remove</button> 
+                  <button className='res-btn no-outline' onClick={this.handleDelete}>Remove</button> 
                 </div>
           </div>
         </div>
