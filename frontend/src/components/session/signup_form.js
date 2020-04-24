@@ -17,6 +17,14 @@ class SignupForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this)
     }
 
+    componentDidMount() {
+        const inputBox = document.querySelectorAll('.input-box')
+        if (inputBox.length) {
+            inputBox.forEach(el => el.style.padding = '0 0 0 10%')
+
+        }
+    }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
