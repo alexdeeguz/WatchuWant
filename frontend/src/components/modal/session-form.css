@@ -129,7 +129,7 @@ input[type="submit"]:hover {
   font-size:1.5vw;
 }
 
-#input-box{
+.input-box{
   padding-left:10%;
   /* margin-left:10% */
 }
