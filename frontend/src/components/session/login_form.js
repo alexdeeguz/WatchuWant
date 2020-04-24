@@ -121,7 +121,7 @@ class LoginForm extends React.Component {
                 <h1>LOGIN</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="session-form">
-                        <input className='input-box' id ='input-box' type="text"
+                        <input className='input-box' id ='input-username' type="text"
                             // id = {usernameErrors}
                             value={this.state.username}
                             onChange={this.update('username')}
@@ -129,7 +129,7 @@ class LoginForm extends React.Component {
                         />
                         <i id='username-icon' className="fas fa-user-alt"></i>
                         <br />
-                        <input className='input-box' id ='input-box' type="password"
+                        <input className='input-box' id ='input-password' type="password"
                             // id = {passwordErrors}
                             value={this.state.password}
                             onChange={this.update('password')}

@@ -61,21 +61,21 @@ class SignupForm extends React.Component {
                 <h1>SIGN UP</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="session-form">
-                        <input className='input-box' id ='input-box' type="text"
+                        <input className='input-box' id ='input-username' type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
                             placeholder="Username"
                         />
                         <i id='new-name-icon' className="fas fa-user-alt"></i>
                         <br />
-                        <input className='input-box' id ='input-box' type="password"
+                        <input className='input-box' id ='input-password' type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
                         <i id='new-password-icon' className="fas fa-lock"></i>
                         <br />
-                        <input className='input-box' id ='input-box' type="password"
+                        <input className='input-box' id ='input-password2' type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
