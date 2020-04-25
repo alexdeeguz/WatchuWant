@@ -5,7 +5,7 @@
 .session-form{
   padding-top: 10%;
   position: relative;
-
+  background-color: red;
 }
 
 .session-form > input {
